@@ -281,7 +281,7 @@ public class TyniCAD extends Xml implements Wiring {
 
 	private Node find(Node dsnRoot, String name, String id) {
 		Node tiny = getNode(dsnRoot, TINY_CAD);
-		Node node = getNode(tiny, name);;
+		Node node = getNode(tiny, name);
 		String nodeId = getAttrValue(node, ID);
 		while (!id.equalsIgnoreCase(nodeId)) {
 			node = nextNode(node, name);
