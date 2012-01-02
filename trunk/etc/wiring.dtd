@@ -1,0 +1,7 @@
+<!ELEMENT wiring (engine)+>
+
+<!ELEMENT engine (#PCDATA)>
+
+<!ATTLIST engine
+    name CDATA #REQUIRED
+    class CDATA #REQUIRED>
