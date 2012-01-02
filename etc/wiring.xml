@@ -2,6 +2,53 @@
 <!DOCTYPE wiring SYSTEM "etc/wiring.dtd">
 <wiring>
   <engine name="TyniCAD" class="com.google.code.autowiring.util.TyniCAD">
+    <bean tag="RECTANGLE" class="com.google.code.autowiring.beans.Rectangle">
+      <prop name="a" class="com.google.code.autowiring.beans.Position"/>
+      <prop name="b" class="com.google.code.autowiring.beans.Position"/>
+      <prop name="style" class="com.google.code.autowiring.beans.Style"/>
+      <prop name="fill" class="com.google.code.autowiring.beans.Fill"/>
+    </bean>
+    <bean tag="LABEL" class="com.google.code.autowiring.beans.Label" prop="label">
+      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
+      <prop name="direction" class="com.google.code.autowiring.beans.Direction"/>
+      <prop name="font" class="com.google.code.autowiring.beans.Font"/>
+      <prop name="color"/>
+      <prop name="style" class="com.google.code.autowiring.beans.Style"/>
+    </bean>
+    <bean tag="TEXT" class="com.google.code.autowiring.beans.Label" prop="label">
+      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
+      <prop name="direction" class="com.google.code.autowiring.beans.Direction"/>
+      <prop name="font" class="com.google.code.autowiring.beans.Font"/>
+      <prop name="color"/>
+    </bean>
+    <bean tag="WIRE" class="com.google.code.autowiring.beans.Wire">
+      <prop name="a" class="com.google.code.autowiring.beans.Position"/>
+      <prop name="b" class="com.google.code.autowiring.beans.Position"/>
+    </bean>
+    <bean tag="JUNCTION" class="com.google.code.autowiring.beans.Junction">
+      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
+    </bean>
+    <bean tag="PIN" class="com.google.code.autowiring.beans.Pin" prop="name">
+      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
+      <!-- which='0' -->
+      <!-- elec='0' -->
+      <prop name="direction" class="com.google.code.autowiring.beans.Direction"/>
+      <!-- part='0' -->
+      <prop name="number"/>
+      <!-- show='3' -->
+      <prop name="length"/>
+      <!-- number_pos='0' -->
+      <!-- centre_name='0' -->
+    </bean>
+    <bean tag="POLYGON" class="com.google.code.autowiring.beans.Polygon">
+      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
+      <prop name="style" class="com.google.code.autowiring.beans.Style"/>
+      <prop name="fill" class="com.google.code.autowiring.beans.Fill"/>
+      <bean tag="POINT" class="com.google.code.autowiring.beans.Point">
+        <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
+        <prop name="Arc" class="com.google.code.autowiring.beans.Point.Arc"/>
+      </bean>
+    </bean>
   </engine>
   <engine name="Inkscape" class="com.google.code.autowiring.util.Inkscape">
   </engine>
