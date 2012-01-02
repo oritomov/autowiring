@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE wiring SYSTEM "etc/wiring.dtd">
+<wiring>
+  <engine name="TyniCAD" class="com.google.code.wiring.util.TyniCAD">
+  </engine>
+  <engine name="Inkscape" class="com.google.code.wiring.util.Inkscape">
+  </engine>
+</wiring>
