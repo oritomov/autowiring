@@ -11,11 +11,10 @@ import org.w3c.dom.Node;
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring;
 import com.google.code.autowiring.WiringException;
-import com.google.code.autowiring.beans.Fill.FillInx;
 import com.google.code.autowiring.beans.Junction;
 import com.google.code.autowiring.beans.Label;
 import com.google.code.autowiring.beans.Pin;
-import com.google.code.autowiring.beans.Rectangle;
+import com.google.code.autowiring.beans.Rect;
 import com.google.code.autowiring.beans.Wire;
 import com.google.code.autowiring.config.CfgEng;
 
@@ -66,8 +65,8 @@ public class Inkscape extends Xml implements Wiring {
 	}
 
 	public void addBean(Bean bean) throws WiringException {
-		if (bean instanceof Rectangle) {
-			rectangle((Rectangle)bean);
+		if (bean instanceof Rect) {
+			rectangle((Rect)bean);
 		} else	
 		if (bean instanceof Label) {
 			text((Label)bean);
@@ -155,20 +154,14 @@ public class Inkscape extends Xml implements Wiring {
 		return layer;
 	}
 
-	private Node rectangle(Rectangle rectangle) {
+	private Node rectangle(Rect rectangle) {
 		Node rect = addNode(doc, layer, RECT);
 		//setAttrValue(rect, "id", "1");
 		setAttrValue(rect, "x", getX(rectangle.getX()));
 		setAttrValue(rect, "y", getY(rectangle.getY()));
 		setAttrValue(rect, "height", getX(rectangle.getHeigh()));
 		setAttrValue(rect, "width", getY(rectangle.getWidth()));
-		String style = "stroke:#"+getColor(rectangle.getBorder())+";stroke-width:"+rectangle.getThickness();
-		if (FillInx.None.equals(rectangle.getFill().getFill())) {
-			style += ";fill:none";
-		} else {
-			style += ";fill:#"+getColor(rectangle.getFill().getColor());
-		}
-		setAttrValue(rect, "style", style);
+		setAttrValue(rect, "style", rectangle.getStyle());
 		return rect;
 	}
 
