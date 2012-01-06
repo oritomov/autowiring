@@ -22,6 +22,9 @@ public interface Wiring {
 		public int getCode() {
 			return code;
 		}
+		public static Direction get(String code) {
+			return get(Integer.parseInt(code));
+		}
 		public static Direction get(int code) {
 			for(Direction direction: Direction.values()) {
 				if (direction.getCode() == code) {

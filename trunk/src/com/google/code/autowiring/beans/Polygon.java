@@ -16,17 +16,23 @@ public class Polygon implements Bean {
 	private double y;
 	private List<Point> points = new ArrayList<Point>();
 
-	public Polygon(double x, double y) {
-		super();
-		this.x = x;
-		this.y = y;
-	}
+//	public Polygon(double x, double y) {
+//		super();
+//		this.x = x;
+//		this.y = y;
+//	}
 
 	public double getX() {
 		return x;
 	}
+	public void setX(double x) {
+		this.x = x;
+	}
 	public double getY() {
 		return y;
+	}
+	public void setY(double y) {
+		this.y = y;
 	}
 	public List<Point> getPoints() {
 		return points;

@@ -2,7 +2,8 @@ package com.google.code.autowiring;
 
 import java.util.List;
 
-import com.google.code.autowiring.util.Props;
+import com.google.code.autowiring.config.Config;
+import com.google.code.autowiring.config.CfgEng;
 
 /**
  * @author	Orlin Tomov
@@ -11,11 +12,11 @@ import com.google.code.autowiring.util.Props;
  */
 public class Conv {
 
-	protected Props getEnv() throws WiringException {
+	protected Config getEnv() throws WiringException {
 		try {
-			Props props = new Props("etc/wiring.xml");
+			Config config = new Config("etc/wiring.xml");
 			//props.load(new FileInputStream("etc/wiring.properties"));
-			return props;
+			return config;
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
 		}
@@ -24,13 +25,13 @@ public class Conv {
 	public static void main(String[] args) {
 		try {
 			Conv conv = new Conv();
-			Props props = conv.getEnv();
-			String designWiring = props.getProperty(args[0]); 
+			Config config = conv.getEnv();
+			CfgEng designEngine = config.getEngine(args[0]); 
 			String designFile = args[1]; 
-			String reportWiring = props.getProperty(args[2]);
+			CfgEng reportEngine = config.getEngine(args[2]);
 			String reportFile = args[3];
-			Wiring design = WiringFactory.createWiring(designWiring, designFile);
-			Wiring report = WiringFactory.createWiring(reportWiring, reportFile);
+			Wiring design = WiringFactory.createWiring(designEngine, designFile);
+			Wiring report = WiringFactory.createWiring(reportEngine, reportFile);
 			List<Bean> beans = design.getBeans();
 			report.setBeans(beans);
 			report.save();

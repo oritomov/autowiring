@@ -1,54 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE wiring SYSTEM "etc/wiring.dtd">
 <wiring>
-  <engine name="TyniCAD" class="com.google.code.autowiring.util.TyniCAD">
-    <bean tag="RECTANGLE" class="com.google.code.autowiring.beans.Rectangle">
-      <prop name="a" class="com.google.code.autowiring.beans.Position"/>
-      <prop name="b" class="com.google.code.autowiring.beans.Position"/>
-      <prop name="style" class="com.google.code.autowiring.beans.Style"/>
-      <prop name="fill" class="com.google.code.autowiring.beans.Fill"/>
-    </bean>
-    <bean tag="LABEL" class="com.google.code.autowiring.beans.Label" prop="label">
-      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
-      <prop name="direction" class="com.google.code.autowiring.beans.Direction"/>
-      <prop name="font" class="com.google.code.autowiring.beans.Font"/>
-      <prop name="color"/>
-      <prop name="style" class="com.google.code.autowiring.beans.Style"/>
-    </bean>
-    <bean tag="TEXT" class="com.google.code.autowiring.beans.Label" prop="label">
-      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
-      <prop name="direction" class="com.google.code.autowiring.beans.Direction"/>
-      <prop name="font" class="com.google.code.autowiring.beans.Font"/>
-      <prop name="color"/>
-    </bean>
-    <bean tag="WIRE" class="com.google.code.autowiring.beans.Wire">
-      <prop name="a" class="com.google.code.autowiring.beans.Position"/>
-      <prop name="b" class="com.google.code.autowiring.beans.Position"/>
-    </bean>
-    <bean tag="JUNCTION" class="com.google.code.autowiring.beans.Junction">
-      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
-    </bean>
-    <bean tag="PIN" class="com.google.code.autowiring.beans.Pin" prop="name">
-      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
+  <engine name="TyniCAD" class="com.google.code.autowiring.tynicad.TyniCAD">
+    <tag name="FILL" class="com.google.code.autowiring.tynicad.Fill">
+      <prop name="id" />
+    </tag>
+    <tag name="FONT" class="com.google.code.autowiring.tynicad.Font">
+      <prop name="id"/>
+    </tag>
+    <tag name="STYLE" class="com.google.code.autowiring.tynicad.Style">
+      <prop name="id"/>
+    </tag>
+    <tag name="JUNCTION" class="com.google.code.autowiring.tynicad.Junction">
+      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
+    </tag>
+    <tag name="LABEL" class="com.google.code.autowiring.tynicad.Label" prop="label">
+      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
+      <prop name="direction"/>
+      <ref name="font" class="com.google.code.autowiring.tynicad.Font" />
+      <prop name="color" />
+      <ref name="style" class="com.google.code.autowiring.tynicad.Style" />
+    </tag>
+    <tag name="PIN" class="com.google.code.autowiring.tynicad.Pin" prop="name">
+      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
       <!-- which='0' -->
       <!-- elec='0' -->
-      <prop name="direction" class="com.google.code.autowiring.beans.Direction"/>
+      <prop name="direction"/>
       <!-- part='0' -->
-      <prop name="number"/>
+      <prop name="number" />
       <!-- show='3' -->
-      <prop name="length"/>
+      <prop name="length" />
       <!-- number_pos='0' -->
       <!-- centre_name='0' -->
-    </bean>
-    <bean tag="POLYGON" class="com.google.code.autowiring.beans.Polygon">
-      <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
-      <prop name="style" class="com.google.code.autowiring.beans.Style"/>
-      <prop name="fill" class="com.google.code.autowiring.beans.Fill"/>
-      <bean tag="POINT" class="com.google.code.autowiring.beans.Point">
-        <prop name="pos" class="com.google.code.autowiring.beans.Position"/>
-        <prop name="Arc" class="com.google.code.autowiring.beans.Point.Arc"/>
-      </bean>
-    </bean>
+    </tag>
+    <tag name="POLYGON" class="com.google.code.autowiring.tynicad.Polygon">
+      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
+      <ref name="style" class="com.google.code.autowiring.tynicad.Style" />
+      <ref name="fill" class="com.google.code.autowiring.tynicad.Fill" />
+      <tag tag="POINT" class="com.google.code.autowiring.tynicad.Point">
+        <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
+        <prop name="Arc" class="com.google.code.autowiring.tynicad.Point.Arc" />
+      </tag>
+    </tag>
+    <tag name="RECTANGLE" class="com.google.code.autowiring.tynicad.Rectangle">
+      <prop name="a" class="com.google.code.autowiring.tynicad.Position"/>
+      <prop name="b" class="com.google.code.autowiring.tynicad.Position"/>
+      <ref name="style" class="com.google.code.autowiring.tynicad.Style"/>
+      <ref name="fill" class="com.google.code.autowiring.tynicad.Fill"/>
+    </tag>
+    <tag name="TEXT" class="com.google.code.autowiring.tynicad.Label" prop="label">
+      <prop name="pos" class="com.google.code.autowiring.tynicad.Position"/>
+      <prop name="direction"/>
+      <ref name="font" class="com.google.code.autowiring.tynicad.Font"/>
+      <prop name="color"/>
+    </tag>
+    <tag name="WIRE" class="com.google.code.autowiring.tynicad.Wire">
+      <prop name="a" class="com.google.code.autowiring.tynicad.Position"/>
+      <prop name="b" class="com.google.code.autowiring.tynicad.Position"/>
+    </tag>
   </engine>
   <engine name="Inkscape" class="com.google.code.autowiring.util.Inkscape">
   </engine>
