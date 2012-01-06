@@ -1,11 +1,13 @@
 package com.google.code.autowiring.tynicad;
 
+import com.google.code.autowiring.beans.Rect;
+
 /**
  * @author	Orlin Tomov
  * @version	1.0
  *
  */
-public class Rectangle extends com.google.code.autowiring.beans.Rectangle {
+public class Rectangle extends Rect {
 
 	protected Rectangle() {
 	}
@@ -24,9 +26,16 @@ public class Rectangle extends com.google.code.autowiring.beans.Rectangle {
 		setHeigh(Math.max(y,y2) - getY());
 	}
 	public void setStyle(Style style) {
-		super.setStyle(style);
+		setStrokeColor(style.getColor());
+		setStrokeWidth(style.getThickness());
 	}
 	public void setFill(Fill fill) {
-		super.setFill(fill);
+		switch (fill.getFill()) {
+			case None:
+				setFillColor(null);
+				break;
+			default:
+				setFillColor(fill.getColor());
+		}
 	}
 }
