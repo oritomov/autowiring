@@ -17,6 +17,7 @@ import com.google.code.autowiring.beans.Label;
 import com.google.code.autowiring.beans.Pin;
 import com.google.code.autowiring.beans.Rectangle;
 import com.google.code.autowiring.beans.Wire;
+import com.google.code.autowiring.config.CfgEng;
 
 /**
  * @author	Orlin Tomov
@@ -34,12 +35,14 @@ public class Inkscape extends Xml implements Wiring {
 	private static final String TSPAN = "tspan";
 	private static final String PATH = "path";
 
+	private CfgEng engine;
 	private Node layer;
 	private String path;
 	private String fileName;
 
-	public Inkscape(String fileName) throws WiringException {
+	public Inkscape(CfgEng engine, String fileName) throws WiringException {
 		super();
+		this.engine = engine;
 		try {
 			path = new File(fileName).getCanonicalPath();
 			path = path.substring(0, path.lastIndexOf(File.separator));
@@ -263,10 +266,21 @@ public class Inkscape extends Xml implements Wiring {
 				x = pin.getLength()/5;
 				break;
 		}
-		Wire wire = new Wire(pin.getX(), pin.getY(), pin.getX()+x, pin.getY()+y, pin.getColor());
+		Wire wire = new Wire();
+		wire.setX1(pin.getX());
+		wire.setY1(pin.getY());
+		wire.setX2(pin.getX()+x);
+		wire.setY2(pin.getY()+y);
+		wire.setColor(pin.getColor());
 		path(wire);
 		if ((pin.getNumber() != null) || (!pin.getNumber().isEmpty())) {
-			Label label = new Label(pin.getX(), pin.getY(), Color.BLACK, pin.getDirection(), pin.getFont(), pin.getNumber());
+			Label label = new Label();
+			label.setX(pin.getX());
+			label.setY(pin.getY());
+			// TODO label.setColor(Color.BLACK));
+			label.setDirection(pin.getDirection());
+			label.setFont(pin.getFont());
+			label.setLabel(pin.getNumber());
 			text(label);
 		}
 		if ((pin.getName() != null) || (!pin.getName().isEmpty())) {
@@ -282,7 +296,13 @@ public class Inkscape extends Xml implements Wiring {
 					y += pin.getFont().getSize();
 					break;
 			}
-			Label label = new Label(x, y, Color.BLACK, pin.getDirection(), pin.getFont(), pin.getName());
+			Label label = new Label();
+			label.setX(x);
+			label.setY(y);
+			// TODO label.setColor(Color.BLACK));
+			label.setDirection(pin.getDirection());
+			label.setFont(pin.getFont());
+			label.setLabel(pin.getName());
 			text(label);
 		}
 	}

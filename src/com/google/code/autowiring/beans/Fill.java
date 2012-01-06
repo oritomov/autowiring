@@ -35,15 +35,18 @@ public class Fill implements Bean {
 	private FillInx fill;
 	private Color color;
 
-	public Fill(FillInx fill, Color color) {
-		super();
-		this.fill = fill;
-		this.color = color;
+	public Fill() {
 	}
 	public FillInx getFill() {
 		return fill;
 	}
+	public void setFill(FillInx fill) {
+		this.fill = fill;
+	}
 	public Color getColor() {
 		return color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
 	}
 }
