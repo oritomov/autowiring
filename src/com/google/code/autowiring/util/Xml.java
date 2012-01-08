@@ -1,7 +1,5 @@
 package com.google.code.autowiring.util;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.io.StringWriter;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -43,14 +41,13 @@ public abstract class Xml {
 
 	protected Xml(String fileName) throws WiringException {
 		try {
-			InputStream in = new FileInputStream(fileName);
-			doc = parse(in);
+			doc = parse(fileName);
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
 		}
 	}
 
-	protected Document parse(InputStream in) throws WiringException {
+	protected Document parse(String fileName) throws WiringException {
 		// Step 1: create a DocumentBuilderFactory
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		// Optional: set various configuration options
@@ -71,7 +68,7 @@ public abstract class Xml {
 
 		// Step 3: parse the input file to get a Document object
 		try {
-			return builder.parse(in);
+			return builder.parse(fileName);
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
 		}

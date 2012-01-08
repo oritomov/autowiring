@@ -1,4 +1,4 @@
-package com.google.code.autowiring.tynicad;
+package com.google.code.autowiring.tynicad.beans;
 
 import com.google.code.autowiring.beans.Rect;
 
@@ -9,7 +9,7 @@ import com.google.code.autowiring.beans.Rect;
  */
 public class Rectangle extends Rect {
 
-	protected Rectangle() {
+	public Rectangle() {
 	}
 	public void setA(Position a) {
 		setX(a.getX());

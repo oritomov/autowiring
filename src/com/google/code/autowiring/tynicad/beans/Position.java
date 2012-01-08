@@ -1,4 +1,4 @@
-package com.google.code.autowiring.beans;
+package com.google.code.autowiring.tynicad.beans;
 
 import com.google.code.autowiring.Bean;
 
@@ -17,6 +17,9 @@ public class Position implements Bean {
 		this.x = x;
 		this.y = y;
 	}
+	public Position(String position) {
+		this(Double.valueOf(position.split(",")[0]), Double.valueOf(position.split(",")[1]));
+	}
 
 	public double getX() {
 		return x;
@@ -24,6 +27,7 @@ public class Position implements Bean {
 	public double getY() {
 		return y;
 	}
+
 	public Position move(Position displace) {
 		x+=displace.getX();
 		y+=displace.getY();

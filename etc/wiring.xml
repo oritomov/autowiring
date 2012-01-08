@@ -1,64 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE wiring SYSTEM "etc/wiring.dtd">
+<!DOCTYPE wiring SYSTEM "wiring.dtd">
 <wiring>
-  <engine name="TyniCAD" class="com.google.code.autowiring.tynicad.TyniCAD">
-    <tag name="FILL" class="com.google.code.autowiring.tynicad.Fill">
-      <prop name="id" />
-    </tag>
-    <tag name="FONT" class="com.google.code.autowiring.tynicad.Font">
-      <prop name="id"/>
-    </tag>
-    <tag name="STYLE" class="com.google.code.autowiring.tynicad.Style">
-      <prop name="id"/>
-    </tag>
-    <tag name="JUNCTION" class="com.google.code.autowiring.tynicad.Junction">
-      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
-    </tag>
-    <tag name="LABEL" class="com.google.code.autowiring.tynicad.Label" prop="label">
-      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
-      <prop name="direction"/>
-      <ref name="font" class="com.google.code.autowiring.tynicad.Font" />
-      <prop name="color" />
-      <ref name="style" class="com.google.code.autowiring.tynicad.Style" />
-    </tag>
-    <tag name="PIN" class="com.google.code.autowiring.tynicad.Pin" prop="name">
-      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
-      <!-- which='0' -->
-      <!-- elec='0' -->
-      <prop name="direction"/>
-      <!-- part='0' -->
-      <prop name="number" />
-      <!-- show='3' -->
-      <prop name="length" />
-      <!-- number_pos='0' -->
-      <!-- centre_name='0' -->
-    </tag>
-    <tag name="POLYGON" class="com.google.code.autowiring.tynicad.Polygon">
-      <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
-      <ref name="style" class="com.google.code.autowiring.tynicad.Style" />
-      <ref name="fill" class="com.google.code.autowiring.tynicad.Fill" />
-      <tag tag="POINT" class="com.google.code.autowiring.tynicad.Point">
-        <prop name="pos" class="com.google.code.autowiring.tynicad.Position" />
-        <prop name="Arc" class="com.google.code.autowiring.tynicad.Point.Arc" />
-      </tag>
-    </tag>
-    <tag name="RECTANGLE" class="com.google.code.autowiring.tynicad.Rectangle">
-      <prop name="a" class="com.google.code.autowiring.tynicad.Position"/>
-      <prop name="b" class="com.google.code.autowiring.tynicad.Position"/>
-      <ref name="style" class="com.google.code.autowiring.tynicad.Style"/>
-      <ref name="fill" class="com.google.code.autowiring.tynicad.Fill"/>
-    </tag>
-    <tag name="TEXT" class="com.google.code.autowiring.tynicad.Label" prop="label">
-      <prop name="pos" class="com.google.code.autowiring.tynicad.Position"/>
-      <prop name="direction"/>
-      <ref name="font" class="com.google.code.autowiring.tynicad.Font"/>
-      <prop name="color"/>
-    </tag>
-    <tag name="WIRE" class="com.google.code.autowiring.tynicad.Wire">
-      <prop name="a" class="com.google.code.autowiring.tynicad.Position"/>
-      <prop name="b" class="com.google.code.autowiring.tynicad.Position"/>
-    </tag>
+  <engine name="TyniCAD" class="com.google.code.autowiring.tynicad.config.TiniCadConfig" xml="etc/TyniCAD.xml">
   </engine>
-  <engine name="Inkscape" class="com.google.code.autowiring.util.Inkscape">
+  <engine name="svg" class="com.google.code.autowiring.svg.SvgConfig" xml="etc/svg.xml">
   </engine>
 </wiring>

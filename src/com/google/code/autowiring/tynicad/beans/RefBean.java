@@ -1,4 +1,4 @@
-package com.google.code.autowiring.tynicad;
+package com.google.code.autowiring.tynicad.beans;
 
 import com.google.code.autowiring.Bean;
 

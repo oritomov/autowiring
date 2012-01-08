@@ -4,4 +4,5 @@
 
 <!ATTLIST engine
     name CDATA #REQUIRED
-    class CDATA #REQUIRED>
+    class CDATA #REQUIRED
+    xml CDATA #IMPLIED>

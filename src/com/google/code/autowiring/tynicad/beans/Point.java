@@ -1,4 +1,4 @@
-package com.google.code.autowiring.beans;
+package com.google.code.autowiring.tynicad.beans;
 
 import com.google.code.autowiring.Bean;
 
@@ -49,5 +49,8 @@ public class Point implements Bean {
 	}
 	public Arc getArc() {
 		return arc;
+	}
+	public void setArc(String code) {
+		this.arc = Arc.get(Integer.parseInt(code));
 	}
 }

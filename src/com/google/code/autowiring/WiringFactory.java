@@ -15,7 +15,7 @@ public class WiringFactory {
 		try {
 			@SuppressWarnings("unchecked")
 			Class<Wiring> wiringClass = (Class<Wiring>) Class.forName(engine.getClassName());
-			Constructor<Wiring> wiringConstructor = wiringClass.getConstructor(CfgEng.class, String.class);
+			Constructor<Wiring> wiringConstructor = wiringClass.getDeclaredConstructor(CfgEng.class, String.class);
 			Wiring wiring = wiringConstructor.newInstance(engine, fileName);
 			return wiring;
 		} catch (Exception e) {
