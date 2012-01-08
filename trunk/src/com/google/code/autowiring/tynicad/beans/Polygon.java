@@ -1,4 +1,4 @@
-package com.google.code.autowiring.beans;
+package com.google.code.autowiring.tynicad.beans;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +16,9 @@ public class Polygon implements Bean {
 	private double y;
 	private List<Point> points = new ArrayList<Point>();
 
-//	public Polygon(double x, double y) {
-//		super();
-//		this.x = x;
-//		this.y = y;
-//	}
+	public Polygon() {
+		super();
+	}
 
 	public double getX() {
 		return x;
@@ -34,10 +32,20 @@ public class Polygon implements Bean {
 	public void setY(double y) {
 		this.y = y;
 	}
+	public void setPos(Position pos) {
+		setX(pos.getX());
+		setY(pos.getY());
+	}
 	public List<Point> getPoints() {
 		return points;
 	}
-	public void add(Point point) {
+	public void addPoints(Point point) {
 		points .add(point);
+	}
+	public void setStyle(Style style) {
+		// TODO
+	}
+	public void setFill(Fill fill) {
+		// TODO
 	}
 }

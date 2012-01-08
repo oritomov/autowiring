@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE tynicad SYSTEM "TyniCAD.dtd">
+<tynicad class="com.google.code.autowiring.tynicad.TyniCAD">
+  <tag name="OPTIONS" class="com.google.code.autowiring.tynicad.beans.Options">
+    <!-- GRID>0</GRID-->
+    <!-- UNITS>0</UNITS-->
+    <!-- COLOR_WIRE>FF0000</COLOR_WIRE-->
+    <!-- COLOR_BUS>0000FF</COLOR_BUS-->
+    <!-- COLOR_JUNCTION>000000</COLOR_JUNCTION-->
+    <!-- COLOR_NOCONNECT>000000</COLOR_NOCONNECT-->
+    <!-- COLOR_LABEL>208000</COLOR_LABEL-->
+    <!-- COLOR_POWER>000000</COLOR_POWER-->
+    <tag name="COLOR_PIN" prop="colorPin"/>
+    <!-- COLOR_HIDDEN_PIN>208020</COLOR_HIDDEN_PIN-->
+    <!-- COLOR_BACKGROUND>FFFFFF</COLOR_BACKGROUND-->
+  </tag>
+  <!-- refs -->
+  <tag name="FILL" class="com.google.code.autowiring.tynicad.beans.Fill">
+    <prop name="id"/>
+    <tag name="INDEX" prop="fill"/>
+    <tag name="COLOR" prop="color"/>
+  </tag>
+  <tag name="FONT" class="com.google.code.autowiring.tynicad.beans.Font">
+    <prop name="id"/>
+  </tag>
+  <tag name="STYLE" class="com.google.code.autowiring.tynicad.beans.Style">
+    <prop name="id"/>
+  </tag>
+  <tag name="SYMBOLDEF" class="com.google.code.autowiring.tynicad.beans.SymbolDef">
+    <prop name="id"/>
+    <tag name="REF_POINT">
+      <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    </tag>
+    <tag name="TinyCAD" class="com.google.code.autowiring.Bean" array="beans"/>
+  </tag>
+  <!-- beans -->
+  <tag name="JUNCTION" class="com.google.code.autowiring.tynicad.beans.Junction">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+  </tag>
+  <tag name="LABEL" class="com.google.code.autowiring.tynicad.beans.Label" prop="label">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="direction"/>
+    <prop name="color" />
+    <ref name="font" class="com.google.code.autowiring.tynicad.beans.Font"/>
+    <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>
+  </tag>
+  <tag name="PIN" class="com.google.code.autowiring.tynicad.beans.Pin" prop="name">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <!-- which='0' -->
+    <!-- elec='0' -->
+    <prop name="direction"/>
+    <!-- part='0' -->
+    <prop name="number"/>
+    <!-- show='3' -->
+    <prop name="length"/>
+    <!-- number_pos='0' -->
+    <!-- centre_name='0' -->
+  </tag>
+  <tag name="POLYGON" class="com.google.code.autowiring.tynicad.beans.Polygon">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>
+    <ref name="fill" class="com.google.code.autowiring.tynicad.beans.Fill"/>
+    <tag name="POINT" class="com.google.code.autowiring.tynicad.beans.Point" array="points">
+      <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+      <prop name="arc"/>
+    </tag>
+  </tag>
+  <tag name="RECTANGLE" class="com.google.code.autowiring.tynicad.beans.Rectangle">
+    <prop name="a" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="b" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>
+    <ref name="fill" class="com.google.code.autowiring.tynicad.beans.Fill"/>
+  </tag>
+  <tag name="SYMBOL" class="com.google.code.autowiring.tynicad.beans.Symbol">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <ref name="id" class="com.google.code.autowiring.tynicad.beans.SymbolDef"/>
+  </tag>
+  <tag name="TEXT" class="com.google.code.autowiring.tynicad.beans.Label" prop="label">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="direction"/>
+    <prop name="color"/>
+    <ref name="font" class="com.google.code.autowiring.tynicad.beans.Font"/>
+  </tag>
+  <tag name="WIRE" class="com.google.code.autowiring.tynicad.beans.Wire">
+    <prop name="a" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="b" class="com.google.code.autowiring.tynicad.beans.Position"/>
+  </tag>
+</tynicad>

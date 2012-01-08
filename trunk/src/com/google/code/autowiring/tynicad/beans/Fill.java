@@ -1,4 +1,6 @@
-package com.google.code.autowiring.tynicad;
+package com.google.code.autowiring.tynicad.beans;
+
+import com.google.code.autowiring.tynicad.TyniCAD;
 
 /**
  * @author	Orlin Tomov
@@ -8,7 +10,7 @@ package com.google.code.autowiring.tynicad;
 public class Fill implements RefBean {
 
 	public enum EFill {
-		None(-1), Solid(0);
+		None(-1), Solid(0), Dash(4);
 
 		private int code;
 
@@ -32,7 +34,7 @@ public class Fill implements RefBean {
 	private EFill fill;
 	private String color;
 
-	protected Fill() {
+	public Fill() {
 		super();
 	}
 
@@ -47,13 +49,13 @@ public class Fill implements RefBean {
 	public EFill getFill() {
 		return fill;
 	}
-	public void setFill(EFill fill) {
-		this.fill = fill;
+	public void setFill(String code) {
+		fill = EFill.get(Integer.parseInt(code));
 	}
 	public String getColor() {
 		return color;
 	}
-	public void setColor(String color) {
-		this.color = color;
+	public void setColor(String bgr) {
+		this.color = TyniCAD.getColor(bgr);
 	}
 }

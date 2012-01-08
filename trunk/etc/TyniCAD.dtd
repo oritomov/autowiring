@@ -1,0 +1,21 @@
+<!ELEMENT tynicad (tag)+>
+
+<!ATTLIST tynicad
+    class CDATA #REQUIRED>
+
+<!ELEMENT tag (prop*,ref*,tag*)>
+
+<!ATTLIST tag
+    name CDATA #REQUIRED
+    class CDATA #IMPLIED
+    prop CDATA #IMPLIED
+    array CDATA #IMPLIED>
+
+<!ATTLIST prop
+    name CDATA #REQUIRED
+    class CDATA #IMPLIED>
+
+<!ATTLIST ref
+    name CDATA #REQUIRED
+    class CDATA #IMPLIED>
+    

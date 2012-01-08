@@ -1,13 +1,16 @@
-package com.google.code.autowiring.tynicad;
+package com.google.code.autowiring.tynicad.beans;
+
+import com.google.code.autowiring.beans.Path;
 
 /**
  * @author	Orlin Tomov
  * @version	1.0
  *
  */
-public class Wire extends com.google.code.autowiring.beans.Wire {
+public class Wire extends Path {
 
-	protected Wire() {
+	public Wire() {
+		super();
 	}
 
 	public void setA(Position a) {

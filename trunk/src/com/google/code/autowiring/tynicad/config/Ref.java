@@ -1,20 +1,20 @@
-package com.google.code.autowiring.config;
+package com.google.code.autowiring.tynicad.config;
 
 /**
  * @author	Orlin Tomov
  * @version	1.0
  *
  */
-public class Prop {
+public class Ref {
 
 	private String name;
 	private String className;
 
-	public Prop(String name, String className) {
-		super();
+	public Ref(String name, String className) {
 		this.name = name;
 		this.className = className;
 	}
+
 	public String getName() {
 		return name;
 	}

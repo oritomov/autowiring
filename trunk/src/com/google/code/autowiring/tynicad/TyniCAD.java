@@ -1,36 +1,23 @@
 package com.google.code.autowiring.tynicad;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import org.w3c.dom.Node;
 
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring;
 import com.google.code.autowiring.WiringException;
-import com.google.code.autowiring.beans.Fill;
-import com.google.code.autowiring.beans.Fill.FillInx;
-import com.google.code.autowiring.beans.Junction;
-import com.google.code.autowiring.beans.Label;
-import com.google.code.autowiring.beans.Pin;
-import com.google.code.autowiring.beans.Point;
-import com.google.code.autowiring.beans.Point.Arc;
-import com.google.code.autowiring.beans.Polygon;
-import com.google.code.autowiring.beans.Position;
-import com.google.code.autowiring.beans.Rectangle;
-import com.google.code.autowiring.beans.Wire;
 import com.google.code.autowiring.config.CfgEng;
-import com.google.code.autowiring.config.Prop;
-import com.google.code.autowiring.config.Ref;
-import com.google.code.autowiring.config.Tag;
+import com.google.code.autowiring.tynicad.beans.Options;
+import com.google.code.autowiring.tynicad.beans.RefBean;
+import com.google.code.autowiring.tynicad.config.Prop;
+import com.google.code.autowiring.tynicad.config.Ref;
+import com.google.code.autowiring.tynicad.config.Tag;
+import com.google.code.autowiring.tynicad.config.TiniCadConfig;
 import com.google.code.autowiring.util.Xml;
 
 /**
@@ -43,28 +30,8 @@ public class TyniCAD extends Xml implements Wiring {
 	private static final String ROOT = "TinyCADSheets";
 	private static final String TINY_CAD = "TinyCAD";
 	private static final String OPTIONS = "OPTIONS";
-	private static final String COLOR_WIRE = "COLOR_WIRE";
-	private static final String COLOR_PIN = "COLOR_PIN";
-	private static final String ID = "id";
-	private static final String RECTANGLE = "RECTANGLE";
-	private static final String STYLE = "style";
-	private static final String FILL = "fill";
-	private static final String SYMBOL = "SYMBOL";
-	private static final String SYMBOLDEF = "SYMBOLDEF";
-	private static final String REF_POINT = "REF_POINT";
-	private static final String COLOR = "COLOR";
-	private static final String THICKNESS = "THICKNESS";
-	private static final String LABEL = "LABEL";
-	private static final String WIRE = "WIRE";
-	private static final String JUNCTION = "JUNCTION";
-	private static final String PIN = "PIN";
-	private static final String TEXT = "TEXT";
-	private static final String FONT = "FONT";
-	private static final String POLYGON = "POLYGON";
-	private static final String POINT = "POINT";
-	private static final String DETAILS = "DETAILS";
 
-	private CfgEng engine;
+	private TiniCadConfig engine;
 	private Node dsnRoot;
 //	private Color wireColor = new Color(0);
 //	private Font pinFont;
@@ -75,14 +42,20 @@ public class TyniCAD extends Xml implements Wiring {
 	private List<Bean> beans;
 
 	public TyniCAD(CfgEng engine, String fileName) throws WiringException {
+		this((TiniCadConfig)engine, fileName);
+	}
+
+	protected TyniCAD(TiniCadConfig engine, String fileName) throws WiringException {
 		super(fileName);
 		this.engine = engine;
 		dsnRoot = getNode(doc, ROOT);
 		Node tiny = getNode(dsnRoot, TINY_CAD);
-		refs = ceateBeans(tiny.getFirstChild());
-		/** will look for next elements after "OPTIONS" */
-		Node options = getNode(tiny, OPTIONS);
-		beans = ceateBeans(options.getNextSibling());
+		refs = new ArrayList<Bean>();
+		/** first extract options. */
+		Bean options = createBean(getNode(tiny, OPTIONS));
+		refs.add(options);
+		/** extract all other */
+		beans = ceateBeans(tiny.getFirstChild());
 //		wireColor = getColor(getNode(options, COLOR_WIRE).getTextContent());
 //		pinFont = getFont(find(dsnRoot, FONT, "1"));
 //		pinFont = pinFont.deriveFont(3.0f);
@@ -105,57 +78,52 @@ public class TyniCAD extends Xml implements Wiring {
 	}
 
 	private List<Bean> ceateBeans(Node node) {
-		List<Bean> refs = new ArrayList<Bean>();
+		List<Bean> beans = new ArrayList<Bean>();
 		while (node != null) {
 			if (node.getNodeType() == Node.ELEMENT_NODE) { 
 				if (engine.getTag(node.getNodeName()) != null) {
-					Bean ref = createBean(node);
-					refs.add(ref);
-				}
-				if (OPTIONS.equalsIgnoreCase(node.getNodeName())) {
-					break;
+					Bean bean = createBean(node);
+					if (bean instanceof RefBean) {
+						refs.add(bean);
+					} else {
+						beans.add(bean);
+					}
 				}
 			}
 			node = node.getNextSibling();
 		}
-		return refs;
+		return beans;
 	}
 
 	private Bean createBean(Node node) throws WiringException {
-		if (node.getNodeName().equalsIgnoreCase(SYMBOL)) {
-			Bean bean = symbol(node);
-			return bean;
-		}
 		try {
 			String name = node.getNodeName();
 			Tag tag = engine.getTag(name);
+			Bean bean = instanceBean(tag.getClassName());
+			setBeanProps(bean, tag.getProps(), node);
+			setBeanProp(bean, tag.getPropName(), node);
+			setBeanRefs(bean, tag.getRefs(), node);
+			setBeanTags(bean, tag.getTags(), node);
+			return bean;
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	/**
+	 * @return the instance of the bean.
+	 */
+	private Bean instanceBean(String className) {
+		try {
 			@SuppressWarnings("unchecked")
-			Class<Bean> beanClass = (Class<Bean>) Class.forName(tag.getClassName());
-			Constructor<Bean> beanConstructor = beanClass.getDeclaredConstructor(new Class[0]);
-			Bean bean = beanConstructor.newInstance(new Object[0]);
-			for(Prop prop: tag.getProps()) {
-				String value = getAttrValue(node, prop.getName());
-				String setterName = getSetterName(prop.getName());
-				if (prop.getClassName() == null) {
-					Method setter = beanClass.getDeclaredMethod(setterName, String.class);
-					setter.invoke(bean, value);
-				} else {
-					@SuppressWarnings("unchecked")
-					Class<Bean> paramClass = (Class<Bean>) Class.forName(prop.getClassName());
-					Constructor<Bean> paramConstructor = paramClass.getDeclaredConstructor(String.class);
-					Bean param = paramConstructor.newInstance(value);
-					Method setter = beanClass.getDeclaredMethod(setterName, paramClass);
-					setter.invoke(bean, param);
-				}
-			}
-			for(Ref ref: tag.getRefs()) {
-				String refId = getAttrValue(node, ref.getName());
-				String setterName = getSetterName(ref.getName());
-				@SuppressWarnings("unchecked")
-				Class<Bean> paramClass = (Class<Bean>) Class.forName(ref.getClassName());
-				Bean param = getRef(paramClass, refId);
-				Method setter = beanClass.getDeclaredMethod(setterName, paramClass);
-				setter.invoke(bean, param);
+			Class<Bean> beanClass = (Class<Bean>) Class.forName(className);
+			Bean bean;
+			try {
+				Constructor<Bean> beanConstructor = beanClass.getDeclaredConstructor(new Class[]{List.class});
+				bean = beanConstructor.newInstance(new Object[]{refs});
+			} catch (NoSuchMethodException e) {
+				Constructor<Bean> beanConstructor = beanClass.getDeclaredConstructor(new Class[0]);
+				bean = beanConstructor.newInstance(new Object[0]);
 			}
 			return bean;
 		} catch (Exception e) {
@@ -163,19 +131,94 @@ public class TyniCAD extends Xml implements Wiring {
 		}
 	}
 
-	private Bean getRef(Class<Bean> paramClass, String refId) {
-		for (Bean ref: refs) {
-			if (ref.getClass().equals(paramClass)) {
-				if (((RefBean) ref).getId().equalsIgnoreCase(refId)) {
-					return ref;
+	private void setBeanProp(Bean bean, String propName, Node node) {
+		if (propName == null) {
+			return;
+		}
+		try {
+			String value = node.getTextContent();
+			String setterName = getSetterName(propName);
+			Method setter = bean.getClass().getDeclaredMethod(setterName, String.class);
+			setter.invoke(bean, value);
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	private void setBeanProps(Bean bean, List<Prop> props, Node node) {
+		try {
+			for(Prop prop: props) {
+				String value = getAttrValue(node, prop.getName());
+				String setterName = getSetterName(prop.getName());
+				if (prop.getClassName() == null) {
+					Method setter = bean.getClass().getDeclaredMethod(setterName, String.class);
+					setter.invoke(bean, value);
+				} else {
+					@SuppressWarnings("unchecked")
+					Class<Bean> paramClass = (Class<Bean>) Class.forName(prop.getClassName());
+					Constructor<Bean> paramConstructor = paramClass.getDeclaredConstructor(String.class);
+					Bean param = paramConstructor.newInstance(value);
+					Method setter = bean.getClass().getDeclaredMethod(setterName, paramClass);
+					setter.invoke(bean, param);
 				}
 			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
 		}
-		return null;
+	}
+
+	private void setBeanRefs(Bean bean, List<Ref> refs, Node node) {
+		try {
+			for(Ref ref: refs) {
+				String refId = getAttrValue(node, ref.getName());
+				String setterName = getSetterName(ref.getName());
+				@SuppressWarnings("unchecked")
+				Class<Bean> paramClass = (Class<Bean>) Class.forName(ref.getClassName());
+				Bean param = getRef(this.refs, paramClass, refId);
+				Method setter = bean.getClass().getDeclaredMethod(setterName, paramClass);
+				setter.invoke(bean, param);
+			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	private void setBeanTags(Bean bean, List<Tag> tags, Node node) {
+		try {
+			for(Tag tag: tags) {
+				Node child = getNode(node, tag.getName());
+				if (tag.getPropName() != null) {
+					setBeanProps(bean, tag.getProps(), child);
+					setBeanProp(bean, tag.getPropName(), child);
+				} else 
+				if (tag.getArrayName() != null) {
+					List<Bean> values = ceateBeans(child.getFirstChild());
+					@SuppressWarnings("unchecked")
+					Class<Bean> paramClass = (Class<Bean>) Class.forName(tag.getClassName());
+					String adderName = getAdderName(tag.getArrayName());
+					Method adder = bean.getClass().getDeclaredMethod(adderName, paramClass);
+					for (Bean value: values) {
+						adder.invoke(bean, value);
+					}
+				}
+			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	private static String getGetterName(String name) {
+		String getterName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
+		return getterName;
 	}
 
 	private String getSetterName(String name) {
 		String setterName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+		return setterName;
+	}
+
+	private String getAdderName(String name) {
+		String setterName = "add" + name.substring(0, 1).toUpperCase() + name.substring(1);
 		return setterName;
 	}
 
@@ -318,14 +361,6 @@ public class TyniCAD extends Xml implements Wiring {
 //		return pin;
 //	}
 
-//	private Color getColor(String bgr) {
-//		int r = Integer.parseInt(bgr.substring(4), 16);
-//		int g = Integer.parseInt(bgr.substring(2, 4), 16);
-//		int b = Integer.parseInt(bgr.substring(0, 2), 16);
-//		Color color = new Color(r, g, b);
-//		return color;
-//	}
-
 //	private Font getFont(Node node) {
 //		String name = getNode(node, "FACENAME").getTextContent();
 //		int style = Font.PLAIN;
@@ -333,4 +368,34 @@ public class TyniCAD extends Xml implements Wiring {
 //		Font font = new Font(name, style, size);
 //		return font;
 //	}
+
+	public static Bean getRef(List<Bean> refs, Class<? extends Bean> paramClass, String refId) {
+		for (Bean ref: refs) {
+			if (ref.getClass().equals(paramClass)) {
+				if (((RefBean) ref).getId().equalsIgnoreCase(refId)) {
+					return ref;
+				}
+			}
+		}
+		return null;
+	}
+
+	public static String getOption(List<Bean> refs, String optionName) throws WiringException {
+		try {
+			Options options = (Options)getRef(refs, Options.class, Options.OPTIONS);
+			Method getter = options.getClass().getDeclaredMethod(getGetterName(optionName), new Class[0]);
+			String value = (String) getter.invoke(options, new Object[0]);
+			return value;
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	public static String getColor(String bgr) {
+		int r = Integer.parseInt(bgr.substring(4), 16);
+		int g = Integer.parseInt(bgr.substring(2, 4), 16);
+		int b = Integer.parseInt(bgr.substring(0, 2), 16);
+		Color color = new Color(r, g, b);
+		return Integer.toHexString(color.getRGB()).substring(2);
+	}
 }

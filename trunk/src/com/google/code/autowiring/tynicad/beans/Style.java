@@ -1,4 +1,4 @@
-package com.google.code.autowiring.tynicad;
+package com.google.code.autowiring.tynicad.beans;
 
 /**
  * @author	Orlin Tomov
@@ -33,7 +33,7 @@ public class Style implements RefBean {
 	private String color;
 	private int thickness;
 
-	protected Style() {
+	public Style() {
 	}
 
 	@Override 
@@ -47,8 +47,8 @@ public class Style implements RefBean {
 	public EStyle getStyle() {
 		return style;
 	}
-	public void setStyle(EStyle style) {
-		this.style = style;
+	public void setStyle(String code) {
+		this.style = EStyle.get(Integer.parseInt(code));
 	}
 	public String getColor() {
 		return color;
