@@ -59,7 +59,7 @@ public class Style implements RefBean {
 	public int getThickness() {
 		return thickness;
 	}
-	public void setThickness(int thickness) {
-		this.thickness = thickness;
+	public void setThickness(String thickness) {
+		this.thickness = Integer.parseInt(thickness);
 	}
 }

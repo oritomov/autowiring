@@ -31,8 +31,8 @@ public class Font implements RefBean {
 	public int getWidth() {
 		return width;
 	}
-	public void setWidth(int width) {
-		this.width = width;
+	public void setWidth(String width) {
+		this.width = Integer.parseInt(width);
 	}
 	public String getFacename() {
 		return facename;
