@@ -1,7 +1,5 @@
 package com.google.code.autowiring.svg;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;

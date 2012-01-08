@@ -5,13 +5,14 @@ package com.google.code.autowiring;
  * @version	1.0
  *
  */
+@SuppressWarnings("serial")
 public class WiringException extends RuntimeException {
 
-	public WiringException(String message, Exception e) {
+	public WiringException(final String message, final Exception e) {
 		super(message, e);
 	}
 
-	public WiringException(String message) {
+	public WiringException(final String message) {
 		super(message);
 	}
 

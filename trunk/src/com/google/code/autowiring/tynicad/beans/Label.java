@@ -29,9 +29,10 @@ public class Label extends Text {
 		super.setText(label);
 	}
 	public void setFont(Font font) {
-		// TODO
+		setFontName(font.getFacename());
+		setFontSize(font.getWidth());
 	}
 	public void setStyle(Style style) {
-		// TODO
+		setColor(style.getColor());
 	}
 }

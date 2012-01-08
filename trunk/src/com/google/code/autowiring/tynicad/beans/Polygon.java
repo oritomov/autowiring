@@ -44,8 +44,17 @@ public class Polygon implements Bean {
 	}
 	public void setStyle(Style style) {
 		// TODO
+		//setStrokeColor(style.getColor());
+		//setStrokeWidth(style.getThickness());
 	}
 	public void setFill(Fill fill) {
 		// TODO
+		//switch (fill.getFill()) {
+		//	case None:
+		//		setFillColor(null);
+		//		break;
+		//	default:
+		//		setFillColor(fill.getColor());
+		//}
 	}
 }
