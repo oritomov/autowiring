@@ -22,9 +22,14 @@
   </tag>
   <tag name="FONT" class="com.google.code.autowiring.tynicad.beans.Font">
     <prop name="id"/>
+    <tag name="WIDTH" prop="width"/>
+    <tag name="FACENAME" prop="facename"/>
   </tag>
   <tag name="STYLE" class="com.google.code.autowiring.tynicad.beans.Style">
     <prop name="id"/>
+    <tag name="STYLE" prop="style"/>
+    <tag name="COLOR" prop="color" />
+    <tag name="THICKNESS" prop="thickness" />
   </tag>
   <tag name="SYMBOLDEF" class="com.google.code.autowiring.tynicad.beans.SymbolDef">
     <prop name="id"/>
