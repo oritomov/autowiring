@@ -15,6 +15,10 @@ import com.google.code.autowiring.config.CfgEng;
 public class Conv {
 
 	private static Logger log = Logger.getRootLogger();
+
+	public static Logger log() {
+		return log;
+	}
 	
 	protected Config getEnv() throws WiringException {
 		try {
@@ -42,9 +46,5 @@ public class Conv {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static Logger log() {
-		return log;
 	}
 }
