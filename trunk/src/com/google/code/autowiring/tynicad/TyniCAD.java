@@ -9,6 +9,7 @@ import java.util.List;
 import org.w3c.dom.Node;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.Conv;
 import com.google.code.autowiring.Wiring;
 import com.google.code.autowiring.WiringException;
 import com.google.code.autowiring.config.CfgEng;
@@ -174,6 +175,10 @@ public class TyniCAD extends Xml implements Wiring {
 				@SuppressWarnings("unchecked")
 				Class<Bean> paramClass = (Class<Bean>) Class.forName(ref.getClassName());
 				Bean param = getRef(this.refs, paramClass, refId);
+				if (param == null) {
+					Conv.log().error("couldn't set "+ref.getName()+" of "+bean.getClass().getName());
+					continue;
+				}
 				Method setter = bean.getClass().getDeclaredMethod(setterName, paramClass);
 				setter.invoke(bean, param);
 			}
@@ -376,6 +381,7 @@ public class TyniCAD extends Xml implements Wiring {
 				}
 			}
 		}
+		Conv.log().error("couldn't find a ref id:"+refId+" of "+paramClass);
 		return null;
 	}
 
