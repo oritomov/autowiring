@@ -29,7 +29,7 @@ public class TiniCadConfig  extends CfgEng {
 		super(name, xmlName);
 		Node root = getNode(doc, ROOT);
 		className = getAttrValue(root, CLASS);
-		beans(root );
+		beans(root);
 	}
 
 	@Override
