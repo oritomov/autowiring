@@ -2,6 +2,8 @@ package com.google.code.autowiring;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.google.code.autowiring.config.Config;
 import com.google.code.autowiring.config.CfgEng;
 
@@ -12,6 +14,8 @@ import com.google.code.autowiring.config.CfgEng;
  */
 public class Conv {
 
+	private static Logger log = Logger.getRootLogger();
+	
 	protected Config getEnv() throws WiringException {
 		try {
 			Config config = new Config("etc/wiring.xml");
@@ -38,5 +42,9 @@ public class Conv {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static Logger log() {
+		return log;
 	}
 }
