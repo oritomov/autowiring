@@ -15,7 +15,6 @@ import com.google.code.autowiring.config.CfgEng;
 import com.google.code.autowiring.tynicad.beans.Options;
 import com.google.code.autowiring.tynicad.beans.RefBean;
 import com.google.code.autowiring.tynicad.config.Prop;
-import com.google.code.autowiring.tynicad.config.Ref;
 import com.google.code.autowiring.tynicad.config.Tag;
 import com.google.code.autowiring.tynicad.config.TiniCadConfig;
 import com.google.code.autowiring.util.Xml;
@@ -167,9 +166,9 @@ public class TyniCAD extends Xml implements Wiring {
 		}
 	}
 
-	private void setBeanRefs(Bean bean, List<Ref> refs, Node node) {
+	private void setBeanRefs(Bean bean, List<Prop> refs, Node node) {
 		try {
-			for(Ref ref: refs) {
+			for(Prop ref: refs) {
 				String refId = getAttrValue(node, ref.getName());
 				String setterName = getSetterName(ref.getName());
 				@SuppressWarnings("unchecked")

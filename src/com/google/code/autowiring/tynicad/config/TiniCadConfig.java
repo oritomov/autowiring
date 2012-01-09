@@ -79,16 +79,16 @@ public class TiniCadConfig  extends CfgEng {
 	private void refs(Tag tag, Node root) {
 		Node node = getNode(root, REF);
 		while (node != null) {
-			Ref ref = ref(node);
+			Prop ref = ref(node);
 			tag.addRef(ref);
 			node = nextNode(node, REF);
 		}
 	}
 
-	private Ref ref(Node node) {
+	private Prop ref(Node node) {
 		String name = getAttrValue(node, NAME);
 		String className = getAttrValue(node, CLASS);
-		Ref ref = new Ref(name, className);
+		Prop ref = new Prop(name, className);
 		return ref;
 	}
 
