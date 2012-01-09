@@ -2,6 +2,7 @@ package com.google.code.autowiring.svg;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -11,9 +12,6 @@ import org.w3c.dom.Node;
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring;
 import com.google.code.autowiring.WiringException;
-import com.google.code.autowiring.beans.Path;
-import com.google.code.autowiring.beans.Rect;
-import com.google.code.autowiring.beans.Text;
 import com.google.code.autowiring.config.CfgEng;
 import com.google.code.autowiring.util.Xml;
 
@@ -28,10 +26,6 @@ public class Svg extends Xml implements Wiring {
 	private static final String DEFS = "defs";
 	private static final String SVG_G = "g";
 	private static final String LAYER = "layer";
-	private static final String RECT = "rect";
-	private static final String TEXT = "text";
-	private static final String TSPAN = "tspan";
-	private static final String PATH = "path";
 
 	private SvgConfig engine;
 	private Node layer;
@@ -63,7 +57,7 @@ public class Svg extends Xml implements Wiring {
 	@Override
 	public void setBeans(List<Bean> beans) throws WiringException {
 		for(Bean bean: beans) {
-			addBean(bean);
+			createNode(layer, bean);
 		}
 	}
 
@@ -139,128 +133,87 @@ public class Svg extends Xml implements Wiring {
 		return layer;
 	}
 
-	private void addBean(Bean bean) throws WiringException {
-		if (bean instanceof Rect) {
-			rectangle((Rect)bean);
-		} else	
-		if (bean instanceof Text) {
-			text((Text)bean);
-		} else	
-		if (bean instanceof Path) {
-			path((Path)bean);
-//		} else	
-//		if (bean instanceof Pin) {
-//			pin((Pin)bean);
-		}
-	}
-
-	private Node rectangle(Rect rect) {
-		Node node = addNode(doc, layer, RECT);
-		//setAttrValue(node, "id", "1");
-		setAttrValue(node, "x", getX(rect.getX()));
-		setAttrValue(node, "y", getY(rect.getY()));
-		setAttrValue(node, "height", getX(rect.getHeigh()));
-		setAttrValue(node, "width", getY(rect.getWidth()));
-		setAttrValue(node, "style", rect.getStyle());
+	private Node createNode(Node parent, Bean bean) {
+		Class<?> clazz = bean.getClass();
+		Tag tag = engine.getTag(clazz);
+		Node node = addNode(doc, parent, tag.getName());
+		setTags(node, tag, bean);
+		setAttrs(node, tag, bean);
+		setDetails(node, tag, bean);
 		return node;
 	}
 
-	private Node text(Text text) {
-		Node node = addNode(doc, layer, TEXT);
-		//setAttrValue(text, "id", "1");
-		setAttrValue(node, "x", getX(text.getX()));
-		setAttrValue(node, "y", getY(text.getY()));
-		setAttrValue(node, "style", text.getStyle());
-		Map<String, String> details = text.getDetails();
-		if (details != null) {
-			for (Entry<String, String> detail: details.entrySet()) {
-				String key = detail.getKey();
-				String value = detail.getValue();
-				setAttrValue(node, key, value);
+	private void setTags(Node parentNode, Tag parentTag, Bean bean) {
+		try {
+			if (parentTag.getTags() != null) {
+				for (Tag tag: parentTag.getTags()) {
+					Node node = addNode(doc, parentNode, tag.getName());
+					setAttrs(node, tag, bean);
+					setText(node, tag, bean);
+				}
 			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
 		}
-		Node tspan = addNode(doc, node, TSPAN);
-		//setAttrValue(tspan, "id", "1");
-		setAttrValue(tspan, "x", getX(text.getX()));
-		setAttrValue(tspan, "y", getY(text.getY()));
-		setAttrValue(tspan, "sodipodi:role", "line");
-		tspan.setTextContent(text.getText());
-		return node;
 	}
 
-	private Node path(Path path) {
-		Node node = addNode(doc, layer, PATH);
-		//setAttrValue(path, "id", "1");
-		setAttrValue(node, "d", path.getD());
-		setAttrValue(node, "style", path.getStyle());
-		Map<String, String> details = path.getDetails();
-		if (details != null) {
-			for (Entry<String, String> detail: details.entrySet()) {
-				String key = detail.getKey();
-				String value = detail.getValue();
-				setAttrValue(node, key, value);
+	private void setAttrs(Node node, Tag tag, Bean bean) {
+		try {
+			if (tag.getAttrsName() != null) {
+				String[] attrs = tag.getAttrsName().split(",");
+				for(String attr: attrs) {
+					String getterName = getGetterName(attr);
+					Method getter = Class.forName(tag.getClassName()).getDeclaredMethod(getterName, new Class[0]);
+					String value = (String) getter.invoke(bean, new Object[0]);
+					setAttrValue(node, attr, value);
+				}
 			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
 		}
-		return node;
 	}
 
-//	private void pin(Pin pin) {
-//		double x = 0;
-//		double y = 0;
-//		switch (pin.getDirection()) {
-//			case Up:
-//				y = -pin.getLength()/5;
-//				break;
-//			case Down:
-//				y = pin.getLength()/5;
-//				break;
-//			case Left:
-//				x = -pin.getLength()/5;
-//				break;
-//			case Right:
-//				x = pin.getLength()/5;
-//				break;
-//		}
-//		Path wire = new Path();
-//		wire.setX1(pin.getX());
-//		wire.setY1(pin.getY());
-//		wire.setX2(pin.getX()+x);
-//		wire.setY2(pin.getY()+y);
-//		wire.setColor(pin.getColor());
-//		path(wire);
-//		if ((pin.getNumber() != null) || (!pin.getNumber().isEmpty())) {
-//			Text label = new Text();
-//			label.setX(pin.getX());
-//			label.setY(pin.getY());
-//			// TODO label.setColor(Color.BLACK));
-//			label.setDirection(pin.getDirection());
-//			label.setFontName(pin.getFont());
-//			label.setText(pin.getNumber());
-//			text(label);
-//		}
-//		if ((pin.getName() != null) || (!pin.getName().isEmpty())) {
-//			x = pin.getX();
-//			y = pin.getY();
-//			switch (pin.getDirection()) {
-//				case Up:
-//				case Down:
-//					x += pin.getFont().getSize();
-//					break;
-//				case Left:
-//				case Right:
-//					y += pin.getFont().getSize();
-//					break;
-//			}
-//			Text label = new Text();
-//			label.setX(x);
-//			label.setY(y);
-//			// TODO label.setColor(Color.BLACK));
-//			label.setDirection(pin.getDirection());
-//			label.setFontName(pin.getFont());
-//			label.setText(pin.getName());
-//			text(label);
-//		}
-//	}
+	private void setDetails(Node node, Tag tag, Bean bean) {
+		try {
+			Method getter = null;
+			try {
+				getter = Class.forName(tag.getClassName()).getDeclaredMethod("getDetails", new Class[0]);
+			} catch (NoSuchMethodException e) {
+				// it's ok. do nothing.
+			}
+			if (getter != null) {
+				@SuppressWarnings("unchecked")
+				Map<String, String> details = (Map<String, String>) getter.invoke(bean, new Object[0]);
+				if (details != null) {
+					for (Entry<String, String> detail: details.entrySet()) {
+						String key = detail.getKey();
+						String value = detail.getValue();
+						setAttrValue(node, key, value);
+					}
+				}
+			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	private void setText(Node node, Tag tag, Bean bean) {
+		try {
+			if (tag.getTextName() != null) {
+				String getterName = getGetterName(tag.getTextName());
+				Method getter = Class.forName(tag.getClassName()).getDeclaredMethod(getterName, new Class[0]);
+				String value = (String) getter.invoke(bean, new Object[0]);
+				node.setTextContent(value);
+			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	private static String getGetterName(String name) {
+		String getterName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
+		return getterName;
+	}
 
 	public static String getY(double y) {
 		return Double.toString(y);
