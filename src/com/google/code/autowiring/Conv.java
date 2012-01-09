@@ -19,11 +19,10 @@ public class Conv {
 	public static Logger log() {
 		return log;
 	}
-	
+
 	protected Config getEnv() throws WiringException {
 		try {
 			Config config = new Config("etc/wiring.xml");
-			//props.load(new FileInputStream("etc/wiring.properties"));
 			return config;
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
