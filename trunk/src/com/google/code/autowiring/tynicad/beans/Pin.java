@@ -71,7 +71,7 @@ public class Pin extends Group {
 		return color;
 	}
 	public void setColor(List<Bean> refs, String name) {
-		this.color =  TyniCAD.getOption(refs, name);
+		this.color = TyniCAD.getColor(TyniCAD.getOption(refs, name));
 	}
 	@Override
 	public List<Bean> getBeans() {

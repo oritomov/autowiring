@@ -12,6 +12,7 @@ public class Options implements RefBean {
 	public final static String OPTIONS = "options";
 
 	private String colorPin;
+	private String colorWire;
 
 	public Options() {
 		super();
@@ -30,5 +31,11 @@ public class Options implements RefBean {
 	}
 	public void setColorPin(String bgr) {
 		this.colorPin = TyniCAD.getColor(bgr);
+	}
+	public String getColorWire() {
+		return colorWire;
+	}
+	public void setColorWire(String colorWire) {
+		this.colorWire = colorWire;
 	}
 }
