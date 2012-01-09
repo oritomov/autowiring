@@ -112,4 +112,7 @@ public class Text implements Bean {
 				return null;
 		}
 	}
+	public String getSodipodi_role() {
+		return "line";
+	}
 }
