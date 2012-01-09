@@ -164,7 +164,7 @@ public class Svg extends Xml implements Wiring {
 				for(String attr: attrs) {
 					String getterName = getGetterName(attr);
 					Method getter = Class.forName(tag.getClassName()).getDeclaredMethod(getterName, new Class[0]);
-					String value = (String) getter.invoke(bean, new Object[0]);
+					String value = getter.invoke(bean, new Object[0]).toString();
 					setAttrValue(node, attr, value);
 				}
 			}
@@ -202,7 +202,7 @@ public class Svg extends Xml implements Wiring {
 			if (tag.getTextName() != null) {
 				String getterName = getGetterName(tag.getTextName());
 				Method getter = Class.forName(tag.getClassName()).getDeclaredMethod(getterName, new Class[0]);
-				String value = (String) getter.invoke(bean, new Object[0]);
+				String value = getter.invoke(bean, new Object[0]).toString();
 				node.setTextContent(value);
 			}
 		} catch (Exception e) {
@@ -212,6 +212,7 @@ public class Svg extends Xml implements Wiring {
 
 	private static String getGetterName(String name) {
 		String getterName = "get" + name.substring(0, 1).toUpperCase() + name.substring(1);
+		getterName = getterName.replace(":", "_");
 		return getterName;
 	}
 

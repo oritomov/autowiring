@@ -4,6 +4,6 @@
   <tag name="path" class="com.google.code.autowiring.beans.Path" attrs="d,style"/>
   <tag name="rect" class="com.google.code.autowiring.beans.Rect" attrs="x,y,height,width,style"/>
   <tag name="text" class="com.google.code.autowiring.beans.Text" attrs="x,y,style">
-    <tag name="tspan" attrs="x,y,sodipodi:role" text="text"/>
+    <tag name="tspan" class="com.google.code.autowiring.beans.Text" attrs="x,y,sodipodi:role" text="text"/>
   </tag>
 </svg>
