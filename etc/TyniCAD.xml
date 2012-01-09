@@ -4,7 +4,7 @@
   <tag name="OPTIONS" class="com.google.code.autowiring.tynicad.beans.Options">
     <!-- GRID>0</GRID-->
     <!-- UNITS>0</UNITS-->
-    <!-- COLOR_WIRE>FF0000</COLOR_WIRE-->
+    <tag name="COLOR_WIRE" prop="colorWire"/>
     <!-- COLOR_BUS>0000FF</COLOR_BUS-->
     <!-- COLOR_JUNCTION>000000</COLOR_JUNCTION-->
     <!-- COLOR_NOCONNECT>000000</COLOR_NOCONNECT-->
