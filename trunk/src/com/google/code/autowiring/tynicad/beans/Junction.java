@@ -1,7 +1,11 @@
 package com.google.code.autowiring.tynicad.beans;
 
+import java.util.List;
+
+import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.beans.Path;
 import com.google.code.autowiring.beans.Pnt.Arc;
+import com.google.code.autowiring.tynicad.TyniCAD;
 
 /**
  * @author	Orlin Tomov
@@ -10,13 +14,15 @@ import com.google.code.autowiring.beans.Pnt.Arc;
  */
 public class Junction extends Path {
 
+	private static final String COLOR_JUNCTION = "colorJunction";
 	private final static double R = 2.5;
 	private static final int WIDTH = 2;
 
-	public Junction() {
+	public Junction(List<Bean> refs) {
 		super();
 		setStrokeColor(null);
 		setStrokeWidth(WIDTH);
+		setFillColor(refs, COLOR_JUNCTION);
 	}
 
 	public void setPos(Position pos) {
@@ -44,5 +50,8 @@ public class Junction extends Path {
 		p3.setRy(R);
 		p3.setArc(Arc.In);
 		addPoints(p3);
+	}
+	public void setFillColor(List<Bean> refs, String name) {
+		setFillColor(TyniCAD.getColor(TyniCAD.getOption(refs, name)));
 	}
 }

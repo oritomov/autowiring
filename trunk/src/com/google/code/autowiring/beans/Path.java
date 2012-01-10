@@ -20,6 +20,7 @@ public class Path implements Bean {
 	private double y;
 	private String strokeColor;
 	private int strokeWidth;
+	private String fillColor;
 	private List<Pnt> points = new ArrayList<Pnt>();
 
 	protected Path() {
@@ -46,6 +47,9 @@ public class Path implements Bean {
 	}
 	public void setStrokeWidth(int strokeWidth) {
 		this.strokeWidth = strokeWidth;
+	}
+	public void setFillColor(String fillColor) {
+		this.fillColor = fillColor;
 	}
 	public String getD() {
 		String d="";
@@ -78,7 +82,8 @@ public class Path implements Bean {
 			style += ";stroke:#"+strokeColor;
 		}
 		if (isClosed()) {
-			style += ";fill:#000000;fill-opacity:1"+
+			style += ";fill:#"+fillColor+
+			";fill-opacity:1"+
 			";fill-rule:nonzero"+
 			";stroke-linecap:square"+
 			";stroke-linejoin:miter"+
