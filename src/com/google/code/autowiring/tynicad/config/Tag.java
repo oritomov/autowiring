@@ -10,14 +10,16 @@ import java.util.List;
  */
 public class Tag extends Prop {
 
+	private String root;
 	private String propName;
 	private String arrayName;
 	private List<Prop> props = new ArrayList<Prop>();
 	private List<Prop> refs = new ArrayList<Prop>();
 	private List<Tag> tags = new ArrayList<Tag>();
 
-	public Tag(String name, String className, String propName, String arrayName) {
+	public Tag(String name, String root, String className, String propName, String arrayName) {
 		super(name, className);
+		this.root = root;
 		this.propName = propName;
 		this.arrayName = arrayName;
 	}
@@ -26,6 +28,9 @@ public class Tag extends Prop {
 	}
 	public List<Prop> getProps() {
 		return props;
+	}
+	public String getRoot() {
+		return root;
 	}
 	public String getPropName() {
 		return propName;

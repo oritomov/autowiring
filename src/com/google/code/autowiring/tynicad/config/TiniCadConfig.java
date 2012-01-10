@@ -14,11 +14,12 @@ import com.google.code.autowiring.config.CfgEng;
  */
 public class TiniCadConfig  extends CfgEng {
 
-	private static final String ROOT = "tynicad";
+	private static final String TYNICAD = "tynicad";
 	private static final String TAG = "tag";
 	private static final String PROP = "prop";
 	private static final String REF = "ref";
 	private static final String NAME = "name";
+	private static final String ROOT = "root";
 	private static final String CLASS = "class";
 	private static final String ARRAY = "array";
 
@@ -27,7 +28,7 @@ public class TiniCadConfig  extends CfgEng {
 
 	public TiniCadConfig(String name, String xmlName) {
 		super(name, xmlName);
-		Node root = getNode(doc, ROOT);
+		Node root = getNode(doc, TYNICAD);
 		className = getAttrValue(root, CLASS);
 		beans(root);
 	}
@@ -39,6 +40,11 @@ public class TiniCadConfig  extends CfgEng {
 
 	public Tag getTag(String name) {
 		for(Tag tag: tags) {
+			if (tag.getName() == null) {
+				if (tag.getRoot().equalsIgnoreCase(name)) {
+					return tag;
+				}
+			} else
 			if (tag.getName().equalsIgnoreCase(name)) {
 				return tag;
 			}
@@ -57,10 +63,11 @@ public class TiniCadConfig  extends CfgEng {
 
 	private Tag tag(Node node) {
 		String name = getAttrValue(node, NAME);
+		String root = getAttrValue(node, ROOT);
 		String className = getAttrValue(node, CLASS);
 		String propName = getAttrValue(node, PROP);
 		String arrayName = getAttrValue(node, ARRAY);
-		Tag tag = new Tag(name, className, propName, arrayName);
+		Tag tag = new Tag(name, root, className, propName, arrayName);
 		props(tag, node);
 		refs(tag, node);
 		tags(tag, node);
