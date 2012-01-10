@@ -141,6 +141,7 @@ public class Svg extends Xml implements Wiring {
 		setTags(node, tag, bean);
 		setAttrs(node, tag, bean);
 		setDetails(node, tag, bean);
+		setBeans(node, tag, bean);
 		return node;
 	}
 
@@ -190,6 +191,28 @@ public class Svg extends Xml implements Wiring {
 						String key = detail.getKey();
 						String value = detail.getValue();
 						setAttrValue(node, key, value);
+					}
+				}
+			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	private void setBeans(Node node, Tag tag, Bean parentBean) {
+		try {
+			Method getter = null;
+			try {
+				getter = Class.forName(tag.getClassName()).getDeclaredMethod("getBeans", new Class[0]);
+			} catch (NoSuchMethodException e) {
+				// it's ok. do nothing.
+			}
+			if (getter != null) {
+				@SuppressWarnings("unchecked")
+				List<Bean> beans = (List<Bean>) getter.invoke(parentBean, new Object[0]);
+				if (beans != null) {
+					for (Bean bean: beans) {
+						createNode(node, bean);
 					}
 				}
 			}
