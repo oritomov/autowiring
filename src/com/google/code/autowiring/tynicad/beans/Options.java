@@ -36,8 +36,8 @@ public class Options implements RefBean {
 	public String getColorWire() {
 		return colorWire;
 	}
-	public void setColorWire(String colorWire) {
-		this.colorWire = colorWire;
+	public void setColorWire(String bgr) {
+		this.colorWire = TyniCAD.getColor(bgr);
 	}
 	public String getColorJunction() {
 		return colorJunction;
