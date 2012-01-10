@@ -230,21 +230,6 @@ public class TyniCAD extends Xml implements Wiring {
 		return setterName;
 	}
 
-//	private void store(Node node, Position displace) {
-//		stored.put(child, origin);
-//		origin = displace.move(origin);
-//		child = node;
-//	}
-
-//	private void restore() {
-//		Iterator<Entry<Node, Position>> i = stored.entrySet().iterator();
-//		Entry<Node, Position> entry = null;
-//		while (i.hasNext()) entry  = i.next();
-//		child = entry.getKey();
-//		origin = entry.getValue();
-//		stored.remove(child);
-//	}
-
 	public static Bean getRef(List<Bean> refs, Class<? extends Bean> paramClass, String refId) {
 		for (Bean ref: refs) {
 			if (ref.getClass().equals(paramClass)) {
