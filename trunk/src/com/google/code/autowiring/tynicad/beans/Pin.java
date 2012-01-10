@@ -5,8 +5,8 @@ import java.util.List;
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring.Direction;
 import com.google.code.autowiring.beans.Group;
+import com.google.code.autowiring.beans.Pnt.Arc;
 import com.google.code.autowiring.tynicad.TyniCAD;
-import com.google.code.autowiring.tynicad.beans.Point.Arc;
 
 /**
  * @author	Orlin Tomov

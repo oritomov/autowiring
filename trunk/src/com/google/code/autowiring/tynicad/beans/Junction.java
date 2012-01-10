@@ -1,7 +1,7 @@
 package com.google.code.autowiring.tynicad.beans;
 
 import com.google.code.autowiring.beans.Path;
-import com.google.code.autowiring.tynicad.beans.Point.Arc;
+import com.google.code.autowiring.beans.Pnt.Arc;
 
 /**
  * @author	Orlin Tomov

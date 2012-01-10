@@ -3,8 +3,8 @@ package com.google.code.autowiring.tynicad.beans;
 import java.util.List;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.beans.Pnt.Arc;
 import com.google.code.autowiring.tynicad.TyniCAD;
-import com.google.code.autowiring.tynicad.beans.Point.Arc;
 
 /**
  * @author	Orlin Tomov

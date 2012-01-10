@@ -6,9 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.beans.Pnt.Arc;
 import com.google.code.autowiring.svg.Svg;
-import com.google.code.autowiring.tynicad.beans.Point;
-import com.google.code.autowiring.tynicad.beans.Point.Arc;
 
 /**
  * @author	Orlin Tomov
@@ -21,7 +20,7 @@ public class Path implements Bean {
 	private double y;
 	private String strokeColor;
 	private int strokeWidth;
-	private List<Point> points = new ArrayList<Point>();
+	private List<Pnt> points = new ArrayList<Pnt>();
 
 	protected Path() {
 		super();
@@ -39,7 +38,7 @@ public class Path implements Bean {
 	public void setY(double y) {
 		this.y = y;
 	}
-	public void addPoints(Point point) {
+	public void addPoints(Pnt point) {
 		points.add(point);
 	}
 	public void setStrokeColor(String strokeColor) {
@@ -50,7 +49,7 @@ public class Path implements Bean {
 	}
 	public String getD() {
 		String d="";
-		for (Point point: points) {
+		for (Pnt point: points) {
 			if (d.length() == 0) {
 				d="M ";
 			} else {
@@ -91,7 +90,7 @@ public class Path implements Bean {
 		return style;
 	}
 	public Map<String, String> getDetails() {
-		Point arc = getArc();
+		Pnt arc = getArc();
 		if (arc == null) {
 			return null;
 		}
@@ -108,8 +107,8 @@ public class Path implements Bean {
 				(points.get(0).getX() == points.get(points.size()-1).getX()) &&
 				(points.get(0).getY() == points.get(points.size()-1).getY());
 	}
-	private Point getArc() {
-		for (Point point: points) {
+	private Pnt getArc() {
+		for (Pnt point: points) {
 			if (!point.getArc().equals(Arc.No)) {
 				return point;
 			}
