@@ -17,12 +17,10 @@ public class Polygon extends Path {
 		setX(pos.getX());
 		setY(pos.getY());
 	}
-	@Override
 	public void addPoints(Point point) {
 		super.addPoints(point);
 	}
 	public void setStyle(Style style) {
-		// TODO
 		setStrokeColor(style.getColor());
 		setStrokeWidth(style.getThickness());
 	}
