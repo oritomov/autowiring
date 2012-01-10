@@ -183,16 +183,23 @@ public class TyniCAD extends Xml implements Wiring {
 		}
 	}
 
-	private void setBeanTags(Bean bean, List<Tag> tags, Node node) {
+	private void setBeanTags(Bean bean, List<Tag> tags, Node parent) {
 		try {
 			for(Tag tag: tags) {
-				Node child = getNode(node, tag.getName());
 				if (tag.getPropName() != null) {
+					Node child = getNode(parent, tag.getName());
 					setBeanProps(bean, tag.getProps(), child);
 					setBeanProp(bean, tag.getPropName(), child);
 				} else 
 				if (tag.getArrayName() != null) {
-					List<Bean> values = ceateBeans(child.getFirstChild());
+					List<Bean> values;
+					if (tag.getRoot() == null) {
+						Node child = getNode(parent, tag.getName());
+						values = ceateBeans(child);
+					} else {
+						Node root = getNode(parent, tag.getRoot());
+						values = ceateBeans(root.getFirstChild());
+					}
 					@SuppressWarnings("unchecked")
 					Class<Bean> paramClass = (Class<Bean>) Class.forName(tag.getClassName());
 					String adderName = getAdderName(tag.getArrayName());

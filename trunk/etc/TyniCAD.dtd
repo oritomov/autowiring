@@ -6,7 +6,8 @@
 <!ELEMENT tag (prop*,ref*,tag*)>
 
 <!ATTLIST tag
-    name CDATA #REQUIRED
+    name CDATA #IMPLIED
+    root CDATA #IMPLIED
     class CDATA #IMPLIED
     prop CDATA #IMPLIED
     array CDATA #IMPLIED>

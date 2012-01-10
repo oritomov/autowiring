@@ -36,7 +36,7 @@
     <tag name="REF_POINT">
       <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     </tag>
-    <tag name="TinyCAD" class="com.google.code.autowiring.Bean" array="beans"/>
+    <tag root="TinyCAD" class="com.google.code.autowiring.Bean" array="beans"/>
   </tag>
   <!-- beans -->
   <tag name="JUNCTION" class="com.google.code.autowiring.tynicad.beans.Junction">
@@ -69,10 +69,7 @@
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>
     <ref name="fill" class="com.google.code.autowiring.tynicad.beans.Fill"/>
-    <tag name="POINT" class="com.google.code.autowiring.tynicad.beans.Point" array="points">
-      <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
-      <prop name="arc"/>
-    </tag>
+    <tag name="POINT" class="com.google.code.autowiring.tynicad.beans.Point" array="points"/>
   </tag>
   <tag name="RECTANGLE" class="com.google.code.autowiring.tynicad.beans.Rectangle">
     <prop name="a" class="com.google.code.autowiring.tynicad.beans.Position"/>
