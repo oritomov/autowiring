@@ -23,7 +23,7 @@ public class Rectangle extends Rect {
 		setX(Math.min(x,x2));
 		setY(Math.min(y,y2));
 		setWidth(Math.max(x,x2) - getX());
-		setHeigh(Math.max(y,y2) - getY());
+		setHeight(Math.max(y,y2) - getY());
 	}
 	public void setStyle(Style style) {
 		setStrokeColor(style.getColor());

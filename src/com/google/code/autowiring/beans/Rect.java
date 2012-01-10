@@ -12,7 +12,7 @@ public class Rect implements Bean {
 	private double x;
 	private double y;
 	private double width;
-	private double heigh; 
+	private double height; 
 	private String fillColor;
 	private String strokeColor;
 	private int strokeWidth;
@@ -37,11 +37,11 @@ public class Rect implements Bean {
 	public void setWidth(double width) {
 		this.width = width;
 	}
-	public double getHeigh() {
-		return heigh;
+	public double getHeight() {
+		return height;
 	}
-	public void setHeigh(double heigh) {
-		this.heigh = heigh;
+	public void setHeight(double height) {
+		this.height = height;
 	}
 	public String getFillColor() {
 		return fillColor;
