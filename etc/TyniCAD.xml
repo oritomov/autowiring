@@ -56,7 +56,7 @@
     <prop name="direction"/>
     <!-- part='0' -->
     <prop name="number"/>
-    <!-- show='3' -->
+    <prop name="show"/>
     <prop name="length"/>
     <!-- number_pos='0' -->
     <!-- centre_name='0' -->
