@@ -26,7 +26,7 @@ public class Pin extends Group {
 	private Direction direction;
 	//part='0' 
 	private String number;
-	//show='3' 
+	private int show;
 	private double length;
 	//number_pos='0' 
 	//centre_name='1'
@@ -49,6 +49,15 @@ public class Pin extends Group {
 	}
 	public void setDirection(String code) {
 		this.direction = Direction.get(Integer.parseInt(code));
+	}
+	public int getShow() {
+		return show;
+	}
+	public void setShow(int show) {
+		this.show = show;
+	}
+	public void setShow(String show) {
+		setShow(Integer.parseInt(show));
 	}
 	public double getLength() {
 		return length;
@@ -88,13 +97,13 @@ public class Pin extends Group {
 		if (super.getBeans().size() == 0) {
 			Wire wire = createWire();
 			addBean(wire);
-			if ((getNumber() != null) || (!getNumber().isEmpty())) {
-				Label number = createNumber();
-				addBean(number);
-			}
-			if ((getName() != null) || (!getName().isEmpty())) {
+			if (((getName() != null) || (!getName().isEmpty())) && ((show&1)!= 0)) {
 				Label name = createName();
 				addBean(name);
+			}
+			if (((getNumber() != null) || (!getNumber().isEmpty())) && ((show&2) != 0)) {
+				Label number = createNumber();
+				addBean(number);
 			}
 		}
 		return super.getBeans();
@@ -128,7 +137,6 @@ public class Pin extends Group {
 		name.setText(getName());
 		return name;
 	}
-
 	private Label createNumber() {
 		Label number = new Label();
 		number.setX(getX());
