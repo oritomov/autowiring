@@ -30,4 +30,12 @@ public class Symbol extends Group {
 		// TODO
 		return def.detBeans();
 	}
+
+	public double getOffsX() {
+		return getX() - def.getX();
+	}
+
+	public double getOffsY() {
+		return getY() - def.getY();
+	}
 }
