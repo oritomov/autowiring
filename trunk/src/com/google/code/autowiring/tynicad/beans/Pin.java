@@ -19,10 +19,17 @@ public class Pin extends Group {
 	private static final String COLOR_PIN = "colorPin";
 	private static final String COLOR_TEXT = "000000";
 	private static final int WIDTH_PIN = 1;
+	private static final int FONT_SIZE = 3;
 
+	//which='0' 
+	//elec='0' 
 	private Direction direction;
-	private double length;
+	//part='0' 
 	private String number;
+	//show='3' 
+	private double length;
+	//number_pos='0' 
+	//centre_name='1'
 	private String name;
 	private Font font;
 	private String color;
@@ -95,14 +102,18 @@ public class Pin extends Group {
 	private Label createName() {
 		double x = getX();
 		double y = getY();
+		int fontSize = getFont().getWidth();
+		if (fontSize == 0) {
+			fontSize = FONT_SIZE;
+		}
 		switch (getDirection()) {
 			case Up:
 			case Down:
-				x += getFont().getWidth();
+				x += fontSize;
 				break;
 			case Left:
 			case Right:
-				y += getFont().getWidth();
+				y += fontSize;
 				break;
 		}
 		Label name = new Label();
@@ -110,7 +121,10 @@ public class Pin extends Group {
 		name.setY(y);
 		name.setColor(COLOR_TEXT);
 		name.setDirection(getDirection());
-		name.setFontName(getFont().getFacename());
+		name.setFont(getFont());
+		if (name.getFontSize() == 0) {
+			name.setFontSize(fontSize);
+		}
 		name.setText(getName());
 		return name;
 	}
@@ -121,7 +135,10 @@ public class Pin extends Group {
 		number.setY(getY());
 		number.setColor(COLOR_TEXT);
 		number.setDirection(getDirection());
-		number.setFontName(getFont().getFacename());
+		number.setFont(getFont());
+		if (number.getFontSize() == 0) {
+			number.setFontSize(FONT_SIZE);
+		}
 		number.setText(getNumber());
 		return number;
 	}
