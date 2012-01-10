@@ -1,8 +1,11 @@
 package com.google.code.autowiring;
 
+import java.io.FileInputStream;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import com.google.code.autowiring.config.Config;
 import com.google.code.autowiring.config.CfgEng;
@@ -14,7 +17,25 @@ import com.google.code.autowiring.config.CfgEng;
  */
 public class Conv {
 
-	private static Logger log = Logger.getRootLogger();
+	private static Logger log;
+
+	static {
+		log = Logger.getRootLogger();
+		reloadProperties();
+	}
+
+	public static synchronized void reloadProperties() {
+		try {
+			String propFileName = "etc/log4j.properties";
+			FileInputStream fis=null;
+			fis = new FileInputStream(propFileName);
+			Properties logProperties = new Properties();
+			logProperties.load(fis);
+			PropertyConfigurator.configure(logProperties);
+		} catch (Exception e) {
+			throw new WiringException("Log4j Properties Not Found!", e);
+		}
+	}
 
 	public static Logger log() {
 		return log;
@@ -43,7 +64,7 @@ public class Conv {
 			report.setBeans(beans);
 			report.save();
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.error(e.getMessage(), e);
 		}
 	}
 }

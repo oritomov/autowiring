@@ -26,7 +26,7 @@ public class Config extends Xml {
 		init();
 	}
 
-	private void init() {
+	private synchronized void init() {
 		Node root = getNode(doc,WIRING);
 		Node node = getNode(root, ENGINE);
 		while (node != null) {
