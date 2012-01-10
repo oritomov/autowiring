@@ -19,7 +19,7 @@ public class Rectangle extends Rect {
 		double x = getX();
 		double y = getY();
 		double x2 = b.getX();
-		double y2 = b.getX();
+		double y2 = b.getY();
 		setX(Math.min(x,x2));
 		setY(Math.min(y,y2));
 		setWidth(Math.max(x,x2) - getX());
