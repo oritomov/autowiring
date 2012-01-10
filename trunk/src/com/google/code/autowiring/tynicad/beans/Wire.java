@@ -3,17 +3,18 @@ package com.google.code.autowiring.tynicad.beans;
 import java.util.List;
 
 import com.google.code.autowiring.Bean;
-import com.google.code.autowiring.beans.Path;
 import com.google.code.autowiring.tynicad.TyniCAD;
+import com.google.code.autowiring.tynicad.beans.Point.Arc;
 
 /**
  * @author	Orlin Tomov
  * @version	1.0
  *
  */
-public class Wire extends Path {
+public class Wire extends Polygon {
 
 	private static final String COLOR_WIRE = "colorWire";
+	private static final int WIDTH_WIRE = 1;
 
 	public Wire() {
 		super();
@@ -22,17 +23,26 @@ public class Wire extends Path {
 	public Wire(List<Bean> refs) {
 		this();
 		setColor(refs, COLOR_WIRE);
+		setStrokeWidth(WIDTH_WIRE);
 	}
 
 	public void setA(Position a) {
-		setX1(a.getX());
-		setY1(a.getY());
+		setX(0);
+		setY(0);
+		Point p = getPoint(a);
+		addPoints(p);
 	}
 	public void setB(Position b) {
-		setX2(b.getX());
-		setY2(b.getY());
+		Point p = getPoint(b);
+		addPoints(p);
+	}
+	private Point getPoint(Position pos) {
+		Point point = new Point();
+		point.setPos(pos);
+		point.setArc(Arc.No);
+		return point;
 	}
 	public void setColor(List<Bean> refs, String name) {
-		setColor(TyniCAD.getColor(TyniCAD.getOption(refs, name)));
+		setStrokeColor(TyniCAD.getColor(TyniCAD.getOption(refs, name)));
 	}
 }

@@ -6,6 +6,7 @@ import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring.Direction;
 import com.google.code.autowiring.beans.Group;
 import com.google.code.autowiring.tynicad.TyniCAD;
+import com.google.code.autowiring.tynicad.beans.Point.Arc;
 
 /**
  * @author	Orlin Tomov
@@ -14,8 +15,9 @@ import com.google.code.autowiring.tynicad.TyniCAD;
  */
 public class Pin extends Group {
 
-	private static final String FONT_ID = "0";
+	private static final String FONT_ID = "1";
 	private static final String COLOR_PIN = "colorPin";
+	private static final int WIDTH_PIN = 1;
 
 	private Direction direction;
 	private double length;
@@ -140,11 +142,20 @@ public class Pin extends Group {
 				break;
 		}
 		Wire wire = new Wire();
-		wire.setX1(getX());
-		wire.setY1(getY());
-		wire.setX2(getX()+x);
-		wire.setY2(getY()+y);
-		wire.setColor(getColor());
+		wire.setX(getX());
+		wire.setY(getY());
+		Point p1 = new Point();
+		p1.setX(0);
+		p1.setY(0);
+		p1.setArc(Arc.No);
+		wire.addPoints(p1);
+		Point p2 = new Point();
+		p2.setX(x);
+		p2.setY(y);
+		p2.setArc(Arc.No);
+		wire.addPoints(p2);
+		wire.setStrokeColor(getColor());
+		wire.setStrokeWidth(WIDTH_PIN);
 		return wire;
 	}
 }
