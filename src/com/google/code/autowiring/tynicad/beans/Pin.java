@@ -17,6 +17,7 @@ public class Pin extends Group {
 
 	private static final String FONT_ID = "1";
 	private static final String COLOR_PIN = "colorPin";
+	private static final String COLOR_TEXT = "000000";
 	private static final int WIDTH_PIN = 1;
 
 	private Direction direction;
@@ -107,7 +108,7 @@ public class Pin extends Group {
 		Label name = new Label();
 		name.setX(x);
 		name.setY(y);
-		// TODO label.setColor(Color.BLACK));
+		name.setColor(COLOR_TEXT);
 		name.setDirection(getDirection());
 		name.setFontName(getFont().getFacename());
 		name.setText(getName());
@@ -118,7 +119,7 @@ public class Pin extends Group {
 		Label number = new Label();
 		number.setX(getX());
 		number.setY(getY());
-		// TODO number.setColor(Color.BLACK));
+		number.setColor(COLOR_TEXT);
 		number.setDirection(getDirection());
 		number.setFontName(getFont().getFacename());
 		number.setText(getNumber());

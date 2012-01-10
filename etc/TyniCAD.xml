@@ -6,7 +6,7 @@
     <!-- UNITS>0</UNITS-->
     <tag name="COLOR_WIRE" prop="colorWire"/>
     <!-- COLOR_BUS>0000FF</COLOR_BUS-->
-    <!-- COLOR_JUNCTION>000000</COLOR_JUNCTION-->
+    <tag name="COLOR_JUNCTION" prop="colorJunction"/>
     <!-- COLOR_NOCONNECT>000000</COLOR_NOCONNECT-->
     <!-- COLOR_LABEL>208000</COLOR_LABEL-->
     <!-- COLOR_POWER>000000</COLOR_POWER-->
