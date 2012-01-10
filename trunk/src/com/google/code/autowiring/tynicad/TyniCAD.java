@@ -186,11 +186,6 @@ public class TyniCAD extends Xml implements Wiring {
 	private void setBeanTags(Bean bean, List<Tag> tags, Node parent) {
 		try {
 			for(Tag tag: tags) {
-				if (tag.getPropName() != null) {
-					Node child = getNode(parent, tag.getName());
-					setBeanProps(bean, tag.getProps(), child);
-					setBeanProp(bean, tag.getPropName(), child);
-				} else 
 				if (tag.getArrayName() != null) {
 					List<Bean> values;
 					if (tag.getRoot() == null) {
@@ -206,6 +201,12 @@ public class TyniCAD extends Xml implements Wiring {
 					Method adder = bean.getClass().getDeclaredMethod(adderName, paramClass);
 					for (Bean value: values) {
 						adder.invoke(bean, value);
+					}
+				} else {
+					Node child = getNode(parent, tag.getName());
+					setBeanProps(bean, tag.getProps(), child);
+					if (tag.getPropName() != null) {
+						setBeanProp(bean, tag.getPropName(), child);
 					}
 				}
 			}
