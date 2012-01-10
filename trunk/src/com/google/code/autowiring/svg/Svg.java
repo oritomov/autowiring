@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import org.w3c.dom.Node;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.Conv;
 import com.google.code.autowiring.Wiring;
 import com.google.code.autowiring.WiringException;
 import com.google.code.autowiring.config.CfgEng;
@@ -65,7 +66,7 @@ public class Svg extends Xml implements Wiring {
 	public void save() throws WiringException {
 		try {
 			String result = toString(doc);
-			System.out.println(result);
+			Conv.log().debug(result);
 			FileWriter out = new FileWriter(path + File.separator + fileName, false);
 			out.write(result);
 			out.flush();
