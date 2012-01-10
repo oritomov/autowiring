@@ -14,6 +14,7 @@ import com.google.code.autowiring.Conv;
 import com.google.code.autowiring.Wiring;
 import com.google.code.autowiring.WiringException;
 import com.google.code.autowiring.config.CfgEng;
+import com.google.code.autowiring.tynicad.beans.Symbol;
 import com.google.code.autowiring.util.Xml;
 
 /**
@@ -58,7 +59,7 @@ public class Svg extends Xml implements Wiring {
 	@Override
 	public void setBeans(List<Bean> beans) throws WiringException {
 		for(Bean bean: beans) {
-			createNode(layer, bean);
+			createNode(layer, bean, 0, 0);
 		}
 	}
 
@@ -134,23 +135,23 @@ public class Svg extends Xml implements Wiring {
 		return layer;
 	}
 
-	private Node createNode(Node parent, Bean bean) {
+	private Node createNode(Node parent, Bean bean, double x, double y) {
 		Class<?> clazz = bean.getClass();
 		Tag tag = engine.getTag(clazz);
 		Node node = addNode(doc, parent, tag.getName());
-		setTags(node, tag, bean);
-		setAttrs(node, tag, bean);
-		setDetails(node, tag, bean);
-		setBeans(node, tag, bean);
+		setTags(node, tag, bean, x, y);
+		setAttrs(node, tag, bean, x, y);
+		setDetails(node, tag, bean, x, y);
+		setBeans(node, tag, bean, x, y);
 		return node;
 	}
 
-	private void setTags(Node parentNode, Tag parentTag, Bean bean) {
+	private void setTags(Node parentNode, Tag parentTag, Bean bean, double x, double y) {
 		try {
 			if (parentTag.getTags() != null) {
 				for (Tag tag: parentTag.getTags()) {
 					Node node = addNode(doc, parentNode, tag.getName());
-					setAttrs(node, tag, bean);
+					setAttrs(node, tag, bean, x, y);
 					setText(node, tag, bean);
 				}
 			}
@@ -159,15 +160,27 @@ public class Svg extends Xml implements Wiring {
 		}
 	}
 
-	private void setAttrs(Node node, Tag tag, Bean bean) {
+	private void setAttrs(Node node, Tag tag, Bean bean, double x, double y) {
 		try {
 			if (tag.getAttrsName() != null) {
 				String[] attrs = tag.getAttrsName().split(",");
 				for(String attr: attrs) {
 					String getterName = getGetterName(attr);
-					Method getter = Class.forName(tag.getClassName()).getDeclaredMethod(getterName, new Class[0]);
-					String value = getter.invoke(bean, new Object[0]).toString();
-					setAttrValue(node, attr, value);
+					Object value = null;
+					try{ 
+						Method getter = Class.forName(tag.getClassName()).getDeclaredMethod(getterName, new Class[]{Double.class, Double.class});
+						value = getter.invoke(bean, new Object[]{x, y}).toString();
+					} catch (NoSuchMethodException e) {
+						Method getter = Class.forName(tag.getClassName()).getDeclaredMethod(getterName, new Class[0]);
+						value = getter.invoke(bean, new Object[0]);
+						if (attr.equalsIgnoreCase("x") && (value instanceof Double)) {
+							value = ((Double)value) + x; 
+						}
+						if (attr.equalsIgnoreCase("y") && (value instanceof Double)) {
+							value = ((Double)value) + y; 
+						}
+					}
+					setAttrValue(node, attr, value.toString());
 				}
 			}
 		} catch (Exception e) {
@@ -175,17 +188,25 @@ public class Svg extends Xml implements Wiring {
 		}
 	}
 
-	private void setDetails(Node node, Tag tag, Bean bean) {
+	private void setDetails(Node node, Tag tag, Bean bean, double x, double y) {
 		try {
 			Method getter = null;
 			try {
-				getter = Class.forName(tag.getClassName()).getDeclaredMethod("getDetails", new Class[0]);
+				getter = Class.forName(tag.getClassName()).getDeclaredMethod("getDetails", new Class[]{Double.class, Double.class});
 			} catch (NoSuchMethodException e) {
-				// it's ok. do nothing.
+				try {
+					getter = Class.forName(tag.getClassName()).getDeclaredMethod("getDetails", new Class[0]);
+				} catch (NoSuchMethodException e2) {
+					// it's ok. do nothing.
+				}
 			}
 			if (getter != null) {
-				@SuppressWarnings("unchecked")
-				Map<String, String> details = (Map<String, String>) getter.invoke(bean, new Object[0]);
+				Map<String, String> details = null;
+				try {
+					details = (Map<String, String>) getter.invoke(bean, new Object[]{x, y});
+				} catch (IllegalArgumentException e) {
+					details = (Map<String, String>) getter.invoke(bean, new Object[0]);
+				}
 				if (details != null) {
 					for (Entry<String, String> detail: details.entrySet()) {
 						String key = detail.getKey();
@@ -199,7 +220,7 @@ public class Svg extends Xml implements Wiring {
 		}
 	}
 
-	private void setBeans(Node node, Tag tag, Bean parentBean) {
+	private void setBeans(Node node, Tag tag, Bean parentBean, double x, double y) {
 		try {
 			Method getter = null;
 			try {
@@ -210,9 +231,13 @@ public class Svg extends Xml implements Wiring {
 			if (getter != null) {
 				@SuppressWarnings("unchecked")
 				List<Bean> beans = (List<Bean>) getter.invoke(parentBean, new Object[0]);
+				if (parentBean instanceof Symbol) {
+					x += ((Symbol)parentBean).getOffsX();
+					y += ((Symbol)parentBean).getOffsY();
+				}
 				if (beans != null) {
 					for (Bean bean: beans) {
-						createNode(node, bean);
+						createNode(node, bean, x, y);
 					}
 				}
 			}

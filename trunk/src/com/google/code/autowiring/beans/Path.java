@@ -51,7 +51,7 @@ public class Path implements Bean {
 	public void setFillColor(String fillColor) {
 		this.fillColor = fillColor;
 	}
-	public String getD() {
+	public String getD(Double x, Double y) {
 		String d="";
 		for (Pnt point: points) {
 			if (d.length() == 0) {
@@ -66,7 +66,7 @@ public class Path implements Bean {
 						d+=" A ";
 				}
 			}
-			d += point.getD(x, y);
+			d += point.getD(getX() + x, getY() + y);
 		}
 		if (isClosed()) {
 			d += " z";
@@ -94,15 +94,15 @@ public class Path implements Bean {
 		}
 		return style;
 	}
-	public Map<String, String> getDetails() {
+	public Map<String, String> getDetails(Double x, Double y) {
 		Pnt arc = getArc();
 		if (arc == null) {
 			return null;
 		}
 		Map<String, String> details = new HashMap<String,String>();
 		details.put("sodipodi:type", "arc");
-		details.put("sodipodi:cx", Svg.getX(getX()));
-		details.put("sodipodi:cy", Svg.getY(getY()));
+		details.put("sodipodi:cx", Svg.getX(x+getX()));
+		details.put("sodipodi:cy", Svg.getY(y+getY()));
 		details.put("sodipodi:rx", Svg.getX(arc.getRx()));
 		details.put("sodipodi:ry", Svg.getY(arc.getRy()));
 		return details;
