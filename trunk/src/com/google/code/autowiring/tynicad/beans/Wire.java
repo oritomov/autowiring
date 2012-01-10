@@ -43,6 +43,6 @@ public class Wire extends Polygon {
 		return point;
 	}
 	public void setColor(List<Bean> refs, String name) {
-		setStrokeColor(TyniCAD.getColor(TyniCAD.getOption(refs, name)));
+		setStrokeColor(TyniCAD.getOption(refs, name));
 	}
 }
