@@ -21,27 +21,27 @@ public class Text implements Bean {
 	private Direction direction;
 	private String text;
 
-	public double getX() {
+	public double getX(Double x, Double y) {
 		switch (getDirection()) {
 			case Up:
 			case Down:
-				return -y;
+				return -(this.y + y);
 			default:
-				return x;
+				return this.x + x;
 		}
 	}
 	public void setX(double x) {
 		this.x = x;
 	}
-	public double getY() {
+	public double getY(Double x, Double y) {
 		switch (getDirection()) {
 			case Up:
 			case Down:
-				return x;
+				return this.x + x;
 				//x="720.0" y="38.0">
 				//x="-37.720947" y="721.8772"
 			default:
-				return y;
+				return this.y + y;
 		}
 	}
 	public void setY(double y) {
