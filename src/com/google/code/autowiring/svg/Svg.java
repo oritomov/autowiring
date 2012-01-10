@@ -188,6 +188,7 @@ public class Svg extends Xml implements Wiring {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private void setDetails(Node node, Tag tag, Bean bean, double x, double y) {
 		try {
 			Method getter = null;
