@@ -1,51 +1,30 @@
 package com.google.code.autowiring.tynicad.beans;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.beans.Path;
 
 /**
  * @author	Orlin Tomov
  * @version	1.0
  *
  */
-public class Polygon implements Bean {
-
-	private double x;
-	private double y;
-	private List<Point> points = new ArrayList<Point>();
+public class Polygon extends Path {
 
 	public Polygon() {
 		super();
 	}
 
-	public double getX() {
-		return x;
-	}
-	public void setX(double x) {
-		this.x = x;
-	}
-	public double getY() {
-		return y;
-	}
-	public void setY(double y) {
-		this.y = y;
-	}
 	public void setPos(Position pos) {
 		setX(pos.getX());
 		setY(pos.getY());
 	}
-	public List<Point> getPoints() {
-		return points;
-	}
+	@Override
 	public void addPoints(Point point) {
-		points .add(point);
+		super.addPoints(point);
 	}
 	public void setStyle(Style style) {
 		// TODO
-		//setStrokeColor(style.getColor());
-		//setStrokeWidth(style.getThickness());
+		setStrokeColor(style.getColor());
+		setStrokeWidth(style.getThickness());
 	}
 	public void setFill(Fill fill) {
 		// TODO
