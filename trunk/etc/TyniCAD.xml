@@ -61,6 +61,10 @@
     <!-- number_pos='0' -->
     <!-- centre_name='0' -->
   </tag>
+  <tag name="POINT" class="com.google.code.autowiring.tynicad.beans.Point">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="arc"/>
+  </tag>
   <tag name="POLYGON" class="com.google.code.autowiring.tynicad.beans.Polygon">
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>

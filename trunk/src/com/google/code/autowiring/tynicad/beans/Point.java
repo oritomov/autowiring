@@ -34,18 +34,25 @@ public class Point implements Bean {
 	private double y;
 	private Arc arc;
 
-	public Point(double x, double y, Arc arc) {
+	public Point() {
 		super();
-		this.x = x;
-		this.y = y;
-		this.arc = arc;
 	}
 
+	public void setPos(Position pos) {
+		setX(pos.getX());
+		setY(pos.getY());
+	}
 	public double getX() {
 		return x;
 	}
+	public void setX(double x) {
+		this.x = x;
+	}
 	public double getY() {
 		return y;
+	}
+	public void setY(double y) {
+		this.y = y;
 	}
 	public Arc getArc() {
 		return arc;
