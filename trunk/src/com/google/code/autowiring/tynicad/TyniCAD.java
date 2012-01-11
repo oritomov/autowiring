@@ -18,6 +18,7 @@ import com.google.code.autowiring.tynicad.beans.RefBean;
 import com.google.code.autowiring.tynicad.config.Prop;
 import com.google.code.autowiring.tynicad.config.Tag;
 import com.google.code.autowiring.tynicad.config.TiniCadConfig;
+import com.google.code.autowiring.util.WireTool;
 import com.google.code.autowiring.util.Xml;
 
 /**
