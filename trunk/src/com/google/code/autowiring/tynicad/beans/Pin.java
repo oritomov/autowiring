@@ -15,11 +15,11 @@ import com.google.code.autowiring.tynicad.TyniCAD;
  */
 public class Pin extends Group {
 
-	private static final String FONT_ID = "1";
-	private static final String COLOR_PIN = "colorPin";
+	public static final String COLOR_PIN = "colorPin";
+	public static final String FONT_ID = "1";
+	public static final int FONT_SIZE = 3;
 	private static final String COLOR_TEXT = "000000";
 	private static final int WIDTH_PIN = 1;
-	private static final int FONT_SIZE = 3;
 
 	//which='0' 
 	//elec='0' 
@@ -35,6 +35,7 @@ public class Pin extends Group {
 	private String color;
 
 	public Pin(List<Bean> refs) {
+		super();
 		setFont(refs, FONT_ID);
 		setColor(refs, COLOR_PIN);
 	}
@@ -83,13 +84,13 @@ public class Pin extends Group {
 	public Font getFont() {
 		return font;
 	}
-	public void setFont(List<Bean> refs, String refId) {
+	private void setFont(List<Bean> refs, String refId) {
 		this.font = (Font) TyniCAD.getRef(refs, Font.class, refId);
 	}
 	public String getColor() {
 		return color;
 	}
-	public void setColor(List<Bean> refs, String name) {
+	private void setColor(List<Bean> refs, String name) {
 		this.color = TyniCAD.getOption(refs, name);
 	}
 	@Override

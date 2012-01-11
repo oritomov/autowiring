@@ -39,6 +39,13 @@
     <tag root="TinyCAD" class="com.google.code.autowiring.Bean" array="beans"/>
   </tag>
   <!-- beans -->
+  <tag name="FIELD" class="com.google.code.autowiring.tynicad.beans.Field">
+    <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="type" />
+    <prop name="description" />
+    <prop name="value" />
+    <prop name="show" />
+  </tag>
   <tag name="JUNCTION" class="com.google.code.autowiring.tynicad.beans.Junction">
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
   </tag>
@@ -80,6 +87,7 @@
   <tag name="SYMBOL" class="com.google.code.autowiring.tynicad.beans.Symbol">
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     <ref name="id" class="com.google.code.autowiring.tynicad.beans.SymbolDef"/>
+    <tag name="FIELD" class="com.google.code.autowiring.tynicad.beans.Field" array="fields"/>
   </tag>
   <tag name="TEXT" class="com.google.code.autowiring.tynicad.beans.Label" prop="label">
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
