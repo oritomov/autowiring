@@ -1,5 +1,6 @@
 package com.google.code.autowiring.tynicad;
 
+import java.util.Iterator;
 import java.util.List;
 
 import com.google.code.autowiring.Bean;
@@ -9,8 +10,11 @@ import com.google.code.autowiring.tynicad.beans.Wire;
 public class WireTool {
 
 	public static boolean cobineWire(List<Bean> beans, Bean bean2) {
+		boolean result = false;
 		if (bean2 instanceof Wire) {
-			for (Bean bean1: beans) {
+			Iterator<Bean> i = beans.iterator();
+			while (i.hasNext()) {
+				Bean bean1 = i.next();
 				if (bean1 instanceof Wire) {
 					Wire wire1 = (Wire) bean1;
 					Wire wire2 = (Wire) bean2;
@@ -19,25 +23,32 @@ public class WireTool {
 						((wire1.getFillColor() == null) && (wire2.getFillColor() == null))) {
 						if (checkContWire(wire1, wire2)) {
 							joinWires(wire1, wire2);
-							return true;
+							result = true;
 						} else
 						if (checkContWire(wire2, wire1)) {
 							insertWire(wire1, wire2);
-							return true;
+							result = true;
 						} else
 						if (checkBeginWire(wire1, wire2)) {
 							insertBackWire(wire1, wire2);
-							return true;
+							result = true;
 						} else
 						if (checkEndWire(wire1, wire2)) {
 							joinBackWires(wire1, wire2);
-							return true;
+							result = true;
+						}
+						if (result) {
+							i.remove();
+							if (!cobineWire(beans, bean1)) {
+								beans.add(bean1);
+							}
+							break;
 						}
 					}
 				}
 			}
 		}
-		return false;
+		return result;
 	}
 
 	/**
