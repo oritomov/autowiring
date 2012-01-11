@@ -82,7 +82,9 @@ public class TyniCAD extends Xml implements Wiring {
 					if (bean instanceof RefBean) {
 						refs.add(bean);
 					} else {
-						beans.add(bean);
+						if (!WireTool.cobineWire(beans, bean)) {
+							beans.add(bean);
+						}
 					}
 				}
 			}
