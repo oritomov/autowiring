@@ -30,6 +30,7 @@ public class Svg extends Xml implements Wiring {
 	private static final String LAYER = "layer";
 
 	private SvgConfig engine;
+	private Node defs;
 	private Node layer;
 	private String path;
 	private String fileName;
@@ -45,7 +46,7 @@ public class Svg extends Xml implements Wiring {
 			path = new File(fileName).getCanonicalPath();
 			path = path.substring(0, path.lastIndexOf(File.separator));
 			this.fileName = fileName;
-			layer = init(path, fileName);
+			init(path, fileName);
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
 		}
@@ -57,9 +58,12 @@ public class Svg extends Xml implements Wiring {
 	}
 
 	@Override
-	public void setBeans(List<Bean> beans) throws WiringException {
-		for(Bean bean: beans) {
-			createNode(layer, bean, 0, 0);
+	public void setBeans(List<Bean> defs, List<Bean> layer) throws WiringException {
+		for(Bean bean: defs) {
+			createNode(this.defs, bean, 0, 0);
+		}
+		for(Bean bean: layer) {
+			createNode(this.layer, bean, 0, 0);
 		}
 	}
 
@@ -77,7 +81,7 @@ public class Svg extends Xml implements Wiring {
 		}
 	}
 
-	private Node init(String path, String fileName) {
+	private void init(String path, String fileName) {
 		Node root = addNode(doc, doc, ROOT);
 		setAttrValue(root, "xmlns:dc", "http://purl.org/dc/elements/1.1/");
 		setAttrValue(root, "xmlns:cc", "http://web.resource.org/cc/");
@@ -95,7 +99,7 @@ public class Svg extends Xml implements Wiring {
 		setAttrValue(root, "sodipodi:docname", fileName);
 		setAttrValue(root, "inkscape:output_extension", "org.inkscape.output.svg.inkscape");
 
-		Node defs = addNode(doc, root, DEFS);
+		defs = addNode(doc, root, DEFS);
 		setAttrValue(defs, "id", DEFS);
 
 		Node namedview = addNode(doc, root, "sodipodi:namedview");
@@ -128,11 +132,10 @@ public class Svg extends Xml implements Wiring {
 		Node dc_type = addNode(doc, cc_work, "dc:type");
 		setAttrValue(dc_type, "rdf:resource", "http://purl.org/dc/dcmitype/StillImage");
 
-		Node layer = addNode(doc, root, SVG_G);
+		layer = addNode(doc, root, SVG_G);
 		setAttrValue(layer, "id", LAYER);
 		setAttrValue(layer, "inkscape:label", LAYER);
 		setAttrValue(layer, "inkscape:groupmode", LAYER);
-		return layer;
 	}
 
 	private Node createNode(Node parent, Bean bean, double x, double y) {
@@ -232,6 +235,7 @@ public class Svg extends Xml implements Wiring {
 			if (getter != null) {
 				@SuppressWarnings("unchecked")
 				List<Bean> beans = (List<Bean>) getter.invoke(parentBean, new Object[0]);
+				// TODO remove symbol
 				if (parentBean instanceof Symbol) {
 					x += ((Symbol)parentBean).getOffsX();
 					y += ((Symbol)parentBean).getOffsY();

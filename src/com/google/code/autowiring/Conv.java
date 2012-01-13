@@ -62,8 +62,9 @@ public class Conv {
 			Wiring design = WiringFactory.createWiring(designEngine, designFile);
 			Wiring report = WiringFactory.createWiring(reportEngine, reportFile);
 			List<Bean> beans = design.getBeans();
-			WireTool.colorLines(beans);
-			report.setBeans(beans);
+			@SuppressWarnings("unchecked")
+			List<Bean> defs = (List<Bean>) WireTool.colorLines(beans);
+			report.setBeans(defs, beans);
 			report.save();
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);

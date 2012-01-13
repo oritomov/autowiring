@@ -7,6 +7,7 @@ import java.util.List;
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Conv;
 import com.google.code.autowiring.beans.Pattern;
+import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.beans.Pnt;
 import com.google.code.autowiring.beans.Path;
 import com.google.code.autowiring.beans.Text;
@@ -27,7 +28,7 @@ public class WireTool {
 					if (bean2 instanceof Path) {
 						Path wire = (Path) bean2;
 						if (pointOnWire(text.getX(x, y), text.getX(x, y), wire)) {
-							if (createPatern(defs, text.getText(), wire)) {
+							if (colorLines(defs, text.getText(), wire)) {
 								i.remove();
 							}
 						}
@@ -38,8 +39,27 @@ public class WireTool {
 		return defs;
 	}
 
+	private static boolean colorLines(List<Pattern> defs, String text, Path wire) {
+		Color color;
+		try {
+			color = Color.valueOf(text);
+		} catch (IllegalArgumentException e) {
+			return createPatern(defs, text, wire);
+		}
+		wire.setStrokeColor(color.getCode());
+		return true;
+	}
+
 	private static boolean createPatern(List<Pattern> defs, String text, Path wire) {
-		// TODO check for a color
+		String[] splet = text.split("-");
+		Color[] colors = new Color[splet.length];
+		for (int i = 0; i < splet.length; i++) {
+			try {
+				colors[i] = Color.valueOf(splet[i]);
+			} catch (IllegalArgumentException e) {
+				return false;
+			}
+		}
 		Pattern pattern = null;
 		for(Pattern p: defs) {
 			if (text.equalsIgnoreCase(p.getId())) {
@@ -48,10 +68,11 @@ public class WireTool {
 			}
 		}
 		if (pattern == null) {
-			pattern = new Pattern();
-			pattern.setId(text);
+			pattern = new Pattern(text, colors);
+			defs.add(pattern);
 		}
-		wire.setStrokeColor(pattern.getId());//"url(#"+pattern.getId()+")"
+		wire.setStrokeColor(pattern.getId());
+		wire.setStrokeUrl(true);
 		return true;
 	}
 

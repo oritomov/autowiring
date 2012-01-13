@@ -19,6 +19,7 @@ public class Path implements Bean {
 	private double x;
 	private double y;
 	private String strokeColor;
+	private boolean strokeUrl = false;
 	private int strokeWidth;
 	private String fillColor;
 	private List<Pnt> points = new ArrayList<Pnt>();
@@ -50,6 +51,12 @@ public class Path implements Bean {
 	}
 	public void setStrokeColor(String strokeColor) {
 		this.strokeColor = strokeColor;
+	}
+	public boolean isStrokeUrl() {
+		return strokeUrl;
+	}
+	public void setStrokeUrl(boolean strokeUrl) {
+		this.strokeUrl = strokeUrl;
 	}
 	public int getStrokeWidth() {
 		return strokeWidth;
@@ -90,6 +97,8 @@ public class Path implements Bean {
 		style = "stroke-width:"+strokeWidth;
 		if (strokeColor == null) {
 			style += ";stroke:none";
+		} else if (strokeUrl) {
+			style += ";stroke:url(#"+strokeColor+")";
 		} else {
 			style += ";stroke:#"+strokeColor;
 		}
