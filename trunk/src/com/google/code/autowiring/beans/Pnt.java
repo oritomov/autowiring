@@ -40,6 +40,11 @@ public class Pnt implements Bean {
 		super();
 	}
 
+	public Pnt(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+
 	public double getX() {
 		return x;
 	}
@@ -80,5 +85,17 @@ public class Pnt implements Bean {
 			default:
 				return null;
 		}
+	}
+
+	public double distance(Pnt point) {
+		double x = point.getX() - this.getX();
+		double y = point.getY() - this.getY();
+		return Math.sqrt(x * x + y * y);
+	}
+
+	public double distance(double x, double y) {
+		x -= this.getX();
+		y -= this.getY();
+		return Math.sqrt(x * x + y * y);
 	}
 }

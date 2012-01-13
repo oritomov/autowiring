@@ -1,13 +1,103 @@
 package com.google.code.autowiring.util;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.Conv;
+import com.google.code.autowiring.beans.Pattern;
 import com.google.code.autowiring.beans.Pnt;
 import com.google.code.autowiring.beans.Path;
+import com.google.code.autowiring.beans.Text;
 
 public class WireTool {
+
+	public static List<? extends Bean> colorLines(List<Bean> beans) {
+		return colorLines(beans, 0, 0);
+	}
+	private static List<Pattern> colorLines(List<Bean> beans, double x, double y) {
+		List<Pattern> defs = new ArrayList<Pattern>();
+		Iterator<Bean> i = beans.iterator();
+		while (i.hasNext()) {
+			Bean bean1 = i.next();
+			if (bean1 instanceof Text) {
+				Text text = (Text) bean1;
+				for (Bean bean2: beans) {
+					if (bean2 instanceof Path) {
+						Path wire = (Path) bean2;
+						if (pointOnWire(text.getX(x, y), text.getX(x, y), wire)) {
+							if (createPatern(defs, text.getText(), wire)) {
+								i.remove();
+							}
+						}
+					}
+				}
+			}
+		}
+		return defs;
+	}
+
+	private static boolean createPatern(List<Pattern> defs, String text, Path wire) {
+		// TODO check for a color
+		Pattern pattern = null;
+		for(Pattern p: defs) {
+			if (text.equalsIgnoreCase(p.getId())) {
+				pattern = p;
+				break;
+			}
+		}
+		if (pattern == null) {
+			pattern = new Pattern();
+			pattern.setId(text);
+		}
+		wire.setStrokeColor(pattern.getId());//"url(#"+pattern.getId()+")"
+		return true;
+	}
+
+	private static boolean pointOnWire(Double x, Double y, Path wire) {
+		for (int i = 1; i < wire.getPoints().size(); i++) {
+			Pnt point1 = wire.getPoints().get(i-1);
+			Pnt point2 = wire.getPoints().get(i);
+			if (distanceToSegment(x, y, point1, point2)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Returns true if the distance of point to the segment defined by p1,p2 is zero;
+	 * 
+	 * @param x of Point to which we want to know the distance of the segment defined by p1,p2
+	 * @param y of Point to which we want to know the distance of the segment defined by p1,p2
+	 * @param p1 First point of the segment
+	 * @param p2 Second point of the segment
+	 * @return Does the distance of point to the segment defined by p1,p2 zero
+	 */
+	private static boolean distanceToSegment(double x, double y, Pnt p1, Pnt p2) {
+
+		final double xDelta = p2.getX() - p1.getX();
+		final double yDelta = p2.getY() - p1.getY();
+
+		if ((xDelta == 0) && (yDelta == 0)) {
+			Conv.log().warn("p1 and p2 cannot be the same point");
+			return false;
+		}
+
+		final double u = ((x - p1.getX()) * xDelta + (y - p1.getY()) * yDelta) / (xDelta * xDelta + yDelta * yDelta);
+
+		final Pnt closestPoint;
+		if (u < 0) {
+			closestPoint = p1;
+		} else if (u > 1) {
+			closestPoint = p2;
+		} else {
+			closestPoint = new Pnt(p1.getX() + u * xDelta, p1.getY() + u * yDelta);
+		}
+
+		return closestPoint.distance(x, y) == 0;
+	}
 
 	public static boolean cobineWire(List<Bean> beans, Bean bean2) {
 		boolean result = false;

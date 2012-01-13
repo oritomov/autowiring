@@ -9,6 +9,7 @@ import org.apache.log4j.PropertyConfigurator;
 
 import com.google.code.autowiring.config.Config;
 import com.google.code.autowiring.config.CfgEng;
+import com.google.code.autowiring.util.WireTool;
 
 /**
  * @author	Orlin Tomov
@@ -61,6 +62,7 @@ public class Conv {
 			Wiring design = WiringFactory.createWiring(designEngine, designFile);
 			Wiring report = WiringFactory.createWiring(reportEngine, reportFile);
 			List<Bean> beans = design.getBeans();
+			WireTool.colorLines(beans);
 			report.setBeans(beans);
 			report.save();
 		} catch (Exception e) {
