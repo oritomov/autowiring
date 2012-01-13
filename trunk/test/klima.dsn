@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This file was written by TinyCAD Version 2.80.03 Build #514 Production Release
+If you wish to view this file go to http://tinycad.sourceforge.net to
+download a copy.-->
+<TinyCADSheets>
+	<TinyCAD>
+		<NAME>Sheet 1</NAME>
+		<DETAILS>
+			<Size width='4455' height='1050'/>
+			<GUIDES horiz='7' vert='5'/>
+			<TITLE></TITLE>
+			<AUTHOR></AUTHOR>
+			<REVISION>1.0</REVISION>
+			<DOCNUMBER></DOCNUMBER>
+			<ORGANISATION></ORGANISATION>
+			<SHEETS>1 of 1</SHEETS>
+			<SHOWS>1</SHOWS>
+			<DATE></DATE>
+			<GRID spacing='50.00000' snap='1'/>
+		</DETAILS>
+		<FONT id='1'>
+			<HEIGHT>-10</HEIGHT>
+			<WIDTH>0</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='3'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='4'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='5'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<STYLE id='3'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>1</THICKNESS>
+		</STYLE>
+		<STYLE id='4'>
+			<STYLE>2</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>1</THICKNESS>
+		</STYLE>
+		<FILL id='0'>
+			<INDEX>-1</INDEX>
+			<COLOR>000000</COLOR>
+		</FILL>
+		<FILL id='2'>
+			<INDEX>0</INDEX>
+			<COLOR>9FAFCF</COLOR>
+		</FILL>
+		<FILL id='3'>
+			<INDEX>4</INDEX>
+			<COLOR>000000</COLOR>
+		</FILL>
+		<FILL id='4'>
+			<INDEX>0</INDEX>
+			<COLOR>00FF00</COLOR>
+		</FILL>
+		<FILL id='5'>
+			<INDEX>0</INDEX>
+			<COLOR>FFFFFF</COLOR>
+		</FILL>
+		<SYMBOLDEF id='1'>
+			<NAME type='0'>fuze box</NAME>
+			<REF type='0'>fuze box</REF>
+			<DESCRIPTION>fuze box</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>package name for PCB layout</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='790.00000,80.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='2.00000,80.00000' b='790.00000,4.00000' style='3' fill='2'/>
+				<LABEL pos='4.00000,8.00000' direction='3' font='5' color='208000' style='0'>30</LABEL>
+				<LABEL pos='4.00000,12.00000' direction='3' font='5' color='208000' style='0'>15</LABEL>
+				<LABEL pos='4.00000,16.00000' direction='3' font='5' color='208000' style='0'>X</LABEL>
+				<LABEL pos='4.00000,20.00000' direction='3' font='5' color='208000' style='0'>31</LABEL>
+				<WIRE a='8.00000,20.00000' b='8.00000,78.00000'/>
+				<WIRE a='4.00000,20.00000' b='8.00000,20.00000'/>
+				<WIRE a='16.00000,8.00000' b='16.00000,78.00000'/>
+				<WIRE a='4.00000,8.00000' b='16.00000,8.00000'/>
+				<WIRE a='32.00000,78.00000' b='32.00000,72.00000'/>
+				<WIRE a='32.00000,72.00000' b='24.00000,72.00000'/>
+				<WIRE a='24.00000,78.00000' b='24.00000,72.00000'/>
+				<WIRE a='40.00000,64.00000' b='40.00000,78.00000'/>
+				<WIRE a='32.00000,56.00000' b='32.00000,64.00000'/>
+				<WIRE a='32.00000,64.00000' b='40.00000,64.00000'/>
+				<WIRE a='40.00000,56.00000' b='40.00000,64.00000'/>
+				<WIRE a='32.00000,30.00000' b='24.00000,30.00000'/>
+				<WIRE a='24.00000,30.00000' b='24.00000,72.00000'/>
+				<WIRE a='40.00000,36.00000' b='40.00000,32.00000'/>
+				<WIRE a='40.00000,32.00000' b='48.00000,32.00000'/>
+				<WIRE a='48.00000,32.00000' b='48.00000,78.00000'/>
+				<WIRE a='56.00000,36.00000' b='56.00000,20.00000'/>
+				<WIRE a='8.00000,20.00000' b='56.00000,20.00000'/>
+				<WIRE a='64.00000,62.00000' b='68.00000,62.00000'/>
+				<WIRE a='68.00000,62.00000' b='68.00000,16.00000'/>
+				<WIRE a='4.00000,16.00000' b='68.00000,16.00000'/>
+				<WIRE a='64.00000,36.00000' b='64.00000,8.00000'/>
+				<WIRE a='16.00000,8.00000' b='64.00000,8.00000'/>
+				<WIRE a='56.00000,68.00000' b='56.00000,78.00000'/>
+				<WIRE a='72.00000,78.00000' b='72.00000,8.00000'/>
+				<WIRE a='64.00000,8.00000' b='72.00000,8.00000'/>
+				<WIRE a='88.00000,78.00000' b='88.00000,12.00000'/>
+				<WIRE a='4.00000,12.00000' b='88.00000,12.00000'/>
+				<WIRE a='80.00000,78.00000' b='80.00000,74.00000'/>
+				<JUNCTION pos='8.00000,20.00000'/>
+				<JUNCTION pos='16.00000,8.00000'/>
+				<JUNCTION pos='56.00000,20.00000'/>
+				<JUNCTION pos='64.00000,8.00000'/>
+				<JUNCTION pos='68.00000,16.00000'/>
+				<JUNCTION pos='72.00000,8.00000'/>
+				<JUNCTION pos='88.00000,12.00000'/>
+				<WIRE a='96.00000,74.00000' b='96.00000,78.00000'/>
+				<WIRE a='80.00000,74.00000' b='96.00000,74.00000'/>
+				<JUNCTION pos='96.00000,74.00000'/>
+				<WIRE a='96.00000,56.00000' b='96.00000,74.00000'/>
+				<WIRE a='104.00000,56.00000' b='104.00000,78.00000'/>
+				<WIRE a='112.00000,56.00000' b='112.00000,78.00000'/>
+				<WIRE a='120.00000,56.00000' b='120.00000,78.00000'/>
+				<WIRE a='128.00000,58.00000' b='132.00000,58.00000'/>
+				<WIRE a='104.00000,36.00000' b='104.00000,20.00000'/>
+				<WIRE a='112.00000,36.00000' b='112.00000,12.00000'/>
+				<WIRE a='120.00000,36.00000' b='120.00000,8.00000'/>
+				<JUNCTION pos='120.00000,8.00000'/>
+				<WIRE a='72.00000,8.00000' b='120.00000,8.00000'/>
+				<JUNCTION pos='112.00000,12.00000'/>
+				<WIRE a='88.00000,12.00000' b='112.00000,12.00000'/>
+				<JUNCTION pos='104.00000,20.00000'/>
+				<WIRE a='56.00000,20.00000' b='104.00000,20.00000'/>
+				<JUNCTION pos='56.00000,68.00000'/>
+				<WIRE a='56.00000,56.00000' b='56.00000,68.00000'/>
+				<WIRE a='144.00000,78.00000' b='144.00000,74.00000'/>
+				<WIRE a='144.00000,74.00000' b='136.00000,74.00000'/>
+				<WIRE a='136.00000,74.00000' b='136.00000,78.00000'/>
+				<JUNCTION pos='136.00000,74.00000'/>
+				<WIRE a='136.00000,56.00000' b='136.00000,74.00000'/>
+				<WIRE a='132.00000,58.00000' b='132.00000,34.00000'/>
+				<WIRE a='132.00000,34.00000' b='136.00000,34.00000'/>
+				<WIRE a='136.00000,34.00000' b='136.00000,36.00000'/>
+				<WIRE a='56.00000,68.00000' b='144.00000,68.00000'/>
+				<WIRE a='96.00000,30.00000' b='96.00000,36.00000'/>
+				<WIRE a='152.00000,56.00000' b='152.00000,78.00000'/>
+				<WIRE a='160.00000,56.00000' b='160.00000,78.00000'/>
+				<WIRE a='152.00000,36.00000' b='152.00000,34.00000'/>
+				<WIRE a='152.00000,34.00000' b='144.00000,34.00000'/>
+				<WIRE a='144.00000,34.00000' b='144.00000,68.00000'/>
+				<WIRE a='160.00000,36.00000' b='160.00000,34.00000'/>
+				<WIRE a='160.00000,34.00000' b='164.00000,34.00000'/>
+				<WIRE a='164.00000,34.00000' b='164.00000,66.00000'/>
+				<WIRE a='168.00000,56.00000' b='168.00000,78.00000'/>
+				<JUNCTION pos='168.00000,8.00000'/>
+				<WIRE a='168.00000,8.00000' b='168.00000,36.00000'/>
+				<WIRE a='120.00000,8.00000' b='168.00000,8.00000'/>
+				<WIRE a='184.00000,70.00000' b='184.00000,78.00000'/>
+				<WIRE a='184.00000,70.00000' b='192.00000,70.00000'/>
+				<WIRE a='184.00000,56.00000' b='184.00000,70.00000'/>
+				<WIRE a='192.00000,70.00000' b='192.00000,78.00000'/>
+				<WIRE a='184.00000,36.00000' b='184.00000,16.00000'/>
+				<JUNCTION pos='184.00000,16.00000'/>
+				<WIRE a='68.00000,16.00000' b='184.00000,16.00000'/>
+				<WIRE a='192.00000,70.00000' b='192.00000,32.00000'/>
+				<WIRE a='192.00000,32.00000' b='200.00000,32.00000'/>
+				<WIRE a='200.00000,32.00000' b='200.00000,36.00000'/>
+				<WIRE a='200.00000,56.00000' b='200.00000,78.00000'/>
+				<WIRE a='208.00000,56.00000' b='208.00000,78.00000'/>
+				<WIRE a='216.00000,70.00000' b='216.00000,78.00000'/>
+				<WIRE a='216.00000,70.00000' b='232.00000,70.00000'/>
+				<WIRE a='216.00000,56.00000' b='216.00000,70.00000'/>
+				<JUNCTION pos='216.00000,20.00000'/>
+				<WIRE a='216.00000,20.00000' b='216.00000,36.00000'/>
+				<WIRE a='104.00000,20.00000' b='216.00000,20.00000'/>
+				<WIRE a='208.00000,36.00000' b='208.00000,28.00000'/>
+				<WIRE a='208.00000,28.00000' b='176.00000,28.00000'/>
+				<WIRE a='176.00000,28.00000' b='176.00000,78.00000'/>
+				<WIRE a='240.00000,36.00000' b='240.00000,8.00000'/>
+				<JUNCTION pos='240.00000,8.00000'/>
+				<WIRE a='168.00000,8.00000' b='240.00000,8.00000'/>
+				<WIRE a='232.00000,36.00000' b='232.00000,20.00000'/>
+				<JUNCTION pos='232.00000,20.00000'/>
+				<WIRE a='216.00000,20.00000' b='232.00000,20.00000'/>
+				<WIRE a='240.00000,56.00000' b='240.00000,78.00000'/>
+				<WIRE a='232.00000,70.00000' b='232.00000,78.00000'/>
+				<WIRE a='232.00000,56.00000' b='232.00000,70.00000'/>
+				<WIRE a='224.00000,56.00000' b='224.00000,58.00000'/>
+				<WIRE a='248.00000,74.00000' b='248.00000,78.00000'/>
+				<WIRE a='248.00000,56.00000' b='248.00000,74.00000'/>
+				<WIRE a='256.00000,56.00000' b='256.00000,78.00000'/>
+				<WIRE a='264.00000,56.00000' b='264.00000,78.00000'/>
+				<WIRE a='272.00000,62.00000' b='272.00000,78.00000'/>
+				<WIRE a='280.00000,56.00000' b='280.00000,78.00000'/>
+				<WIRE a='288.00000,70.00000' b='288.00000,78.00000'/>
+				<WIRE a='288.00000,56.00000' b='288.00000,70.00000'/>
+				<WIRE a='272.00000,56.00000' b='272.00000,62.00000'/>
+				<WIRE a='288.00000,36.00000' b='288.00000,26.00000'/>
+				<WIRE a='272.00000,34.00000' b='304.00000,34.00000'/>
+				<WIRE a='264.00000,36.00000' b='264.00000,34.00000'/>
+				<WIRE a='264.00000,34.00000' b='272.00000,34.00000'/>
+				<WIRE a='272.00000,36.00000' b='272.00000,34.00000'/>
+				<WIRE a='256.00000,36.00000' b='256.00000,30.00000'/>
+				<WIRE a='256.00000,30.00000' b='280.00000,30.00000'/>
+				<WIRE a='280.00000,30.00000' b='280.00000,36.00000'/>
+				<WIRE a='248.00000,36.00000' b='248.00000,22.00000'/>
+				<WIRE a='248.00000,22.00000' b='328.00000,22.00000'/>
+				<WIRE a='296.00000,78.00000' b='296.00000,8.00000'/>
+				<JUNCTION pos='296.00000,8.00000'/>
+				<WIRE a='240.00000,8.00000' b='296.00000,8.00000'/>
+				<WIRE a='320.00000,78.00000' b='320.00000,26.00000'/>
+				<WIRE a='288.00000,26.00000' b='320.00000,26.00000'/>
+				<WIRE a='304.00000,34.00000' b='304.00000,78.00000'/>
+				<WIRE a='280.00000,30.00000' b='312.00000,30.00000'/>
+				<WIRE a='312.00000,30.00000' b='312.00000,78.00000'/>
+				<WIRE a='328.00000,22.00000' b='328.00000,78.00000'/>
+				<WIRE a='352.00000,36.00000' b='352.00000,8.00000'/>
+				<JUNCTION pos='352.00000,8.00000'/>
+				<WIRE a='296.00000,8.00000' b='352.00000,8.00000'/>
+				<WIRE a='360.00000,36.00000' b='360.00000,12.00000'/>
+				<JUNCTION pos='360.00000,12.00000'/>
+				<WIRE a='112.00000,12.00000' b='360.00000,12.00000'/>
+				<WIRE a='336.00000,58.00000' b='336.00000,28.00000'/>
+				<WIRE a='336.00000,28.00000' b='368.00000,28.00000'/>
+				<WIRE a='368.00000,28.00000' b='368.00000,36.00000'/>
+				<WIRE a='224.00000,58.00000' b='336.00000,58.00000'/>
+				<WIRE a='336.00000,78.00000' b='336.00000,58.00000'/>
+				<WIRE a='248.00000,74.00000' b='344.00000,74.00000'/>
+				<WIRE a='344.00000,74.00000' b='344.00000,78.00000'/>
+				<WIRE a='288.00000,70.00000' b='376.00000,70.00000'/>
+				<WIRE a='376.00000,70.00000' b='376.00000,78.00000'/>
+				<WIRE a='164.00000,66.00000' b='352.00000,66.00000'/>
+				<WIRE a='352.00000,66.00000' b='352.00000,78.00000'/>
+				<WIRE a='352.00000,56.00000' b='352.00000,66.00000'/>
+				<WIRE a='368.00000,66.00000' b='368.00000,78.00000'/>
+				<WIRE a='368.00000,56.00000' b='368.00000,66.00000'/>
+				<WIRE a='384.00000,78.00000' b='384.00000,66.00000'/>
+				<WIRE a='392.00000,78.00000' b='392.00000,66.00000'/>
+				<WIRE a='384.00000,66.00000' b='368.00000,66.00000'/>
+				<WIRE a='392.00000,66.00000' b='384.00000,66.00000'/>
+				<WIRE a='400.00000,78.00000' b='400.00000,72.00000'/>
+				<WIRE a='400.00000,72.00000' b='408.00000,72.00000'/>
+				<WIRE a='408.00000,72.00000' b='408.00000,78.00000'/>
+				<JUNCTION pos='408.00000,72.00000'/>
+				<WIRE a='408.00000,56.00000' b='408.00000,72.00000'/>
+				<WIRE a='416.00000,56.00000' b='416.00000,78.00000'/>
+				<WIRE a='504.00000,20.00000' b='788.00000,20.00000'/>
+				<WIRE a='648.00000,16.00000' b='788.00000,16.00000'/>
+				<WIRE a='776.00000,12.00000' b='788.00000,12.00000'/>
+				<WIRE a='656.00000,8.00000' b='788.00000,8.00000'/>
+				<WIRE a='408.00000,36.00000' b='408.00000,16.00000'/>
+				<JUNCTION pos='408.00000,16.00000'/>
+				<WIRE a='184.00000,16.00000' b='408.00000,16.00000'/>
+				<WIRE a='232.00000,20.00000' b='504.00000,20.00000'/>
+				<WIRE a='456.00000,72.00000' b='456.00000,78.00000'/>
+				<JUNCTION pos='456.00000,72.00000'/>
+				<WIRE a='456.00000,72.00000' b='448.00000,72.00000'/>
+				<WIRE a='456.00000,56.00000' b='456.00000,72.00000'/>
+				<WIRE a='448.00000,72.00000' b='448.00000,78.00000'/>
+				<WIRE a='448.00000,56.00000' b='452.00000,56.00000'/>
+				<WIRE a='452.00000,56.00000' b='452.00000,32.00000'/>
+				<WIRE a='452.00000,32.00000' b='456.00000,32.00000'/>
+				<WIRE a='456.00000,32.00000' b='456.00000,36.00000'/>
+				<WIRE a='440.00000,56.00000' b='440.00000,78.00000'/>
+				<WIRE a='440.00000,36.00000' b='440.00000,34.00000'/>
+				<WIRE a='440.00000,34.00000' b='432.00000,34.00000'/>
+				<WIRE a='432.00000,34.00000' b='432.00000,78.00000'/>
+				<WIRE a='448.00000,36.00000' b='448.00000,30.00000'/>
+				<WIRE a='448.00000,30.00000' b='424.00000,30.00000'/>
+				<WIRE a='424.00000,30.00000' b='424.00000,78.00000'/>
+				<WIRE a='272.00000,62.00000' b='464.00000,62.00000'/>
+				<WIRE a='464.00000,62.00000' b='464.00000,78.00000'/>
+				<WIRE a='472.00000,78.00000' b='472.00000,58.00000'/>
+				<WIRE a='472.00000,58.00000' b='480.00000,58.00000'/>
+				<WIRE a='480.00000,78.00000' b='480.00000,58.00000'/>
+				<WIRE a='488.00000,58.00000' b='496.00000,58.00000'/>
+				<WIRE a='496.00000,58.00000' b='496.00000,78.00000'/>
+				<WIRE a='488.00000,58.00000' b='488.00000,78.00000'/>
+				<WIRE a='480.00000,58.00000' b='488.00000,58.00000'/>
+				<WIRE a='472.00000,58.00000' b='360.00000,58.00000'/>
+				<JUNCTION pos='480.00000,58.00000'/>
+				<JUNCTION pos='488.00000,58.00000'/>
+				<WIRE a='504.00000,36.00000' b='504.00000,20.00000'/>
+				<WIRE a='504.00000,56.00000' b='504.00000,78.00000'/>
+				<WIRE a='512.00000,36.00000' b='512.00000,8.00000'/>
+				<WIRE a='352.00000,8.00000' b='512.00000,8.00000'/>
+				<WIRE a='520.00000,56.00000' b='520.00000,78.00000'/>
+				<WIRE a='512.00000,62.00000' b='512.00000,78.00000'/>
+				<WIRE a='528.00000,36.00000' b='528.00000,34.00000'/>
+				<WIRE a='528.00000,34.00000' b='524.00000,34.00000'/>
+				<WIRE a='524.00000,34.00000' b='524.00000,62.00000'/>
+				<WIRE a='524.00000,62.00000' b='512.00000,62.00000'/>
+				<WIRE a='512.00000,56.00000' b='512.00000,62.00000'/>
+				<WIRE a='528.00000,56.00000' b='528.00000,78.00000'/>
+				<JUNCTION pos='504.00000,20.00000'/>
+				<WIRE a='776.00000,78.00000' b='776.00000,12.00000'/>
+				<WIRE a='632.00000,12.00000' b='776.00000,12.00000'/>
+				<WIRE a='536.00000,56.00000' b='536.00000,78.00000'/>
+				<WIRE a='536.00000,36.00000' b='536.00000,8.00000'/>
+				<JUNCTION pos='536.00000,8.00000'/>
+				<WIRE a='512.00000,8.00000' b='536.00000,8.00000'/>
+				<WIRE a='552.00000,56.00000' b='552.00000,78.00000'/>
+				<WIRE a='552.00000,36.00000' b='552.00000,34.00000'/>
+				<WIRE a='552.00000,34.00000' b='544.00000,34.00000'/>
+				<WIRE a='544.00000,34.00000' b='544.00000,78.00000'/>
+				<WIRE a='568.00000,56.00000' b='568.00000,78.00000'/>
+				<WIRE a='576.00000,78.00000' b='576.00000,34.00000'/>
+				<WIRE a='576.00000,34.00000' b='560.00000,34.00000'/>
+				<WIRE a='560.00000,34.00000' b='560.00000,36.00000'/>
+				<WIRE a='560.00000,56.00000' b='560.00000,78.00000'/>
+				<WIRE a='592.00000,56.00000' b='592.00000,78.00000'/>
+				<WIRE a='592.00000,36.00000' b='592.00000,34.00000'/>
+				<WIRE a='592.00000,34.00000' b='584.00000,34.00000'/>
+				<WIRE a='584.00000,34.00000' b='584.00000,78.00000'/>
+				<WIRE a='600.00000,56.00000' b='600.00000,78.00000'/>
+				<WIRE a='600.00000,36.00000' b='600.00000,34.00000'/>
+				<WIRE a='600.00000,34.00000' b='608.00000,34.00000'/>
+				<WIRE a='608.00000,34.00000' b='608.00000,78.00000'/>
+				<WIRE a='624.00000,56.00000' b='624.00000,78.00000'/>
+				<WIRE a='624.00000,36.00000' b='624.00000,8.00000'/>
+				<JUNCTION pos='624.00000,8.00000'/>
+				<WIRE a='616.00000,8.00000' b='624.00000,8.00000'/>
+				<JUNCTION pos='616.00000,8.00000'/>
+				<WIRE a='616.00000,8.00000' b='616.00000,36.00000'/>
+				<WIRE a='536.00000,8.00000' b='616.00000,8.00000'/>
+				<WIRE a='616.00000,56.00000' b='616.00000,78.00000'/>
+				<WIRE a='632.00000,36.00000' b='632.00000,12.00000'/>
+				<JUNCTION pos='632.00000,12.00000'/>
+				<WIRE a='360.00000,12.00000' b='632.00000,12.00000'/>
+				<WIRE a='632.00000,56.00000' b='632.00000,78.00000'/>
+				<JUNCTION pos='640.00000,16.00000'/>
+				<WIRE a='640.00000,16.00000' b='640.00000,78.00000'/>
+				<WIRE a='416.00000,16.00000' b='640.00000,16.00000'/>
+				<JUNCTION pos='648.00000,16.00000'/>
+				<WIRE a='648.00000,16.00000' b='648.00000,78.00000'/>
+				<WIRE a='640.00000,16.00000' b='648.00000,16.00000'/>
+				<JUNCTION pos='656.00000,8.00000'/>
+				<WIRE a='656.00000,8.00000' b='656.00000,36.00000'/>
+				<WIRE a='624.00000,8.00000' b='656.00000,8.00000'/>
+				<WIRE a='656.00000,62.00000' b='656.00000,78.00000'/>
+				<JUNCTION pos='656.00000,62.00000'/>
+				<WIRE a='656.00000,62.00000' b='664.00000,62.00000'/>
+				<WIRE a='656.00000,56.00000' b='656.00000,62.00000'/>
+				<WIRE a='664.00000,62.00000' b='664.00000,78.00000'/>
+				<WIRE a='672.00000,78.00000' b='672.00000,62.00000'/>
+				<WIRE a='672.00000,62.00000' b='680.00000,62.00000'/>
+				<WIRE a='680.00000,62.00000' b='680.00000,78.00000'/>
+				<WIRE a='688.00000,78.00000' b='688.00000,62.00000'/>
+				<WIRE a='688.00000,62.00000' b='696.00000,62.00000'/>
+				<WIRE a='696.00000,62.00000' b='696.00000,78.00000'/>
+				<JUNCTION pos='776.00000,12.00000'/>
+				<JUNCTION pos='32.00000,30.00000'/>
+				<WIRE a='32.00000,30.00000' b='32.00000,36.00000'/>
+				<WIRE a='96.00000,30.00000' b='32.00000,30.00000'/>
+				<WIRE a='64.00000,62.00000' b='64.00000,56.00000'/>
+				<WIRE a='128.00000,58.00000' b='128.00000,78.00000'/>
+				<JUNCTION pos='128.00000,58.00000'/>
+				<WIRE a='128.00000,56.00000' b='128.00000,58.00000'/>
+				<JUNCTION pos='472.00000,58.00000'/>
+				<WIRE a='360.00000,58.00000' b='360.00000,78.00000'/>
+				<JUNCTION pos='360.00000,58.00000'/>
+				<WIRE a='360.00000,56.00000' b='360.00000,58.00000'/>
+				<WIRE a='720.00000,78.00000' b='720.00000,56.00000'/>
+				<WIRE a='728.00000,78.00000' b='728.00000,56.00000'/>
+				<WIRE a='736.00000,78.00000' b='736.00000,56.00000'/>
+				<WIRE a='744.00000,78.00000' b='744.00000,56.00000'/>
+				<WIRE a='752.00000,78.00000' b='752.00000,56.00000'/>
+				<WIRE a='712.00000,78.00000' b='712.00000,30.00000'/>
+				<WIRE a='712.00000,30.00000' b='720.00000,30.00000'/>
+				<WIRE a='720.00000,30.00000' b='720.00000,36.00000'/>
+				<WIRE a='704.00000,80.00000' b='704.00000,26.00000'/>
+				<WIRE a='704.00000,26.00000' b='728.00000,26.00000'/>
+				<WIRE a='728.00000,26.00000' b='728.00000,36.00000'/>
+				<WIRE a='760.00000,78.00000' b='760.00000,30.00000'/>
+				<WIRE a='760.00000,30.00000' b='752.00000,30.00000'/>
+				<WIRE a='752.00000,30.00000' b='752.00000,36.00000'/>
+				<WIRE a='768.00000,78.00000' b='768.00000,26.00000'/>
+				<WIRE a='768.00000,26.00000' b='744.00000,26.00000'/>
+				<WIRE a='744.00000,26.00000' b='744.00000,36.00000'/>
+				<PIN pos='720.00000,38.00000' which='0' elec='0' direction='0' part='0' number='2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='728.00000,38.00000' which='0' elec='0' direction='0' part='0' number='1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='720.00000,54.00000' which='0' elec='0' direction='1' part='0' number='3' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='728.00000,54.00000' which='0' elec='0' direction='1' part='0' number='4' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='736.00000,54.00000' which='0' elec='0' direction='1' part='0' number='5' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='744.00000,54.00000' which='0' elec='0' direction='1' part='0' number='6' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='752.00000,54.00000' which='0' elec='0' direction='1' part='0' number='7' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='752.00000,38.00000' which='0' elec='0' direction='0' part='0' number='8' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='744.00000,38.00000' which='0' elec='0' direction='0' part='0' number='9' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='784.00000,80.00000' which='0' elec='0' direction='0' part='0' number='N' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='776.00000,80.00000' which='0' elec='0' direction='0' part='0' number='B15' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='704.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='712.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K2' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='720.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K3' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='728.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K4' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='736.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K5' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='744.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K6' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='752.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K7' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='760.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K8' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='768.00000,80.00000' which='0' elec='0' direction='0' part='0' number='K9' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='688.00000,80.00000' which='0' elec='0' direction='0' part='0' number='Ers' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='696.00000,80.00000' which='0' elec='0' direction='0' part='0' number='Frl' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='672.00000,80.00000' which='0' elec='0' direction='0' part='0' number='Ft' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='680.00000,80.00000' which='0' elec='0' direction='0' part='0' number='Ht' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<TEXT pos='732.00000,60.00000' direction='3' font='4' color='000000'>relay 3</TEXT>
+				<PIN pos='656.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='656.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30b</PIN>
+				<TEXT pos='656.00000,60.00000' direction='3' font='4' color='000000'>f 4</TEXT>
+				<PIN pos='664.00000,80.00000' which='0' elec='0' direction='0' part='0' number='F30al' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='656.00000,80.00000' which='0' elec='0' direction='0' part='0' number='H30b' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='648.00000,80.00000' which='0' elec='0' direction='0' part='0' number='M75s' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='640.00000,80.00000' which='0' elec='0' direction='0' part='0' number='M75s' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='632.00000,80.00000' which='0' elec='0' direction='0' part='0' number='M75as' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='624.00000,80.00000' which='0' elec='0' direction='0' part='0' number='M30az' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='616.00000,80.00000' which='0' elec='0' direction='0' part='0' number='M30ac' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<TEXT pos='632.00000,60.00000' direction='3' font='4' color='000000'>f 18</TEXT>
+				<TEXT pos='624.00000,60.00000' direction='3' font='4' color='000000'>f 19</TEXT>
+				<TEXT pos='616.00000,60.00000' direction='3' font='4' color='000000'>f 21</TEXT>
+				<PIN pos='632.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>15</PIN>
+				<PIN pos='624.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='616.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='632.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30as</PIN>
+				<PIN pos='624.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30az</PIN>
+				<PIN pos='616.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30ac</PIN>
+				<TEXT pos='592.00000,60.00000' direction='3' font='4' color='000000'>relay 11</TEXT>
+				<PIN pos='600.00000,54.00000' which='0' elec='0' direction='1' part='0' number='54' show='3' length='10' number_pos='0' centre_name='1'>87m</PIN>
+				<PIN pos='592.00000,38.00000' which='0' elec='0' direction='0' part='0' number='55' show='3' length='10' number_pos='0' centre_name='1'>86m</PIN>
+				<PIN pos='600.00000,38.00000' which='0' elec='0' direction='0' part='0' number='56' show='3' length='10' number_pos='0' centre_name='1'>30m</PIN>
+				<PIN pos='592.00000,54.00000' which='0' elec='0' direction='1' part='0' number='57' show='3' length='10' number_pos='0' centre_name='1'>85m</PIN>
+				<PIN pos='600.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A87m' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='608.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A30m' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='592.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A85m' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='584.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A86m' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='576.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A30k' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='568.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A87ak' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='560.00000,80.00000' which='0' elec='0' direction='0' part='0' number='M87k' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='544.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A86k' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='552.00000,80.00000' which='0' elec='0' direction='0' part='0' number='A85k' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='536.00000,80.00000' which='0' elec='0' direction='0' part='0' number='P30as' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='528.00000,80.00000' which='0' elec='0' direction='0' part='0' number='E87la' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='520.00000,80.00000' which='0' elec='0' direction='0' part='0' number='E87al' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='512.00000,80.00000' which='0' elec='0' direction='0' part='0' number='E87l' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='504.00000,80.00000' which='0' elec='0' direction='0' part='0' number='D85l' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='496.00000,80.00000' which='0' elec='0' direction='0' part='0' number='C15a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='488.00000,80.00000' which='0' elec='0' direction='0' part='0' number='C15a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='480.00000,80.00000' which='0' elec='0' direction='0' part='0' number='C15a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='472.00000,80.00000' which='0' elec='0' direction='0' part='0' number='B15a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='464.00000,80.00000' which='0' elec='0' direction='0' part='0' number='C56ak' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='456.00000,80.00000' which='0' elec='0' direction='0' part='0' number='F55' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='448.00000,80.00000' which='0' elec='0' direction='0' part='0' number='E55' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='440.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G85n' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='432.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G86n' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='424.00000,80.00000' which='0' elec='0' direction='0' part='0' number='75n' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='416.00000,80.00000' which='0' elec='0' direction='0' part='0' number='J75ah' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='408.00000,80.00000' which='0' elec='0' direction='0' part='0' number='J75al' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='400.00000,80.00000' which='0' elec='0' direction='0' part='0' number='M75ak' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='392.00000,80.00000' which='0' elec='0' direction='0' part='0' number='I58d' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='384.00000,80.00000' which='0' elec='0' direction='0' part='0' number='J58as' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='376.00000,80.00000' which='0' elec='0' direction='0' part='0' number='H58r' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='368.00000,80.00000' which='0' elec='0' direction='0' part='0' number='J58a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='360.00000,80.00000' which='0' elec='0' direction='0' part='0' number='B15a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='352.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G30a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='344.00000,80.00000' which='0' elec='0' direction='0' part='0' number='H58l' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='336.00000,80.00000' which='0' elec='0' direction='0' part='0' number='J58' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='328.00000,80.00000' which='0' elec='0' direction='0' part='0' number='F57l' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='320.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G57r' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='312.00000,80.00000' which='0' elec='0' direction='0' part='0' number='F56b' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='304.00000,80.00000' which='0' elec='0' direction='0' part='0' number='I56a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='296.00000,80.00000' which='0' elec='0' direction='0' part='0' number='J30' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='288.00000,80.00000' which='0' elec='0' direction='0' part='0' number='E58r' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='280.00000,80.00000' which='0' elec='0' direction='0' part='0' number='D56br' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='272.00000,80.00000' which='0' elec='0' direction='0' part='0' number='D56ar' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='264.00000,80.00000' which='0' elec='0' direction='0' part='0' number='D56al' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='256.00000,80.00000' which='0' elec='0' direction='0' part='0' number='D56bl' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='248.00000,80.00000' which='0' elec='0' direction='0' part='0' number='D58l' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='240.00000,80.00000' which='0' elec='0' direction='0' part='0' number='DP' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='232.00000,80.00000' which='0' elec='0' direction='0' part='0' number='B53c' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='216.00000,80.00000' which='0' elec='0' direction='0' part='0' number='C53c' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='208.00000,80.00000' which='0' elec='0' direction='0' part='0' number='CJ' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='200.00000,80.00000' which='0' elec='0' direction='0' part='0' number='C53e' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='192.00000,80.00000' which='0' elec='0' direction='0' part='0' number='I75aw' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='184.00000,80.00000' which='0' elec='0' direction='0' part='0' number='D75a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='176.00000,80.00000' which='0' elec='0' direction='0' part='0' number='C31b' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='168.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G49' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='160.00000,80.00000' which='0' elec='0' direction='0' part='0' number='E87h' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='152.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G71' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='144.00000,80.00000' which='0' elec='0' direction='0' part='0' number='B87f' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='136.00000,80.00000' which='0' elec='0' direction='0' part='0' number='H87f' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='128.00000,80.00000' which='0' elec='0' direction='0' part='0' number='O' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='120.00000,80.00000' which='0' elec='0' direction='0' part='0' number='87a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='112.00000,80.00000' which='0' elec='0' direction='0' part='0' number='BS' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='104.00000,80.00000' which='0' elec='0' direction='0' part='0' number='ILa' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='96.00000,80.00000' which='0' elec='0' direction='0' part='0' number='I1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='88.00000,80.00000' which='0' elec='0' direction='0' part='0' number='I15' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='80.00000,80.00000' which='0' elec='0' direction='0' part='0' number='B1' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='72.00000,80.00000' which='0' elec='0' direction='0' part='0' number='L30' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='56.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G75' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='48.00000,80.00000' which='0' elec='0' direction='0' part='0' number='H50w' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='40.00000,80.00000' which='0' elec='0' direction='0' part='0' number='F50z' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='32.00000,80.00000' which='0' elec='0' direction='0' part='0' number='B50a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='24.00000,80.00000' which='0' elec='0' direction='0' part='0' number='E50a' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='16.00000,80.00000' which='0' elec='0' direction='0' part='0' number='L30' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='8.00000,80.00000' which='0' elec='0' direction='0' part='0' number='G31' show='3' length='10' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='552.00000,54.00000' which='0' elec='0' direction='1' part='0' number='28' show='3' length='10' number_pos='0' centre_name='1'>85k</PIN>
+				<PIN pos='568.00000,54.00000' which='0' elec='0' direction='1' part='0' number='29' show='3' length='10' number_pos='0' centre_name='1'>87ak</PIN>
+				<PIN pos='560.00000,38.00000' which='0' elec='0' direction='0' part='0' number='30' show='3' length='10' number_pos='0' centre_name='1'>30k</PIN>
+				<PIN pos='552.00000,38.00000' which='0' elec='0' direction='0' part='0' number='31' show='3' length='10' number_pos='0' centre_name='1'>86k</PIN>
+				<PIN pos='560.00000,54.00000' which='0' elec='0' direction='1' part='0' number='58' show='3' length='10' number_pos='0' centre_name='1'>87k</PIN>
+				<PIN pos='536.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='528.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>87l</PIN>
+				<PIN pos='528.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>87la</PIN>
+				<PIN pos='536.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30as</PIN>
+				<TEXT pos='556.00000,60.00000' direction='3' font='4' color='000000'>relay 6</TEXT>
+				<TEXT pos='528.00000,60.00000' direction='3' font='4' color='000000'>f5</TEXT>
+				<TEXT pos='536.00000,60.00000' direction='3' font='4' color='000000'>f20</TEXT>
+				<TEXT pos='508.00000,60.00000' direction='3' font='4' color='000000'>relay 2</TEXT>
+				<JUNCTION pos='512.00000,62.00000'/>
+				<PIN pos='512.00000,38.00000' which='0' elec='0' direction='0' part='0' number='14' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='504.00000,54.00000' which='0' elec='0' direction='1' part='0' number='15' show='3' length='10' number_pos='0' centre_name='1'>85l</PIN>
+				<PIN pos='520.00000,54.00000' which='0' elec='0' direction='1' part='0' number='16' show='3' length='10' number_pos='0' centre_name='1'>87al</PIN>
+				<PIN pos='512.00000,54.00000' which='0' elec='0' direction='1' part='0' number='17' show='3' length='10' number_pos='0' centre_name='1'>87l</PIN>
+				<PIN pos='504.00000,38.00000' which='0' elec='0' direction='0' part='0' number='18' show='3' length='10' number_pos='0' centre_name='1'>31</PIN>
+				<TEXT pos='456.00000,60.00000' direction='3' font='4' color='000000'>f1</TEXT>
+				<TEXT pos='440.00000,60.00000' direction='3' font='4' color='000000'>relay 1</TEXT>
+				<PIN pos='456.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>87n</PIN>
+				<PIN pos='456.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>55</PIN>
+				<PIN pos='448.00000,38.00000' which='0' elec='0' direction='0' part='0' number='24' show='3' length='10' number_pos='0' centre_name='1'>75n</PIN>
+				<PIN pos='440.00000,54.00000' which='0' elec='0' direction='1' part='0' number='25' show='3' length='10' number_pos='0' centre_name='1'>85n</PIN>
+				<PIN pos='448.00000,54.00000' which='0' elec='0' direction='1' part='0' number='26' show='3' length='10' number_pos='0' centre_name='1'>87n</PIN>
+				<PIN pos='440.00000,38.00000' which='0' elec='0' direction='0' part='0' number='27' show='3' length='10' number_pos='0' centre_name='1'>86n</PIN>
+				<PIN pos='416.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>75</PIN>
+				<PIN pos='408.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>75</PIN>
+				<PIN pos='416.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>75ah</PIN>
+				<PIN pos='408.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>75al</PIN>
+				<TEXT pos='416.00000,60.00000' direction='3' font='4' color='000000'>f16</TEXT>
+				<TEXT pos='408.00000,60.00000' direction='3' font='4' color='000000'>f17</TEXT>
+				<TEXT pos='368.00000,60.00000' direction='3' font='4' color='000000'>f14</TEXT>
+				<TEXT pos='360.00000,62.00000' direction='3' font='4' color='000000'>f12</TEXT>
+				<TEXT pos='352.00000,60.00000' direction='3' font='4' color='000000'>f3</TEXT>
+				<PIN pos='368.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>58</PIN>
+				<PIN pos='360.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>15</PIN>
+				<PIN pos='352.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='368.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>58a</PIN>
+				<PIN pos='360.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>15a</PIN>
+				<PIN pos='352.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30a</PIN>
+				<TEXT pos='288.00000,60.00000' direction='3' font='4' color='000000'>f6</TEXT>
+				<TEXT pos='248.00000,60.00000' direction='3' font='4' color='000000'>f7</TEXT>
+				<TEXT pos='272.00000,60.00000' direction='3' font='4' color='000000'>f8</TEXT>
+				<TEXT pos='264.00000,60.00000' direction='3' font='4' color='000000'>f9</TEXT>
+				<TEXT pos='280.00000,60.00000' direction='3' font='4' color='000000'>f10</TEXT>
+				<TEXT pos='256.00000,60.00000' direction='3' font='4' color='000000'>f11</TEXT>
+				<PIN pos='288.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>57r</PIN>
+				<PIN pos='280.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56b</PIN>
+				<PIN pos='272.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56a</PIN>
+				<PIN pos='264.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56a</PIN>
+				<PIN pos='256.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56b</PIN>
+				<PIN pos='248.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>57l</PIN>
+				<PIN pos='288.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>58r</PIN>
+				<PIN pos='280.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56br</PIN>
+				<PIN pos='272.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56ar</PIN>
+				<PIN pos='264.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56al</PIN>
+				<PIN pos='256.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>56bl</PIN>
+				<PIN pos='248.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>58l</PIN>
+				<JUNCTION pos='248.00000,74.00000'/>
+				<JUNCTION pos='288.00000,70.00000'/>
+				<JUNCTION pos='352.00000,66.00000'/>
+				<JUNCTION pos='216.00000,70.00000'/>
+				<JUNCTION pos='232.00000,70.00000'/>
+				<JUNCTION pos='184.00000,70.00000'/>
+				<JUNCTION pos='192.00000,70.00000'/>
+				<JUNCTION pos='368.00000,66.00000'/>
+				<JUNCTION pos='384.00000,66.00000'/>
+				<JUNCTION pos='272.00000,62.00000'/>
+				<JUNCTION pos='336.00000,58.00000'/>
+				<JUNCTION pos='280.00000,30.00000'/>
+				<JUNCTION pos='272.00000,34.00000'/>
+				<PIN pos='240.00000,38.00000' which='0' elec='0' direction='0' part='0' number='19' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='232.00000,54.00000' which='0' elec='0' direction='1' part='0' number='20' show='3' length='10' number_pos='0' centre_name='1'>53c</PIN>
+				<PIN pos='240.00000,54.00000' which='0' elec='0' direction='1' part='0' number='21' show='3' length='10' number_pos='0' centre_name='1'>P</PIN>
+				<PIN pos='224.00000,54.00000' which='0' elec='0' direction='1' part='0' number='22' show='3' length='10' number_pos='0' centre_name='1'>58</PIN>
+				<PIN pos='232.00000,38.00000' which='0' elec='0' direction='0' part='0' number='23' show='3' length='10' number_pos='0' centre_name='1'>31</PIN>
+				<TEXT pos='228.00000,60.00000' direction='3' font='4' color='000000'>relay 4</TEXT>
+				<TEXT pos='204.00000,60.00000' direction='3' font='4' color='000000'>relay 9</TEXT>
+				<PIN pos='200.00000,54.00000' which='0' elec='0' direction='1' part='0' number='40' show='3' length='10' number_pos='0' centre_name='1'>53e</PIN>
+				<PIN pos='216.00000,54.00000' which='0' elec='0' direction='1' part='0' number='41' show='3' length='10' number_pos='0' centre_name='1'>53c</PIN>
+				<PIN pos='208.00000,38.00000' which='0' elec='0' direction='0' part='0' number='42' show='3' length='10' number_pos='0' centre_name='1'>31b</PIN>
+				<PIN pos='200.00000,38.00000' which='0' elec='0' direction='0' part='0' number='43' show='3' length='10' number_pos='0' centre_name='1'>75a</PIN>
+				<PIN pos='216.00000,38.00000' which='0' elec='0' direction='0' part='0' number='44' show='3' length='10' number_pos='0' centre_name='1'>31</PIN>
+				<PIN pos='208.00000,54.00000' which='0' elec='0' direction='1' part='0' number='45' show='3' length='10' number_pos='0' centre_name='1'>J</PIN>
+				<PIN pos='184.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>75</PIN>
+				<PIN pos='168.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='184.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>75a</PIN>
+				<PIN pos='168.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>49</PIN>
+				<WIRE a='416.00000,36.00000' b='416.00000,16.00000'/>
+				<JUNCTION pos='416.00000,16.00000'/>
+				<WIRE a='408.00000,16.00000' b='416.00000,16.00000'/>
+				<TEXT pos='184.00000,60.00000' direction='3' font='4' color='000000'>f15</TEXT>
+				<TEXT pos='168.00000,60.00000' direction='3' font='4' color='000000'>f2</TEXT>
+				<PIN pos='160.00000,54.00000' which='0' elec='0' direction='1' part='0' number='32' show='3' length='10' number_pos='0' centre_name='1'>87h</PIN>
+				<PIN pos='152.00000,38.00000' which='0' elec='0' direction='0' part='0' number='33' show='3' length='10' number_pos='0' centre_name='1'>75</PIN>
+				<PIN pos='160.00000,38.00000' which='0' elec='0' direction='0' part='0' number='34' show='3' length='10' number_pos='0' centre_name='1'>30a</PIN>
+				<PIN pos='152.00000,54.00000' which='0' elec='0' direction='1' part='0' number='35' show='3' length='10' number_pos='0' centre_name='1'>71</PIN>
+				<TEXT pos='152.00000,60.00000' direction='3' font='4' color='000000'>relay 7</TEXT>
+				<PIN pos='136.00000,38.00000' which='0' elec='0' direction='0' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>87</PIN>
+				<PIN pos='136.00000,54.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='10' number_pos='0' centre_name='1'>87f</PIN>
+				<TEXT pos='136.00000,60.00000' direction='3' font='4' color='000000'>f13</TEXT>
+				<PIN pos='112.00000,38.00000' which='0' elec='0' direction='0' part='0' number='46' show='3' length='10' number_pos='0' centre_name='1'>15</PIN>
+				<PIN pos='112.00000,54.00000' which='0' elec='0' direction='1' part='0' number='47' show='3' length='10' number_pos='0' centre_name='1'>T</PIN>
+				<PIN pos='120.00000,38.00000' which='0' elec='0' direction='0' part='0' number='48' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='104.00000,54.00000' which='0' elec='0' direction='1' part='0' number='49' show='3' length='10' number_pos='0' centre_name='1'>L</PIN>
+				<PIN pos='104.00000,38.00000' which='0' elec='0' direction='0' part='0' number='50' show='3' length='10' number_pos='0' centre_name='1'>31</PIN>
+				<PIN pos='96.00000,54.00000' which='0' elec='0' direction='1' part='0' number='51' show='3' length='10' number_pos='0' centre_name='1'>1</PIN>
+				<PIN pos='128.00000,54.00000' which='0' elec='0' direction='1' part='0' number='52' show='3' length='10' number_pos='0' centre_name='1'>87</PIN>
+				<PIN pos='96.00000,38.00000' which='0' elec='0' direction='0' part='0' number='53' show='3' length='10' number_pos='0' centre_name='1'>50a</PIN>
+				<PIN pos='120.00000,54.00000' which='0' elec='0' direction='1' part='0' number='59' show='3' length='10' number_pos='0' centre_name='1'>87a</PIN>
+				<TEXT pos='108.00000,60.00000' direction='3' font='4' color='000000'>relay 10</TEXT>
+				<TEXT pos='56.00000,60.00000' direction='3' font='4' color='000000'>relay 5</TEXT>
+				<TEXT pos='32.00000,60.00000' direction='3' font='4' color='000000'>relay 8</TEXT>
+				<JUNCTION pos='40.00000,64.00000'/>
+				<JUNCTION pos='24.00000,72.00000'/>
+				<PIN pos='64.00000,38.00000' which='0' elec='0' direction='0' part='0' number='24' show='3' length='10' number_pos='0' centre_name='1'>30</PIN>
+				<PIN pos='56.00000,54.00000' which='0' elec='0' direction='1' part='0' number='25' show='3' length='10' number_pos='0' centre_name='1'>75</PIN>
+				<PIN pos='64.00000,54.00000' which='0' elec='0' direction='1' part='0' number='26' show='3' length='10' number_pos='0' centre_name='1'>75s</PIN>
+				<PIN pos='56.00000,38.00000' which='0' elec='0' direction='0' part='0' number='27' show='3' length='10' number_pos='0' centre_name='1'>31</PIN>
+				<PIN pos='32.00000,38.00000' which='0' elec='0' direction='0' part='0' number='36' show='3' length='10' number_pos='0' centre_name='1'>50a</PIN>
+				<PIN pos='40.00000,54.00000' which='0' elec='0' direction='1' part='0' number='37' show='3' length='10' number_pos='0' centre_name='1'>50z</PIN>
+				<PIN pos='32.00000,54.00000' which='0' elec='0' direction='1' part='0' number='38' show='3' length='10' number_pos='0' centre_name='1'>50z</PIN>
+				<PIN pos='40.00000,38.00000' which='0' elec='0' direction='0' part='0' number='39' show='3' length='10' number_pos='0' centre_name='1'>50w</PIN>
+				<JUNCTION pos='512.00000,8.00000'/>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='2'>
+			<NAME type='0'>272 </NAME>
+			<REF type='0'>after run</REF>
+			<DESCRIPTION>relay</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>package name for PCB layout</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>WAG</NAME>
+				<DEFAULT>443 955 532</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='68.00000,42.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='32.00000,26.00000' b='68.00000,42.00000' style='3' fill='0'/>
+				<PIN pos='58.00000,26.00000' which='0' elec='0' direction='1' part='0' number='50a' show='1' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='34.00000,42.00000' which='0' elec='0' direction='0' part='0' number='15' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='66.00000,42.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='42.00000,42.00000' which='0' elec='0' direction='0' part='0' number='ST1' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='42.00000,26.00000' which='0' elec='0' direction='1' part='0' number='' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='34.00000,26.00000' which='0' elec='0' direction='1' part='0' number='30' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='50.00000,42.00000' which='0' elec='0' direction='0' part='0' number='T' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='58.00000,42.00000' which='0' elec='0' direction='0' part='0' number='31' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='66.00000,26.00000' which='0' elec='0' direction='1' part='0' number='87' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='3'>
+			<NAME type='0'>214</NAME>
+			<REF type='0'>clutch</REF>
+			<DESCRIPTION>relay</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>package name for PCB layout</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>WAG</NAME>
+				<DEFAULT>443 951 253 K</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='45.00000,42.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='30.00000,26.00000' b='45.00000,42.00000' style='3' fill='0'/>
+				<PIN pos='34.00000,26.00000' which='0' elec='0' direction='1' part='0' number='86' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='42.00000,26.00000' which='0' elec='0' direction='1' part='0' number='30' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='34.00000,42.00000' which='0' elec='0' direction='0' part='0' number='85' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='42.00000,42.00000' which='0' elec='0' direction='0' part='0' number='87' show='3' length='20' number_pos='0' centre_name='0'></PIN>
+				<RECTANGLE a='32.00000,32.00000' b='36.00000,36.00000' style='3' fill='3'/>
+				<WIRE a='42.00000,30.00000' b='42.00000,32.00000'/>
+				<WIRE a='44.00000,36.00000' b='42.00000,32.00000'/>
+				<WIRE a='42.00000,38.00000' b='42.00000,36.00000'/>
+				<WIRE a='34.00000,30.00000' b='34.00000,32.00000'/>
+				<WIRE a='34.00000,38.00000' b='34.00000,36.00000'/>
+				<POLYGON pos='36.00000,34.00000' style='4' fill='0'>
+					<POINT pos='0.00000,0.00000' arc='0'/>
+					<POINT pos='8.00000,0.00000' arc='0'/>
+				</POLYGON>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='4'>
+			<NAME type='1'>30A</NAME>
+			<REF type='0'>F?</REF>
+			<DESCRIPTION>fuze</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>package name for PCB layout</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='36.00000,42.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='32.00000,26.00000' b='36.00000,42.00000' style='3' fill='4'/>
+				<PIN pos='34.00000,26.00000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='34.00000,42.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='20' number_pos='0' centre_name='0'></PIN>
+				<TEXT pos='36.00000,36.00000' direction='0' font='4' color='000000'>30A</TEXT>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='5'>
+			<NAME type='1'>25A</NAME>
+			<REF type='0'>F?</REF>
+			<DESCRIPTION>fuze</DESCRIPTION>
+			<PPP>1</PPP>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>package name for PCB layout</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='36.00000,42.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='32.00000,26.00000' b='36.00000,42.00000' style='3' fill='5'/>
+				<PIN pos='34.00000,26.00000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='20' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='34.00000,42.00000' which='0' elec='0' direction='0' part='0' number='1' show='1' length='20' number_pos='0' centre_name='0'></PIN>
+				<TEXT pos='36.00000,36.00000' direction='0' font='4' color='000000'>25A</TEXT>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<OPTIONS>
+			<GRID>0</GRID>
+			<UNITS>0</UNITS>
+			<COLOR_WIRE>FF0000</COLOR_WIRE>
+			<COLOR_BUS>0000FF</COLOR_BUS>
+			<COLOR_JUNCTION>000000</COLOR_JUNCTION>
+			<COLOR_NOCONNECT>000000</COLOR_NOCONNECT>
+			<COLOR_LABEL>208000</COLOR_LABEL>
+			<COLOR_POWER>000000</COLOR_POWER>
+			<COLOR_PIN>4040C0</COLOR_PIN>
+			<COLOR_HIDDEN_PIN>208020</COLOR_HIDDEN_PIN>
+			<COLOR_BACKGROUND>FFFFFF</COLOR_BACKGROUND>
+		</OPTIONS>
+		<SYMBOL id='1' pos='842.00000,76.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='fuze box' show='1' pos='1.00000,-71.60000'/>
+			<FIELD type='0' description='Name' value='fuze box' show='1' pos='1.00000,-74.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-69.20000'/>
+		</SYMBOL>
+		<SYMBOL id='2' pos='806.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='after run' show='1' pos='1.00000,-11.60000'/>
+			<FIELD type='0' description='Name' value='272 ' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-9.20000'/>
+			<FIELD type='1' description='WAG' value='443 955 532' show='0' pos='1.00000,-6.80000'/>
+		</SYMBOL>
+		<SYMBOL id='3' pos='567.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='clutch' show='1' pos='1.00000,-11.60000'/>
+			<FIELD type='0' description='Name' value='214' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-9.20000'/>
+			<FIELD type='1' description='WAG' value='443 951 253 K' show='0' pos='1.00000,-6.80000'/>
+		</SYMBOL>
+		<SYMBOL id='3' pos='615.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='clutch' show='1' pos='1.00000,-11.60000'/>
+			<FIELD type='0' description='Name' value='214' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-9.20000'/>
+			<FIELD type='1' description='WAG' value='443 951 253 K' show='0' pos='1.00000,-6.80000'/>
+		</SYMBOL>
+		<SYMBOL id='3' pos='655.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='clutch' show='1' pos='1.00000,-11.60000'/>
+			<FIELD type='0' description='Name' value='214' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-9.20000'/>
+			<FIELD type='1' description='WAG' value='443 951 253 K' show='0' pos='1.00000,-6.80000'/>
+		</SYMBOL>
+		<SYMBOL id='4' pos='582.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='F?' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='1' description='Name' value='30A' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-11.60000'/>
+		</SYMBOL>
+		<SYMBOL id='4' pos='590.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='F?' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='1' description='Name' value='30A' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-11.60000'/>
+		</SYMBOL>
+		<SYMBOL id='4' pos='462.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='F?' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='1' description='Name' value='30A' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-11.60000'/>
+		</SYMBOL>
+		<SYMBOL id='5' pos='238.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='F?' show='1' pos='1.00000,-14.00000'/>
+			<FIELD type='1' description='Name' value='25A' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='1.00000,-11.60000'/>
+		</SYMBOL>
+		<WIRE a='460.00000,76.00000' b='460.00000,105.00000'/>
+		<LABEL pos='460.00000,91.00000' direction='3' font='3' color='208000' style='0'>black-blue</LABEL>
+		<WIRE a='596.00000,76.00000' b='596.00000,95.00000'/>
+		<LABEL pos='596.00000,88.00000' direction='3' font='3' color='208000' style='0'>broun</LABEL>
+		<WIRE a='604.00000,76.00000' b='604.00000,96.00000'/>
+		<LABEL pos='604.00000,88.00000' direction='3' font='3' color='208000' style='0'>black-yellow</LABEL>
+		<WIRE a='608.00000,96.00000' b='608.00000,79.00000'/>
+		<WIRE a='608.00000,79.00000' b='604.00000,76.00000'/>
+		<JUNCTION pos='604.00000,76.00000'/>
+		<WIRE a='612.00000,76.00000' b='612.00000,96.00000'/>
+		<LABEL pos='612.00000,88.00000' direction='3' font='3' color='208000' style='0'>broun-yellow</LABEL>
+	</TinyCAD>
+</TinyCADSheets>

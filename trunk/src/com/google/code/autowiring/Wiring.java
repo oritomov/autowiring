@@ -34,7 +34,7 @@ public interface Wiring {
 
 	public List<Bean> getBeans() throws WiringException;
 
-	public void setBeans(List<Bean> beans) throws WiringException;
+	public void setBeans(List<Bean> defs, List<Bean> beans) throws WiringException;
 
 	public void save() throws WiringException;
 }

@@ -62,8 +62,12 @@ public class Rect implements Bean {
 		this.strokeWidth = strokeWidth;
 	}
 	public String getStyle() {
-		String style = "stroke:#"+getStrokeColor();
-		style += ";stroke-width:"+getStrokeWidth();
+		String style = "stroke-width:"+getStrokeWidth();
+		if (getStrokeColor() == null) {
+			style += ";stroke:none";
+		} else {
+			style += ";stroke:#"+getStrokeColor();
+		}
 		if (getFillColor() == null) {
 			style += ";fill:none";
 		} else {

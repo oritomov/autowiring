@@ -65,7 +65,7 @@ public class TyniCAD extends Xml implements Wiring {
 	}
 
 	@Override
-	public void setBeans(List<Bean> beans) throws WiringException {
+	public void setBeans(List<Bean> beans1, List<Bean> beans2) throws WiringException {
 		throw new WiringException("Not implemted!");
 	}
 
