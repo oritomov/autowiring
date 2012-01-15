@@ -27,9 +27,10 @@ public class WireTool {
 				for (Bean bean2: beans) {
 					if (bean2 instanceof Path) {
 						Path wire = (Path) bean2;
-						if (pointOnWire(text.getX(x, y), text.getX(x, y), wire)) {
+						if (pointOnWire(text.getX(x, y), text.getY(x, y), wire)) {
 							if (colorLines(defs, text.getText(), wire)) {
 								i.remove();
+								break;
 							}
 						}
 					}
