@@ -103,15 +103,15 @@ public class Path implements Bean {
 			style += ";stroke:#"+strokeColor;
 		}
 		if (isClosed()) {
-			style += ";fill:#"+fillColor+
-			";fill-opacity:1"+
-			";fill-rule:nonzero"+
-			";stroke-linecap:square"+
-			";stroke-linejoin:miter"+
-			";stroke-miterlimit:4"+
-			";stroke-dasharray:none"+
-			";stroke-dashoffset:0"+
-			";stroke-opacity:1";
+			style += ";fill:#"+fillColor;
+//			style += ";fill-opacity:1";
+//			style += ";fill-rule:nonzero";
+//			style += ";stroke-linecap:square";
+//			style += ";stroke-linejoin:miter";
+//			style += ";stroke-miterlimit:4";
+//			style += ";stroke-dasharray:none";
+//			style += ";stroke-dashoffset:0";
+//			style += ";stroke-opacity:1";
 		} else {
 			style += ";fill:none";
 		}
