@@ -11,6 +11,7 @@ import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.beans.Pnt;
 import com.google.code.autowiring.beans.Path;
 import com.google.code.autowiring.beans.Text;
+import com.google.code.autowiring.tynicad.beans.Symbol;
 
 public class WireTool {
 
@@ -35,6 +36,13 @@ public class WireTool {
 						}
 					}
 				}
+			}
+			if (bean1 instanceof Symbol) {
+				Symbol group = (Symbol) bean1;
+				List<Bean> groupBeans = group.getBeans();
+				double groupX = x + group.getOffsX();
+				double groupY = y + group.getOffsY();
+				defs.addAll(colorLines(groupBeans, groupX, groupY));
 			}
 		}
 		return defs;
