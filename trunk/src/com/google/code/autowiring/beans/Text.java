@@ -73,14 +73,12 @@ public class Text implements Bean {
 	}
 	public String getStyle() {
 		String style = "font-size:"+getFontSize()+"px"+
-		";fill:#"+getColor()+
 		";font-family:"+getFontName();
-		//;font-weight:normal
-		//;font-style:normal
-		//;font-stretch:normal
-		//;font-variant:normal
-		//;writing-mode:lr
-		//;line-height:125%
+		if (color == null) {
+			style += ";fill:none";
+		} else {
+			style += ";fill:#"+color;
+		}
 		switch (getDirection()) {
 			case Up:
 			case Left:
