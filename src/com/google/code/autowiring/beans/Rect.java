@@ -63,15 +63,15 @@ public class Rect implements Bean {
 	}
 	public String getStyle() {
 		String style = "stroke-width:"+getStrokeWidth();
-		if (getStrokeColor() == null) {
+		if (strokeColor == null) {
 			style += ";stroke:none";
 		} else {
-			style += ";stroke:#"+getStrokeColor();
+			style += ";stroke:#"+strokeColor;
 		}
-		if (getFillColor() == null) {
+		if (fillColor == null) {
 			style += ";fill:none";
 		} else {
-			style += ";fill:#"+getFillColor();
+			style += ";fill:#"+fillColor;
 		}
 		return style;
 	}

@@ -104,14 +104,6 @@ public class Path implements Bean {
 		}
 		if (isClosed() && (fillColor!=null)) {
 			style += ";fill:#"+fillColor;
-//			style += ";fill-opacity:1";
-//			style += ";fill-rule:nonzero";
-//			style += ";stroke-linecap:square";
-//			style += ";stroke-linejoin:miter";
-//			style += ";stroke-miterlimit:4";
-//			style += ";stroke-dasharray:none";
-//			style += ";stroke-dashoffset:0";
-//			style += ";stroke-opacity:1";
 		} else {
 			style += ";fill:none";
 		}
