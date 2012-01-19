@@ -39,6 +39,12 @@
     <tag root="TinyCAD" class="com.google.code.autowiring.Bean" array="beans"/>
   </tag>
   <!-- beans -->
+  <tag name="ELLIPSE" class="com.google.code.autowiring.tynicad.beans.Ellipse">
+    <prop name="a" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="b" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>
+    <ref name="fill" class="com.google.code.autowiring.tynicad.beans.Fill"/>
+  </tag>
   <tag name="FIELD" class="com.google.code.autowiring.tynicad.beans.Field">
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     <prop name="type" />
