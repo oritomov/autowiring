@@ -28,6 +28,7 @@ public abstract class Xml {
 	private static final boolean ignoreComments = true;
 	private static final boolean putCDATAIntoText = true;
 	private static final boolean createEntityRefs = true;
+	private static final int INDENT = 2;
 
 	protected Document doc;
 
@@ -147,7 +148,9 @@ public abstract class Xml {
 
 	protected String toString(Document document) {
 		try {
-			Transformer transformer = TransformerFactory.newInstance().newTransformer();
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			transformerFactory.setAttribute("indent-number", INDENT);
+			Transformer transformer = transformerFactory.newTransformer();
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
 			//initialize StreamResult with File object to save to file
