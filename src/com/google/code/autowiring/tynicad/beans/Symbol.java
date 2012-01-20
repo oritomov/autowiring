@@ -51,7 +51,7 @@ public class Symbol extends Group {
 				label.setX(field.getX()+def.getX());
 				label.setY(field.getY()+def.getY());
 				label.setLabel(field.getValue());
-				label.setDirection(Direction.Left);
+				label.setDirection(Direction.Right);
 				label.setColor(color);
 				label.setFont(font);
 				if (label.getFontSize() == 0) {
