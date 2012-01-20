@@ -81,12 +81,12 @@ public class Text implements Bean {
 		}
 		switch (getDirection()) {
 			case Up:
-			case Left:
+			case Right:
 				style += ";text-align:start"+
 				";text-anchor:start";
 				break;
 			case Down:
-			case Right:
+			case Left:
 				style += ";text-anchor:end" +
 				";text-align:end";
 				break;
