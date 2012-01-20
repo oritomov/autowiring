@@ -1,7 +1,9 @@
 package com.google.code.autowiring.svg;
 
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +26,7 @@ import com.google.code.autowiring.util.Xml;
  */
 public class Svg extends Xml implements Wiring {
 
+	public static final String CHARSET = "UTF-8";
 	private static final String ROOT = "svg";
 	private static final String DEFS = "defs";
 	private static final String SVG_G = "g";
@@ -72,7 +75,7 @@ public class Svg extends Xml implements Wiring {
 		try {
 			String result = toString(doc);
 			Conv.log().debug(result);
-			FileWriter out = new FileWriter(path + File.separator + fileName, false);
+			Writer out = new OutputStreamWriter(new FileOutputStream(path + File.separator + fileName),CHARSET);
 			out.write(result);
 			out.flush();
 			out.close();
