@@ -129,7 +129,7 @@ public class WireTool {
 		return closestPoint.distance(x, y) == 0;
 	}
 
-	public static boolean cobineWire(List<Bean> beans, Bean bean2) {
+	public static boolean joinWire(List<Bean> beans, Bean bean2) {
 		boolean result = false;
 		if (bean2 instanceof Path) {
 			Iterator<Bean> i = beans.iterator();
@@ -138,7 +138,9 @@ public class WireTool {
 				if (bean1 instanceof Path) {
 					Path wire1 = (Path) bean1;
 					Path wire2 = (Path) bean2;
-					if ((wire1.getStrokeColor() != null) &&
+					if ((!wire1.isClosed()) &&
+						(!wire2.isClosed()) &&
+						(wire1.getStrokeColor() != null) &&
 						(wire1.getStrokeColor().equalsIgnoreCase(wire2.getStrokeColor())) && 
 						(wire1.getStrokeWidth() == wire2.getStrokeWidth()) && 
 						((wire1.getFillColor() == null) && (wire2.getFillColor() == null))) {
@@ -160,7 +162,7 @@ public class WireTool {
 						}
 						if (result) {
 							i.remove();
-							if (!cobineWire(beans, bean1)) {
+							if (!joinWire(beans, bean1)) {
 								beans.add(bean1);
 							}
 							break;
