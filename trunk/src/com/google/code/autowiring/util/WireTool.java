@@ -55,7 +55,7 @@ public class WireTool {
 		} catch (IllegalArgumentException e) {
 			return createPatern(defs, text, wire);
 		}
-		wire.setStrokeColor(color.getCode());
+		wire.setStrokeColor(color.getRgb());
 		return true;
 	}
 

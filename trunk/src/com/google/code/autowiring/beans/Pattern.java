@@ -18,13 +18,13 @@ public class Pattern implements Bean {
 		yellow("ffff00"),
 		broun("9f6f2f");
 		
-		private String code;
+		private String rgb;
 
-		private Color(String code) {
-			this.code = code;
+		private Color(String rgb) {
+			this.rgb = rgb;
 		}
-		public String getCode() {
-			return code;
+		public String getRgb() {
+			return rgb;
 		}
 	}
 
@@ -48,7 +48,7 @@ public class Pattern implements Bean {
 				rect.setY(y);
 				rect.setHeight(SIZE);
 				rect.setWidth(SIZE);
-				rect.setFillColor(color.getCode());
+				rect.setFillColor(color.getRgb());
 				beans.add(rect);
 			}
 		}
