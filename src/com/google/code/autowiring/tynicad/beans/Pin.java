@@ -120,8 +120,8 @@ public class Pin extends Group {
 		return super.getBeans();
 	}
 	private Label createName() {
-		double x = getX();
-		double y = getY();
+		double x = 0;
+		double y = 0;
 		int fontSize = getFont().getWidth();
 		if (fontSize == 0) {
 			fontSize = FONT_SIZE;
@@ -150,8 +150,8 @@ public class Pin extends Group {
 	}
 	private Label createNumber() {
 		Label number = new Label();
-		number.setX(getX());
-		number.setY(getY());
+		number.setX(0);
+		number.setY(0);
 		number.setColor(COLOR_TEXT);
 		number.setDirection(getDirection());
 		number.setFont(getFont());
@@ -179,8 +179,8 @@ public class Pin extends Group {
 				break;
 		}
 		Wire wire = new Wire();
-		wire.setX(getX());
-		wire.setY(getY());
+		wire.setX(0);
+		wire.setY(0);
 		Point p1 = new Point();
 		p1.setX(0);
 		p1.setY(0);

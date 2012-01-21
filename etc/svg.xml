@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <svg class="com.google.code.autowiring.svg.Svg">
-  <tag name="g" class="com.google.code.autowiring.beans.Group"/>
+  <tag name="g" class="com.google.code.autowiring.beans.Group" attrs="transform"/>
   <tag name="path" class="com.google.code.autowiring.beans.Path" attrs="d,style"/>
   <tag name="pattern" class="com.google.code.autowiring.beans.Pattern" attrs="id,height,width"/>
   <tag name="rect" class="com.google.code.autowiring.beans.Rect" attrs="x,y,height,width,style"/>

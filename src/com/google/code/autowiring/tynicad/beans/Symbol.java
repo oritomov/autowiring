@@ -66,9 +66,9 @@ public class Symbol extends Group {
 		}
 	}
 	public double getOffsX() {
-		return getX() - def.getX();
+		return - def.getX();
 	}
 	public double getOffsY() {
-		return getY() - def.getY();
+		return - def.getY();
 	}
 }
