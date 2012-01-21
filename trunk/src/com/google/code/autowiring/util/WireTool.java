@@ -10,6 +10,7 @@ import com.google.code.autowiring.beans.Pattern;
 import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.beans.Pnt;
 import com.google.code.autowiring.beans.Path;
+import com.google.code.autowiring.beans.Rect;
 import com.google.code.autowiring.beans.Text;
 import com.google.code.autowiring.tynicad.beans.Symbol;
 
@@ -40,6 +41,9 @@ public class WireTool {
 			if (bean1 instanceof Symbol) {
 				Symbol group = (Symbol) bean1;
 				List<Bean> groupBeans = group.getBeans();
+				if (group.getColor() != null) {
+					colorSymbol(groupBeans, group.getColor());
+				}
 				double groupX = x + group.getOffsX();
 				double groupY = y + group.getOffsY();
 				defs.addAll(colorLines(groupBeans, groupX, groupY));
@@ -276,5 +280,35 @@ public class WireTool {
 		Pnt p2last = wire2.getPoints().get(wire2.getPoints().size() - 1);
 		return ((p1last.getX()+wire1.getX()==p2last.getX()+wire2.getX()) && 
 				(p1last.getY()+wire1.getY()==p2last.getY()+wire2.getY()));
+	}
+
+	private static void colorSymbol(List<Bean> beans, String color) {
+		Color fill;
+		Color stroke = null;
+		try {
+			fill = Color.valueOf(color);
+		} catch (IllegalArgumentException e) {
+			String[] splet = color.split("-");
+			fill = Color.valueOf(splet[0]);
+			stroke = Color.valueOf(splet[1]);
+		}
+		for (Bean bean: beans) {
+			if (bean instanceof Path) {
+				Path path = (Path) bean;
+				if (path.isClosed()) {
+					path.setFillColor(fill.getRgb());
+				}
+				if (stroke != null) {
+					path.setStrokeColor(stroke.getRgb());
+				}
+			} else 
+			if (bean instanceof Rect) {
+				Rect rect = (Rect) bean;
+				rect.setFillColor(fill.getRgb());
+				if (stroke != null) {
+					rect.setStrokeColor(stroke.getRgb());
+				}
+			}
+		}
 	}
 }
