@@ -122,7 +122,7 @@ public class Path implements Bean {
 		details.put("sodipodi:ry", Svg.getY(arc.getRy()));
 		return details;
 	}
-	private boolean isClosed() {
+	public boolean isClosed() {
 		return (points.size() > 0) &&
 				(points.get(0).getX() == points.get(points.size()-1).getX()) &&
 				(points.get(0).getY() == points.get(points.size()-1).getY());
