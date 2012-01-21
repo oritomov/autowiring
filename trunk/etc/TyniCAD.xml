@@ -92,6 +92,7 @@
   </tag>
   <tag name="SYMBOL" class="com.google.code.autowiring.tynicad.beans.Symbol">
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
+    <prop name="rotate"/>
     <ref name="id" class="com.google.code.autowiring.tynicad.beans.SymbolDef"/>
     <tag name="FIELD" class="com.google.code.autowiring.tynicad.beans.Field" array="fields"/>
   </tag>
