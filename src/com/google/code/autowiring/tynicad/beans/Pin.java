@@ -34,6 +34,10 @@ public class Pin extends Group {
 	private Font font;
 	private String color;
 
+	public Pin() {
+		super();
+	}
+
 	public Pin(List<Bean> refs) {
 		super();
 		setFont(refs, FONT_ID);
@@ -49,7 +53,10 @@ public class Pin extends Group {
 		return direction;
 	}
 	public void setDirection(String code) {
-		this.direction = Direction.get(Integer.parseInt(code));
+		setDirection(Direction.get(Integer.parseInt(code)));
+	}
+	public void setDirection(Direction direction) {
+		this.direction = direction;
 	}
 	public int getShow() {
 		return show;
@@ -84,8 +91,11 @@ public class Pin extends Group {
 	public Font getFont() {
 		return font;
 	}
+	public void setFont(Font font) {
+		this.font = font;
+	}
 	private void setFont(List<Bean> refs, String refId) {
-		this.font = (Font) TyniCAD.getRef(refs, Font.class, refId);
+		setFont((Font) TyniCAD.getRef(refs, Font.class, refId));
 	}
 	public String getColor() {
 		return color;
@@ -97,14 +107,14 @@ public class Pin extends Group {
 	public List<Bean> getBeans() {
 		if (super.getBeans().size() == 0) {
 			Wire wire = createWire();
-			addBean(wire);
+			addBeans(wire);
 			if (((getName() != null) || (!getName().isEmpty())) && ((show&1)!= 0)) {
 				Label name = createName();
-				addBean(name);
+				addBeans(name);
 			}
 			if (((getNumber() != null) || (!getNumber().isEmpty())) && ((show&2) != 0)) {
 				Label number = createNumber();
-				addBean(number);
+				addBeans(number);
 			}
 		}
 		return super.getBeans();
