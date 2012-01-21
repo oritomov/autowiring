@@ -44,8 +44,8 @@ public class WireTool {
 				if (group.getColor() != null) {
 					colorSymbol(groupBeans, group.getColor());
 				}
-				double groupX = x + group.getOffsX();
-				double groupY = y + group.getOffsY();
+				double groupX = x - group.getDefX();
+				double groupY = y - group.getDefY();
 				defs.addAll(colorLines(groupBeans, groupX, groupY));
 			}
 		}

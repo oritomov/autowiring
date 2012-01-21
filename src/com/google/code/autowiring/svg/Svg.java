@@ -240,8 +240,8 @@ public class Svg extends Xml implements Wiring {
 				List<Bean> beans = (List<Bean>) getter.invoke(parentBean, new Object[0]);
 				// TODO remove symbol
 				if (parentBean instanceof Symbol) {
-					x += ((Symbol)parentBean).getOffsX();
-					y += ((Symbol)parentBean).getOffsY();
+					x -= ((Symbol)parentBean).getDefX();
+					y -= ((Symbol)parentBean).getDefY();
 				}
 				if (beans != null) {
 					for (Bean bean: beans) {
