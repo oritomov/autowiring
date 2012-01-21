@@ -72,10 +72,10 @@ public class Symbol extends Group {
 			}
 		}
 	}
-	public double getOffsX() {
-		return - def.getX();
+	public double getDefX() {
+		return def.getX();
 	}
-	public double getOffsY() {
-		return - def.getY();
+	public double getDefY() {
+		return def.getY();
 	}
 }
