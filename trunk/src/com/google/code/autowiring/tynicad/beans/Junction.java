@@ -18,6 +18,10 @@ public class Junction extends Path {
 	private final static double R = 2.5;
 	private static final int WIDTH = 2;
 
+	public Junction() {
+		super();
+	}
+
 	public Junction(List<Bean> refs) {
 		super();
 		setStrokeColor(null);

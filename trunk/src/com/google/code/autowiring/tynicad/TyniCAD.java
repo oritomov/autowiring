@@ -74,6 +74,50 @@ public class TyniCAD extends Xml implements Wiring {
 		throw new WiringException("Not implemted!");
 	}
 
+	@SuppressWarnings("unchecked")
+	public static Bean clone(Bean bean) throws WiringException {
+		try {
+			Bean clone;
+			Class<Bean> beanClass = (Class<Bean>) Class.forName(bean.getClass().getName());
+			Constructor<Bean> beanConstructor = beanClass.getConstructor(new Class[0]);
+			clone = beanConstructor.newInstance(new Object[0]);
+			for(Method setter: beanClass.getMethods()) {
+				if (setter.getName().startsWith("set")) {
+					String getterName = "get" + setter.getName().substring(3);
+					try {
+						Method getter = beanClass.getMethod(getterName, new Class[0]);
+						if ((setter.getParameterTypes().length == 1) && 
+							(getter.getParameterTypes().length == 0) && 
+							(setter.getParameterTypes()[0].equals(getter.getReturnType()))) {
+							setter.invoke(clone, getter.invoke(bean, new Object[0]));
+						}
+					} catch (NoSuchMethodException e) {
+						/** it's ok. do nothing */
+					}
+				}
+				if (setter.getName().startsWith("add")) {
+					String getterName = "get" + setter.getName().substring(3);
+					try {
+						Method getter = beanClass.getMethod(getterName, new Class[0]);
+						if ((setter.getParameterTypes().length == 1) && 
+							(getter.getParameterTypes().length == 0) && 
+							(getter.getReturnType().equals(List.class))) {
+							List<Bean> beans = (List<Bean>) getter.invoke(bean, new Object[0]);
+							for (Bean item: beans) {
+								setter.invoke(clone, clone(item));
+							}
+						}
+					} catch (NoSuchMethodException e) {
+						/** it's ok. do nothing */
+					}
+				}
+			}
+			return clone;
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
 	private List<Bean> ceateBeans(Node node) {
 		List<Bean> beans = new ArrayList<Bean>();
 		while (node != null) {
@@ -118,10 +162,10 @@ public class TyniCAD extends Xml implements Wiring {
 			Class<Bean> beanClass = (Class<Bean>) Class.forName(className);
 			Bean bean;
 			try {
-				Constructor<Bean> beanConstructor = beanClass.getDeclaredConstructor(new Class[]{List.class});
+				Constructor<Bean> beanConstructor = beanClass.getConstructor(new Class[]{List.class});
 				bean = beanConstructor.newInstance(new Object[]{refs});
 			} catch (NoSuchMethodException e) {
-				Constructor<Bean> beanConstructor = beanClass.getDeclaredConstructor(new Class[0]);
+				Constructor<Bean> beanConstructor = beanClass.getConstructor(new Class[0]);
 				bean = beanConstructor.newInstance(new Object[0]);
 			}
 			return bean;
@@ -137,7 +181,7 @@ public class TyniCAD extends Xml implements Wiring {
 		try {
 			String value = node.getTextContent();
 			String setterName = getSetterName(propName);
-			Method setter = bean.getClass().getDeclaredMethod(setterName, String.class);
+			Method setter = bean.getClass().getMethod(setterName, String.class);
 			setter.invoke(bean, value);
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
@@ -150,14 +194,14 @@ public class TyniCAD extends Xml implements Wiring {
 				String value = getAttrValue(node, prop.getName());
 				String setterName = getSetterName(prop.getName());
 				if (prop.getClassName() == null) {
-					Method setter = bean.getClass().getDeclaredMethod(setterName, String.class);
+					Method setter = bean.getClass().getMethod(setterName, String.class);
 					setter.invoke(bean, value);
 				} else {
 					@SuppressWarnings("unchecked")
 					Class<Bean> paramClass = (Class<Bean>) Class.forName(prop.getClassName());
-					Constructor<Bean> paramConstructor = paramClass.getDeclaredConstructor(String.class);
+					Constructor<Bean> paramConstructor = paramClass.getConstructor(String.class);
 					Bean param = paramConstructor.newInstance(value);
-					Method setter = bean.getClass().getDeclaredMethod(setterName, paramClass);
+					Method setter = bean.getClass().getMethod(setterName, paramClass);
 					setter.invoke(bean, param);
 				}
 			}
@@ -178,7 +222,7 @@ public class TyniCAD extends Xml implements Wiring {
 					Conv.log().error("couldn't set "+ref.getName()+" of "+bean.getClass().getName());
 					continue;
 				}
-				Method setter = bean.getClass().getDeclaredMethod(setterName, paramClass);
+				Method setter = bean.getClass().getMethod(setterName, paramClass);
 				setter.invoke(bean, param);
 			}
 		} catch (Exception e) {
@@ -186,6 +230,7 @@ public class TyniCAD extends Xml implements Wiring {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private void setBeanTags(Bean bean, List<Tag> tags, Node parent) {
 		try {
 			for(Tag tag: tags) {
@@ -198,10 +243,16 @@ public class TyniCAD extends Xml implements Wiring {
 						Node root = getNode(parent, tag.getRoot());
 						values = ceateBeans(root.getFirstChild());
 					}
-					@SuppressWarnings("unchecked")
 					Class<Bean> paramClass = (Class<Bean>) Class.forName(tag.getClassName());
 					String adderName = getAdderName(tag.getArrayName());
-					Method adder = bean.getClass().getDeclaredMethod(adderName, paramClass);
+					Method adder = null;
+					while (adder==null) {
+						try {
+							adder = bean.getClass().getMethod(adderName, paramClass);
+						} catch (NoSuchMethodException e) {
+							paramClass = (Class<Bean>) paramClass.getSuperclass();
+						}
+					}
 					for (Bean value: values) {
 						adder.invoke(bean, value);
 					}
@@ -248,7 +299,7 @@ public class TyniCAD extends Xml implements Wiring {
 	public static String getOption(List<Bean> refs, String optionName) throws WiringException {
 		try {
 			Options options = (Options)getRef(refs, Options.class, Options.OPTIONS);
-			Method getter = options.getClass().getDeclaredMethod(getGetterName(optionName), new Class[0]);
+			Method getter = options.getClass().getMethod(getGetterName(optionName), new Class[0]);
 			String value = (String) getter.invoke(options, new Object[0]);
 			return value;
 		} catch (Exception e) {

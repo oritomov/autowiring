@@ -36,7 +36,7 @@ public class Group  implements Bean {
 	public List<Bean> getBeans() {
 		return beans;
 	}
-	public void addBean(Bean bean) {
+	public void addBeans(Bean bean) {
 		beans.add(bean);
 	}
 
