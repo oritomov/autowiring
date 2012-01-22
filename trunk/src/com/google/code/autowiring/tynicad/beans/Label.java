@@ -20,7 +20,7 @@ public class Label extends Text {
 		setY(pos.getY());
 	}
 	public void setDirection(String code) {
-		super.setDirection(Direction.get(Integer.parseInt(code)));
+		super.setDirection(Direction.valueOf(Integer.parseInt(code)));
 	}
 	@Override
 	public void setColor(String bgr) {

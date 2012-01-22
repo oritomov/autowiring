@@ -53,7 +53,7 @@ public class Pin extends Group {
 		return direction;
 	}
 	public void setDirection(String code) {
-		setDirection(Direction.get(Integer.parseInt(code)));
+		setDirection(Direction.valueOf(Integer.parseInt(code)));
 	}
 	public void setDirection(Direction direction) {
 		this.direction = direction;

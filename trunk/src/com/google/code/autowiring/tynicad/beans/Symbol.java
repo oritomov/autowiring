@@ -39,10 +39,8 @@ public class Symbol extends Group {
 	}
 	public void setRotate(String rotate) {
 		int code = Integer.parseInt(rotate);
-		Direction direction = Direction.get(code % Direction.values().length);
+		Direction direction = Direction.valueOf(code);
 		setDirection(direction);
-		setMirror((code / Direction.values().length) > 0);
-		
 	}
 	private void setFieldFont(List<Bean> refs, String refId) {
 		this.fieldFont = (Font) TyniCAD.getRef(refs, Font.class, refId);
