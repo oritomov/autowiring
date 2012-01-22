@@ -59,7 +59,7 @@ public class WireTool {
 		} catch (IllegalArgumentException e) {
 			return createPatern(defs, text, wire);
 		}
-		wire.setStrokeColor(color.getRgb());
+		wire.setStrokeColor(color);
 		return true;
 	}
 
@@ -84,8 +84,8 @@ public class WireTool {
 			pattern = new Pattern(text, colors);
 			defs.add(pattern);
 		}
-		wire.setStrokeColor(pattern.getId());
-		wire.setStrokeUrl(true);
+		wire.setStrokeColor(null);
+		wire.setStrokeUrl(pattern.getId());
 		return true;
 	}
 
@@ -145,7 +145,7 @@ public class WireTool {
 					if ((!wire1.isClosed()) &&
 						(!wire2.isClosed()) &&
 						(wire1.getStrokeColor() != null) &&
-						(wire1.getStrokeColor().equalsIgnoreCase(wire2.getStrokeColor())) && 
+						(wire1.getStrokeColor().equals(wire2.getStrokeColor())) && 
 						(wire1.getStrokeWidth() == wire2.getStrokeWidth()) && 
 						((wire1.getFillColor() == null) && (wire2.getFillColor() == null))) {
 						if (checkContWire(wire1, wire2)) {
@@ -296,17 +296,17 @@ public class WireTool {
 			if (bean instanceof Path) {
 				Path path = (Path) bean;
 				if (path.isClosed()) {
-					path.setFillColor(fill.getRgb());
+					path.setFillColor(fill);
 				}
 				if (stroke != null) {
-					path.setStrokeColor(stroke.getRgb());
+					path.setStrokeColor(stroke);
 				}
 			} else 
 			if (bean instanceof Rect) {
 				Rect rect = (Rect) bean;
-				rect.setFillColor(fill.getRgb());
+				rect.setFillColor(fill);
 				if (stroke != null) {
-					rect.setStrokeColor(stroke.getRgb());
+					rect.setStrokeColor(stroke);
 				}
 			}
 		}

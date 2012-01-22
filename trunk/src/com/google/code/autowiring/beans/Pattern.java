@@ -6,27 +6,48 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.Conv;
 
 public class Pattern implements Bean {
 
 	public enum Color {
-		red("ff0000"), 
-		green("00ff00"), 
-		blue("0000ff"), 
-		black("000000"),
-		white("bfbfbf"),
-		gray("7f7f7f"),
-		yellow("ffff00"),
-		purple("ff00ff"),
-		broun("9f6f2f");
-		
-		private String rgb;
+		red(   0xff,0x00,0x00), 
+		green( 0x00,0xff,0x00), 
+		blue(  0x00,0x00,0xff), 
+		black( 0x00,0x00,0x00),
+		white( 0xbf,0xbf,0xbf),
+		gray(  0x7f,0x7f,0x7f),
+		yellow(0xff,0xff,0x00),
+		purple(0xff,0x00,0xff),
+		broun( 0x9f,0x6f,0x2f),
 
-		private Color(String rgb) {
-			this.rgb = rgb;
+		label(  0x00,0x80,0x20),
+		cristal(0xFF,0xFF,0xFF),
+		fuzebox(0xCF,0xAF,0x9F),
+		pin(   0xC0,0x40,0x40);
+		
+		private int r;
+		private int g;
+		private int b;
+
+		private Color(int r, int g, int b) {
+			this.r = r;
+			this.g = g;
+			this.b = b;
 		}
 		public String getRgb() {
-			return rgb;
+			return ("0" + Integer.toHexString(r)).substring(Integer.toHexString(r).length()-1) + 
+				   ("0" + Integer.toHexString(g)).substring(Integer.toHexString(g).length()-1) + 
+				   ("0" + Integer.toHexString(b)).substring(Integer.toHexString(b).length()-1);
+		}
+		public static Color valueOf(int r, int g, int b) {
+			for(Color color: Color.values()) {
+				if ((color.r == r) && (color.g == g) && (color.b == b)) {
+					return color;
+				}
+			}
+			Conv.log().warn("unknown color: " + r + ", " + g + ", " + b);
+			return null;
 		}
 	}
 
@@ -50,7 +71,7 @@ public class Pattern implements Bean {
 				rect.setY(y);
 				rect.setHeight(SIZE);
 				rect.setWidth(SIZE);
-				rect.setFillColor(color.getRgb());
+				rect.setFillColor(color);
 				beans.add(rect);
 			}
 		}

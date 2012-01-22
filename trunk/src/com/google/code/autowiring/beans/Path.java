@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.beans.Pnt.Arc;
 import com.google.code.autowiring.svg.Svg;
 
@@ -18,10 +19,10 @@ public class Path implements Bean {
 
 	private double x;
 	private double y;
-	private String strokeColor;
-	private boolean strokeUrl = false;
+	private Color strokeColor;
+	private String strokeUrl;
 	private int strokeWidth;
-	private String fillColor;
+	private Color fillColor;
 	private List<Pnt> points = new ArrayList<Pnt>();
 
 	protected Path() {
@@ -46,16 +47,16 @@ public class Path implements Bean {
 	public void addPoints(Pnt point) {
 		points.add(point);
 	}
-	public String getStrokeColor() {
+	public Color getStrokeColor() {
 		return strokeColor;
 	}
-	public void setStrokeColor(String strokeColor) {
+	public void setStrokeColor(Color strokeColor) {
 		this.strokeColor = strokeColor;
 	}
-	public boolean isStrokeUrl() {
+	public String setStrokeUrl() {
 		return strokeUrl;
 	}
-	public void setStrokeUrl(boolean strokeUrl) {
+	public void setStrokeUrl(String strokeUrl) {
 		this.strokeUrl = strokeUrl;
 	}
 	public int getStrokeWidth() {
@@ -64,10 +65,10 @@ public class Path implements Bean {
 	public void setStrokeWidth(int strokeWidth) {
 		this.strokeWidth = strokeWidth;
 	}
-	public String getFillColor() {
+	public Color getFillColor() {
 		return fillColor;
 	}
-	public void setFillColor(String fillColor) {
+	public void setFillColor(Color fillColor) {
 		this.fillColor = fillColor;
 	}
 	public String getD(Double x, Double y) {
@@ -95,15 +96,16 @@ public class Path implements Bean {
 	public String getStyle() {
 		String style;
 		style = "stroke-width:"+strokeWidth;
-		if (strokeColor == null) {
-			style += ";stroke:none";
-		} else if (strokeUrl) {
-			style += ";stroke:url(#"+strokeColor+")";
+		if (strokeUrl != null) {
+			style += ";stroke:url(#"+strokeUrl+")";
+		} else 
+		if (strokeColor != null) {
+			style += ";stroke:#"+strokeColor.getRgb();
 		} else {
-			style += ";stroke:#"+strokeColor;
+			style += ";stroke:none";
 		}
 		if (isClosed() && (fillColor!=null)) {
-			style += ";fill:#"+fillColor;
+			style += ";fill:#"+fillColor.getRgb();
 		} else {
 			style += ";fill:none";
 		}

@@ -22,7 +22,6 @@ public class Label extends Text {
 	public void setDirection(String code) {
 		super.setDirection(Direction.valueOf(Integer.parseInt(code)));
 	}
-	@Override
 	public void setColor(String bgr) {
 		super.setColor(TyniCAD.getColor(bgr));
 	}
