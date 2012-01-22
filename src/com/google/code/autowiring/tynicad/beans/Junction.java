@@ -56,6 +56,6 @@ public class Junction extends Path {
 		addPoints(p3);
 	}
 	public void setFillColor(List<Bean> refs, String name) {
-		setFillColor(TyniCAD.getColor(TyniCAD.getOption(refs, name)));
+		setFillColor(TyniCAD.getOption(refs, name));
 	}
 }
