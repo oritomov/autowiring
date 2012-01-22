@@ -17,6 +17,7 @@ public class Pattern implements Bean {
 		white("bfbfbf"),
 		gray("7f7f7f"),
 		yellow("ffff00"),
+		purple("ff00ff"),
 		broun("9f6f2f");
 		
 		private String rgb;
