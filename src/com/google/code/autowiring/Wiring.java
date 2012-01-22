@@ -12,7 +12,7 @@ import com.google.code.autowiring.WiringException;
 public interface Wiring {
 
 	public enum Direction {
-		Up(0), Down(1), Left(2), Right(3);
+		Up(0), Down(1), Left(2), Right(3), UpMirror(4), DownMirror(5), LeftMirror(6), RightMirror(7);
 
 		private int code;
 
@@ -22,7 +22,33 @@ public interface Wiring {
 		public int getCode() {
 			return code;
 		}
-		public static Direction get(int code) {
+		// TODO fix matrix
+		public String getTransform(double x, double y) {
+			switch (this) {
+				case Up:
+					return "translate("+x+","+y+")";
+				case Down:
+					//return "matrix(-1,0,0,-1,"+x+","+y+")";
+					return "translate("+x+","+y+")";
+				case Left:
+					//return "matrix(0,-1,1,0,"+x+","+y+")";
+				case Right:
+					return "matrix(0,1,1,0,"+x+","+y+")";
+				case UpMirror:
+					//return "matrix(-1,0,0,1,"+x+","+y+")";
+				case DownMirror:
+					//return "matrix(1,0,0,-1,"+x+","+y+")";
+					return "translate("+x+","+y+")";
+				case LeftMirror:
+					//return "matrix(0,1,1,0,"+x+","+y+")";
+				case RightMirror:
+					//return "matrix(0,-1,-1,0,"+x+","+y+")";
+					return "matrix(0,1,1,0,"+x+","+y+")";
+				default:
+					return null;
+			}
+		}
+		public static Direction valueOf(int code) {
 			for(Direction direction: Direction.values()) {
 				if (direction.getCode() == code) {
 					return direction;
