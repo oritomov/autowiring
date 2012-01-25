@@ -4,32 +4,32 @@
   <tag name="OPTIONS" class="com.google.code.autowiring.tynicad.beans.Options">
     <!-- GRID>0</GRID-->
     <!-- UNITS>0</UNITS-->
-    <tag name="COLOR_WIRE" prop="colorWire"/>
+    <tag name="COLOR_WIRE"><text name="colorWire"/></tag>
     <!-- COLOR_BUS>0000FF</COLOR_BUS-->
-    <tag name="COLOR_JUNCTION" prop="colorJunction"/>
+    <tag name="COLOR_JUNCTION"><text name="colorJunction"/></tag>
     <!-- COLOR_NOCONNECT>000000</COLOR_NOCONNECT-->
     <!-- COLOR_LABEL>208000</COLOR_LABEL-->
     <!-- COLOR_POWER>000000</COLOR_POWER-->
-    <tag name="COLOR_PIN" prop="colorPin"/>
+    <tag name="COLOR_PIN"><text name="colorPin"/></tag>
     <!-- COLOR_HIDDEN_PIN>208020</COLOR_HIDDEN_PIN-->
     <!-- COLOR_BACKGROUND>FFFFFF</COLOR_BACKGROUND-->
   </tag>
   <!-- refs -->
   <tag name="FILL" class="com.google.code.autowiring.tynicad.beans.Fill">
     <prop name="id"/>
-    <tag name="INDEX" prop="fill"/>
-    <tag name="COLOR" prop="color"/>
+    <tag name="INDEX"><text name="fill"/></tag>
+    <tag name="COLOR"><text name="color"/></tag>
   </tag>
   <tag name="FONT" class="com.google.code.autowiring.tynicad.beans.Font">
     <prop name="id"/>
-    <tag name="WIDTH" prop="width"/>
-    <tag name="FACENAME" prop="facename"/>
+    <tag name="WIDTH"><text name="width"/></tag>
+    <tag name="FACENAME"><text name="facename"/></tag>
   </tag>
   <tag name="STYLE" class="com.google.code.autowiring.tynicad.beans.Style">
     <prop name="id"/>
-    <tag name="STYLE" prop="style"/>
-    <tag name="COLOR" prop="color" />
-    <tag name="THICKNESS" prop="thickness" />
+    <tag name="STYLE"><text name="style"/></tag>
+    <tag name="COLOR"><text name="color" /></tag>
+    <tag name="THICKNESS"><text name="thickness"/></tag>
   </tag>
   <tag name="SYMBOLDEF" class="com.google.code.autowiring.tynicad.beans.SymbolDef">
     <prop name="id"/>
@@ -55,14 +55,16 @@
   <tag name="JUNCTION" class="com.google.code.autowiring.tynicad.beans.Junction">
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
   </tag>
-  <tag name="LABEL" class="com.google.code.autowiring.tynicad.beans.Label" prop="label">
+  <tag name="LABEL" class="com.google.code.autowiring.tynicad.beans.Label">
+    <text name="label"/>
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     <prop name="direction"/>
     <prop name="color" />
     <ref name="font" class="com.google.code.autowiring.tynicad.beans.Font"/>
     <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>
   </tag>
-  <tag name="PIN" class="com.google.code.autowiring.tynicad.beans.Pin" prop="name">
+  <tag name="PIN" class="com.google.code.autowiring.tynicad.beans.Pin">
+    <text name="name"/>
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     <!-- which='0' -->
     <!-- elec='0' -->
@@ -96,7 +98,8 @@
     <ref name="id" class="com.google.code.autowiring.tynicad.beans.SymbolDef"/>
     <tag name="FIELD" class="com.google.code.autowiring.tynicad.beans.Field" array="fields"/>
   </tag>
-  <tag name="TEXT" class="com.google.code.autowiring.tynicad.beans.Label" prop="label">
+  <tag name="TEXT" class="com.google.code.autowiring.tynicad.beans.Label">
+    <text name="label"/>
     <prop name="pos" class="com.google.code.autowiring.tynicad.beans.Position"/>
     <prop name="direction"/>
     <prop name="color"/>

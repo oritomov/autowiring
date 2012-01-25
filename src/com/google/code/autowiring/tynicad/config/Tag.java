@@ -8,40 +8,36 @@ import java.util.List;
  * @version	1.0
  *
  */
-public class Tag extends Prop {
+public class Tag extends Attr {
 
 	private String root;
-	private String propName;
 	private String arrayName;
-	private List<Prop> props = new ArrayList<Prop>();
-	private List<Prop> refs = new ArrayList<Prop>();
+	private List<Attr> props = new ArrayList<Attr>();
+	private List<Attr> refs = new ArrayList<Attr>();
 	private List<Tag> tags = new ArrayList<Tag>();
+	private Attr text;
 
-	public Tag(String name, String root, String className, String propName, String arrayName) {
+	public Tag(String name, String root, String className, String arrayName) {
 		super(name, className);
 		this.root = root;
-		this.propName = propName;
 		this.arrayName = arrayName;
 	}
-	public void addProp(Prop prop) {
-		props .add(prop);
+	public void addProp(Attr prop) {
+		props.add(prop);
 	}
-	public List<Prop> getProps() {
+	public List<Attr> getProps() {
 		return props;
 	}
 	public String getRoot() {
 		return root;
 	}
-	public String getPropName() {
-		return propName;
-	}
 	public String getArrayName() {
 		return arrayName;
 	}
-	public void addRef(Prop ref) {
+	public void addRef(Attr ref) {
 		refs .add(ref);
 	}
-	public List<Prop> getRefs() {
+	public List<Attr> getRefs() {
 		return refs;
 	}
 	public void addTag(Tag tag) {
@@ -49,5 +45,11 @@ public class Tag extends Prop {
 	}
 	public List<Tag> getTags() {
 		return tags;
+	}
+	public void setText(Attr text) {
+		this.text = text;
+	}
+	public Attr getText() {
+		return text;
 	}
 }

@@ -15,7 +15,7 @@ import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.config.CfgEng;
 import com.google.code.autowiring.tynicad.beans.Options;
 import com.google.code.autowiring.tynicad.beans.RefBean;
-import com.google.code.autowiring.tynicad.config.Prop;
+import com.google.code.autowiring.tynicad.config.Attr;
 import com.google.code.autowiring.tynicad.config.Tag;
 import com.google.code.autowiring.tynicad.config.TiniCadConfig;
 import com.google.code.autowiring.util.WireTool;
@@ -144,7 +144,7 @@ public class TyniCAD extends Xml implements Wiring {
 			Tag tag = engine.getTag(name);
 			Bean bean = instanceBean(tag.getClassName());
 			setBeanProps(bean, tag.getProps(), node);
-			setBeanProp(bean, tag.getPropName(), node);
+			setBeanText(bean, tag.getText(), node);
 			setBeanRefs(bean, tag.getRefs(), node);
 			setBeanTags(bean, tag.getTags(), node);
 			return bean;
@@ -174,23 +174,34 @@ public class TyniCAD extends Xml implements Wiring {
 		}
 	}
 
-	private void setBeanProp(Bean bean, String propName, Node node) {
-		if (propName == null) {
+	private void setBeanText(Bean bean, Attr text, Node node) {
+		if (text == null) {
 			return;
 		}
 		try {
+			String textName = text.getName();
+			String className = text.getClassName();
 			String value = node.getTextContent();
-			String setterName = getSetterName(propName);
-			Method setter = bean.getClass().getMethod(setterName, String.class);
-			setter.invoke(bean, value);
+			String setterName = getSetterName(textName);
+			if (className == null) {
+				Method setter = bean.getClass().getMethod(setterName, String.class);
+				setter.invoke(bean, value);
+			} else {
+				@SuppressWarnings("unchecked")
+				Class<Bean> paramClass = (Class<Bean>) Class.forName(className);
+				Constructor<Bean> paramConstructor = paramClass.getConstructor(String.class);
+				Bean param = paramConstructor.newInstance(value);
+				Method setter = bean.getClass().getMethod(setterName, paramClass);
+				setter.invoke(bean, param);
+			}
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
 		}
 	}
 
-	private void setBeanProps(Bean bean, List<Prop> props, Node node) {
+	private void setBeanProps(Bean bean, List<Attr> props, Node node) {
 		try {
-			for(Prop prop: props) {
+			for(Attr prop: props) {
 				String value = getAttrValue(node, prop.getName());
 				String setterName = getSetterName(prop.getName());
 				if (prop.getClassName() == null) {
@@ -210,9 +221,9 @@ public class TyniCAD extends Xml implements Wiring {
 		}
 	}
 
-	private void setBeanRefs(Bean bean, List<Prop> refs, Node node) {
+	private void setBeanRefs(Bean bean, List<Attr> refs, Node node) {
 		try {
-			for(Prop ref: refs) {
+			for(Attr ref: refs) {
 				String refId = getAttrValue(node, ref.getName());
 				String setterName = getSetterName(ref.getName());
 				@SuppressWarnings("unchecked")
@@ -259,8 +270,8 @@ public class TyniCAD extends Xml implements Wiring {
 				} else {
 					Node child = getNode(parent, tag.getName());
 					setBeanProps(bean, tag.getProps(), child);
-					if (tag.getPropName() != null) {
-						setBeanProp(bean, tag.getPropName(), child);
+					if (tag.getText() != null) {
+						setBeanText(bean, tag.getText(), child);
 					}
 				}
 			}
