@@ -1,7 +1,6 @@
 package com.google.code.autowiring.beans;
 
 import com.google.code.autowiring.Bean;
-import com.google.code.autowiring.beans.Pattern.Color;
 
 /**
  * @author	Orlin Tomov
@@ -14,8 +13,8 @@ public class Rect implements Bean {
 	private double y;
 	private double width;
 	private double height; 
-	private Color fillColor;
-	private Color strokeColor;
+	private String fillColor;
+	private String strokeColor;
 	private int strokeWidth;
 
 	protected Rect() {
@@ -44,16 +43,16 @@ public class Rect implements Bean {
 	public void setHeight(double height) {
 		this.height = height;
 	}
-	public Color getFillColor() {
+	public String getFillColor() {
 		return fillColor;
 	}
-	public void setFillColor(Color fillColor) {
+	public void setFillColor(String fillColor) {
 		this.fillColor = fillColor;
 	}
-	public Color getStrokeColor() {
+	public String getStrokeColor() {
 		return strokeColor;
 	}
-	public void setStrokeColor(Color strokeColor) {
+	public void setStrokeColor(String strokeColor) {
 		this.strokeColor = strokeColor;
 	}
 	public int getStrokeWidth() {
@@ -67,12 +66,12 @@ public class Rect implements Bean {
 		if (strokeColor == null) {
 			style += ";stroke:none";
 		} else {
-			style += ";stroke:#"+strokeColor.getRgb();
+			style += ";stroke:#"+strokeColor;
 		}
 		if (fillColor == null) {
 			style += ";fill:none";
 		} else {
-			style += ";fill:#"+fillColor.getRgb();
+			style += ";fill:#"+fillColor;
 		}
 		return style;
 	}

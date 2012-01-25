@@ -59,7 +59,7 @@ public class WireTool {
 		} catch (IllegalArgumentException e) {
 			return createPatern(defs, text, wire);
 		}
-		wire.setStrokeColor(color);
+		wire.setStrokeColor(color.getRgb());
 		return true;
 	}
 
@@ -296,17 +296,17 @@ public class WireTool {
 			if (bean instanceof Path) {
 				Path path = (Path) bean;
 				if (path.isClosed()) {
-					path.setFillColor(fill);
+					path.setFillColor(fill.getRgb());
 				}
 				if (stroke != null) {
-					path.setStrokeColor(stroke);
+					path.setStrokeColor(stroke.getRgb());
 				}
 			} else 
 			if (bean instanceof Rect) {
 				Rect rect = (Rect) bean;
-				rect.setFillColor(fill);
+				rect.setFillColor(fill.getRgb());
 				if (stroke != null) {
-					rect.setStrokeColor(stroke);
+					rect.setStrokeColor(stroke.getRgb());
 				}
 			}
 		}
