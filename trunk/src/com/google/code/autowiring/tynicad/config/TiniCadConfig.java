@@ -15,12 +15,13 @@ import com.google.code.autowiring.config.CfgEng;
 public class TiniCadConfig  extends CfgEng {
 
 	private static final String TYNICAD = "tynicad";
+	private static final String ROOT = "root";
+	private static final String NAME = "name";
+	private static final String CLASS = "class";
 	private static final String TAG = "tag";
 	private static final String PROP = "prop";
 	private static final String REF = "ref";
-	private static final String NAME = "name";
-	private static final String ROOT = "root";
-	private static final String CLASS = "class";
+	private static final String TEXT = "text";
 	private static final String ARRAY = "array";
 
 	private String className;
@@ -65,12 +66,12 @@ public class TiniCadConfig  extends CfgEng {
 		String name = getAttrValue(node, NAME);
 		String root = getAttrValue(node, ROOT);
 		String className = getAttrValue(node, CLASS);
-		String propName = getAttrValue(node, PROP);
 		String arrayName = getAttrValue(node, ARRAY);
-		Tag tag = new Tag(name, root, className, propName, arrayName);
+		Tag tag = new Tag(name, root, className, arrayName);
 		props(tag, node);
 		refs(tag, node);
 		tags(tag, node);
+		text(tag, node);
 		return tag;
 	}
 
@@ -83,35 +84,37 @@ public class TiniCadConfig  extends CfgEng {
 		}
 	}
 
-	private void refs(Tag tag, Node root) {
-		Node node = getNode(root, REF);
-		while (node != null) {
-			Prop ref = ref(node);
-			tag.addRef(ref);
-			node = nextNode(node, REF);
-		}
-	}
-
-	private Prop ref(Node node) {
-		String name = getAttrValue(node, NAME);
-		String className = getAttrValue(node, CLASS);
-		Prop ref = new Prop(name, className);
-		return ref;
-	}
-
 	private void props(Tag tag, Node root) {
 		Node node = getNode(root, PROP);
 		while (node != null) {
-			Prop prop = prop(node);
+			Attr prop = attr(node);
 			tag.addProp(prop);
 			node = nextNode(node, PROP);
 		}
 	}
 
-	private Prop prop(Node node) {
+	private void refs(Tag tag, Node root) {
+		Node node = getNode(root, REF);
+		while (node != null) {
+			Attr ref = attr(node);
+			tag.addRef(ref);
+			node = nextNode(node, REF);
+		}
+	}
+
+	private void text(Tag tag, Node root) {
+		Node node = getNode(root, TEXT);
+		while (node != null) {
+			Attr text = attr(node);
+			tag.setText(text);
+			return;
+		}
+	}
+
+	private Attr attr(Node node) {
 		String name = getAttrValue(node, NAME);
 		String className = getAttrValue(node, CLASS);
-		Prop prop = new Prop(name, className);
-		return prop;
+		Attr attr = new Attr(name, className);
+		return attr;
 	}
 }
