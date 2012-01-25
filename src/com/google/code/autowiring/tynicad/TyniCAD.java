@@ -174,41 +174,33 @@ public class TyniCAD extends Xml implements Wiring {
 	}
 
 	private void setBeanText(Bean bean, Attr text, Node node) {
-		if (text == null) {
-			return;
-		}
-		try {
-			String textName = text.getName();
-			String className = text.getClassName();
-			String value = node.getTextContent();
-			String setterName = getSetterName(textName);
-			if (className == null) {
-				Method setter = bean.getClass().getMethod(setterName, String.class);
-				setter.invoke(bean, value);
-			} else {
-				@SuppressWarnings("unchecked")
-				Class<Bean> paramClass = (Class<Bean>) Class.forName(className);
-				Constructor<Bean> paramConstructor = paramClass.getConstructor(String.class);
-				Bean param = paramConstructor.newInstance(value);
-				Method setter = bean.getClass().getMethod(setterName, paramClass);
-				setter.invoke(bean, param);
-			}
-		} catch (Exception e) {
-			throw new WiringException(e.getMessage(), e);
-		}
+		String value = node.getTextContent();
+		setBeanProp(bean, text, node, value);
 	}
 
 	private void setBeanProps(Bean bean, List<Attr> props, Node node) {
 		try {
 			for(Attr prop: props) {
 				String value = getAttrValue(node, prop.getName());
-				String setterName = getSetterName(prop.getName());
-				if (prop.getClassName() == null) {
+				setBeanProp(bean, prop, node, value);
+			}
+		} catch (Exception e) {
+			throw new WiringException(e.getMessage(), e);
+		}
+	}
+
+	private void setBeanProp(Bean bean, Attr prop, Node node, String value) {
+		try {
+			if (prop != null) {
+				String name = prop.getName();
+				String setterName = getSetterName(name);
+				String className = prop.getClassName();
+				if (className == null) {
 					Method setter = bean.getClass().getMethod(setterName, String.class);
 					setter.invoke(bean, value);
 				} else {
 					@SuppressWarnings("unchecked")
-					Class<Bean> paramClass = (Class<Bean>) Class.forName(prop.getClassName());
+					Class<Bean> paramClass = (Class<Bean>) Class.forName(className);
 					Constructor<Bean> paramConstructor = paramClass.getConstructor(String.class);
 					Bean param = paramConstructor.newInstance(value);
 					Method setter = bean.getClass().getMethod(setterName, paramClass);
