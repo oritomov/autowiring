@@ -5,7 +5,6 @@ import java.util.List;
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring.Direction;
 import com.google.code.autowiring.beans.Group;
-import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.tynicad.TyniCAD;
 
 /**
@@ -17,7 +16,7 @@ public class Symbol extends Group {
 
 	private static final String COLOR = "color";
 	private SymbolDef def;
-	private Color fieldColor;
+	private String fieldColor;
 	private Font fieldFont;
 	private String color;
 

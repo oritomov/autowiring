@@ -1,8 +1,5 @@
 package com.google.code.autowiring.tynicad.beans;
 
-import com.google.code.autowiring.beans.Pattern.Color;
-import com.google.code.autowiring.tynicad.TyniCAD;
-
 /**
  * @author	Orlin Tomov
  * @version	1.0
@@ -33,7 +30,7 @@ public class Fill implements RefBean {
 
 	private String id;
 	private EFill fill;
-	private Color color;
+	private String color;
 
 	public Fill() {
 		super();
@@ -53,10 +50,13 @@ public class Fill implements RefBean {
 	public void setFill(String code) {
 		fill = EFill.get(Integer.parseInt(code));
 	}
-	public Color getColor() {
+	public String getColor() {
 		return color;
 	}
-	public void setColor(String bgr) {
-		this.color = TyniCAD.getColor(bgr);
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public void setColor(BgrColor bgrColor) {
+		this.color = bgrColor.getColor();
 	}
 }

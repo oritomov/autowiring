@@ -20,11 +20,7 @@ public class Pattern implements Bean {
 		yellow(0xff,0xff,0x00),
 		purple(0xff,0x00,0xff),
 		broun( 0x9f,0x6f,0x2f),
-
-		label(  0x00,0x80,0x20),
-		cristal(0xFF,0xFF,0xFF),
-		fuzebox(0xCF,0xAF,0x9F),
-		pin(   0xC0,0x40,0x40);
+		fuzebox(0xCF,0xAF,0x9F);
 		
 		private int r;
 		private int g;
@@ -71,7 +67,7 @@ public class Pattern implements Bean {
 				rect.setY(y);
 				rect.setHeight(SIZE);
 				rect.setWidth(SIZE);
-				rect.setFillColor(color);
+				rect.setFillColor(color.getRgb());
 				beans.add(rect);
 			}
 		}

@@ -11,7 +11,6 @@ import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Conv;
 import com.google.code.autowiring.Wiring;
 import com.google.code.autowiring.WiringException;
-import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.config.CfgEng;
 import com.google.code.autowiring.tynicad.beans.Options;
 import com.google.code.autowiring.tynicad.beans.RefBean;
@@ -307,22 +306,14 @@ public class TyniCAD extends Xml implements Wiring {
 		return null;
 	}
 
-	public static Color getOption(List<Bean> refs, String optionName) throws WiringException {
+	public static String getOption(List<Bean> refs, String optionName) throws WiringException {
 		try {
 			Options options = (Options)getRef(refs, Options.class, Options.OPTIONS);
 			Method getter = options.getClass().getMethod(getGetterName(optionName), new Class[0]);
-			Color value = (Color) getter.invoke(options, new Object[0]);
+			String value = (String) getter.invoke(options, new Object[0]);
 			return value;
 		} catch (Exception e) {
 			throw new WiringException(e.getMessage(), e);
 		}
-	}
-
-	public static Color getColor(String bgr) {
-		int r = Integer.parseInt(bgr.substring(4), 16);
-		int g = Integer.parseInt(bgr.substring(2, 4), 16);
-		int b = Integer.parseInt(bgr.substring(0, 2), 16);
-		Color color = Color.valueOf(r, g, b);
-		return color;
 	}
 }

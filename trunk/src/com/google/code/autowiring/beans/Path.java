@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.code.autowiring.Bean;
-import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.beans.Pnt.Arc;
 import com.google.code.autowiring.svg.Svg;
 
@@ -19,10 +18,10 @@ public class Path implements Bean {
 
 	private double x;
 	private double y;
-	private Color strokeColor;
+	private String strokeColor;
 	private String strokeUrl;
 	private int strokeWidth;
-	private Color fillColor;
+	private String fillColor;
 	private List<Pnt> points = new ArrayList<Pnt>();
 
 	protected Path() {
@@ -47,10 +46,10 @@ public class Path implements Bean {
 	public void addPoints(Pnt point) {
 		points.add(point);
 	}
-	public Color getStrokeColor() {
+	public String getStrokeColor() {
 		return strokeColor;
 	}
-	public void setStrokeColor(Color strokeColor) {
+	public void setStrokeColor(String strokeColor) {
 		this.strokeColor = strokeColor;
 	}
 	public String setStrokeUrl() {
@@ -65,10 +64,10 @@ public class Path implements Bean {
 	public void setStrokeWidth(int strokeWidth) {
 		this.strokeWidth = strokeWidth;
 	}
-	public Color getFillColor() {
+	public String getFillColor() {
 		return fillColor;
 	}
-	public void setFillColor(Color fillColor) {
+	public void setFillColor(String fillColor) {
 		this.fillColor = fillColor;
 	}
 	public String getD(Double x, Double y) {
@@ -100,12 +99,12 @@ public class Path implements Bean {
 			style += ";stroke:url(#"+strokeUrl+")";
 		} else 
 		if (strokeColor != null) {
-			style += ";stroke:#"+strokeColor.getRgb();
+			style += ";stroke:#"+strokeColor;
 		} else {
 			style += ";stroke:none";
 		}
 		if (isClosed() && (fillColor!=null)) {
-			style += ";fill:#"+fillColor.getRgb();
+			style += ";fill:#"+fillColor;
 		} else {
 			style += ";fill:none";
 		}

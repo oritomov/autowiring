@@ -1,8 +1,5 @@
 package com.google.code.autowiring.tynicad.beans;
 
-import com.google.code.autowiring.beans.Pattern.Color;
-import com.google.code.autowiring.tynicad.TyniCAD;
-
 /**
  * @author	Orlin Tomov
  * @version	1.0
@@ -33,7 +30,7 @@ public class Style implements RefBean {
 
 	private String id;
 	private EStyle style;
-	private Color color;
+	private String color;
 	private int thickness;
 
 	public Style() {
@@ -53,15 +50,14 @@ public class Style implements RefBean {
 	public void setStyle(String code) {
 		this.style = EStyle.get(Integer.parseInt(code));
 	}
-	public Color getColor() {
+	public String getColor() {
 		return color;
 	}
-	public void setColor(Color color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
-	public void setColor(String bgr) {
-		Color color = TyniCAD.getColor(bgr);
-		this.color = color;
+	public void setColor(BgrColor bgrColor) {
+		this.color = bgrColor.getColor();
 	}
 	public int getThickness() {
 		return thickness;

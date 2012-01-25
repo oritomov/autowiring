@@ -5,7 +5,6 @@ import java.util.List;
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring.Direction;
 import com.google.code.autowiring.beans.Group;
-import com.google.code.autowiring.beans.Pattern.Color;
 import com.google.code.autowiring.beans.Pnt.Arc;
 import com.google.code.autowiring.tynicad.TyniCAD;
 
@@ -33,7 +32,7 @@ public class Pin extends Group {
 	//centre_name='1'
 	private String name;
 	private Font font;
-	private Color color;
+	private String color;
 
 	public Pin() {
 		super();
@@ -98,7 +97,7 @@ public class Pin extends Group {
 	private void setFont(List<Bean> refs, String refId) {
 		setFont((Font) TyniCAD.getRef(refs, Font.class, refId));
 	}
-	public Color getColor() {
+	public String getColor() {
 		return color;
 	}
 	private void setColor(List<Bean> refs, String name) {

@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.google.code.autowiring.Bean;
 import com.google.code.autowiring.Wiring.Direction;
-import com.google.code.autowiring.beans.Pattern.Color;
 
 /**
  * @author	Orlin Tomov
@@ -17,7 +16,7 @@ public class Text implements Bean {
 	private double x;
 	private double y;
 	private int fontSize;
-	private Color color;
+	private String color;
 	private String fontName;
 	private Direction direction;
 	private String text;
@@ -60,10 +59,10 @@ public class Text implements Bean {
 	public void setFontSize(int fontSize) {
 		this.fontSize = fontSize;
 	}
-	public Color getColor() {
+	public String getColor() {
 		return color;
 	}
-	public void setColor(Color color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 	public String getFontName() {
@@ -84,7 +83,7 @@ public class Text implements Bean {
 		if (color == null) {
 			style += ";fill:none";
 		} else {
-			style += ";fill:#"+color.getRgb();
+			style += ";fill:#"+color;
 		}
 		switch (getDirection()) {
 			case Up:

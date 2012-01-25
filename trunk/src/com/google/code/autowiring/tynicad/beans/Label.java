@@ -2,7 +2,6 @@ package com.google.code.autowiring.tynicad.beans;
 
 import com.google.code.autowiring.Wiring.Direction;
 import com.google.code.autowiring.beans.Text;
-import com.google.code.autowiring.tynicad.TyniCAD;
 
 /**
  * @author	Orlin Tomov
@@ -22,8 +21,8 @@ public class Label extends Text {
 	public void setDirection(String code) {
 		super.setDirection(Direction.valueOf(Integer.parseInt(code)));
 	}
-	public void setColor(String bgr) {
-		super.setColor(TyniCAD.getColor(bgr));
+	public void setColor(BgrColor bgrColor) {
+		super.setColor(bgrColor.getColor());
 	}
 	public void setLabel(String label) {
 		super.setText(label);
