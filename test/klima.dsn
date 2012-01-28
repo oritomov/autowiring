@@ -1137,7 +1137,7 @@ download a copy.-->
 				<WIRE a='34.00000,30.50000' b='34.00000,30.00000'/>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='11'>
+		<SYMBOLDEF id='10'>
 			<NAME type='0'>a/c</NAME>
 			<REF type='0'>control unit</REF>
 			<DESCRIPTION>ctrl unit</DESCRIPTION>
@@ -1183,7 +1183,7 @@ download a copy.-->
 				<PIN pos='58.00000,26.00000' which='0' elec='0' direction='1' part='0' number='8' show='3' length='20' number_pos='0' centre_name='1'>87</PIN>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='12'>
+		<SYMBOLDEF id='11'>
 			<NAME type='0'>diode</NAME>
 			<REF type='0'>diode</REF>
 			<DESCRIPTION>diode</DESCRIPTION>
@@ -1234,7 +1234,7 @@ download a copy.-->
 				</POLYGON>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='13'>
+		<SYMBOLDEF id='12'>
 			<NAME type='0'>connector</NAME>
 			<REF type='0'>pin</REF>
 			<DESCRIPTION>pin</DESCRIPTION>
@@ -1282,7 +1282,7 @@ download a copy.-->
 				</POLYGON>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='14'>
+		<SYMBOLDEF id='13'>
 			<NAME type='0'>inside fan</NAME>
 			<REF type='0'>blower</REF>
 			<DESCRIPTION>blower</DESCRIPTION>
@@ -1331,7 +1331,7 @@ download a copy.-->
 				<WIRE a='42.00000,30.00000' b='42.00000,34.00000'/>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='16'>
+		<SYMBOLDEF id='14'>
 			<NAME type='0'>blower resistor</NAME>
 			<REF type='0'>blower res</REF>
 			<DESCRIPTION>blower res</DESCRIPTION>
@@ -1386,7 +1386,7 @@ download a copy.-->
 				<WIRE a='34.00000,28.00000' b='42.00000,28.00000'/>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='17'>
+		<SYMBOLDEF id='15'>
 			<NAME type='0'>a/c select switch</NAME>
 			<REF type='0'>a/c select sw</REF>
 			<DESCRIPTION>a/c select sw</DESCRIPTION>
@@ -1536,7 +1536,7 @@ download a copy.-->
 				</POLYGON>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='18'>
+		<SYMBOLDEF id='16'>
 			<NAME type='0'>a/c flap sol</NAME>
 			<REF type='0'>a/c flap sol</REF>
 			<DESCRIPTION>a/c flap sol</DESCRIPTION>
@@ -1583,7 +1583,7 @@ download a copy.-->
 				<WIRE a='34.00000,36.00000' b='34.00000,38.00000'/>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='19'>
+		<SYMBOLDEF id='17'>
 			<NAME type='0'>compressor</NAME>
 			<REF type='0'>clutch</REF>
 			<DESCRIPTION>clutch</DESCRIPTION>
@@ -1629,7 +1629,7 @@ download a copy.-->
 				<POWER pos='34.00000,36.00000' which='0' direction='1'></POWER>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='20'>
+		<SYMBOLDEF id='18'>
 			<NAME type='0'>blower switch</NAME>
 			<REF type='0'>blower sw</REF>
 			<DESCRIPTION>blower sw</DESCRIPTION>
@@ -1873,7 +1873,6 @@ download a copy.-->
 		<WIRE a='620.00000,116.00000' b='620.00000,160.00000'/>
 		<WIRE a='612.00000,76.00000' b='612.00000,160.00000'/>
 		<LABEL pos='616.00000,184.00000' direction='3' font='3' color='208000' style='0'>broun</LABEL>
-		<JUNCTION pos='236.00000,76.00000'/>
 		<WIRE a='644.00000,148.00000' b='644.00000,184.00000'/>
 		<WIRE a='644.00000,184.00000' b='636.00000,184.00000'/>
 		<WIRE a='636.00000,184.00000' b='636.00000,176.00000'/>
@@ -1901,7 +1900,7 @@ download a copy.-->
 		<LABEL pos='582.00000,138.00000' direction='3' font='3' color='208000' style='0'>black-yellow</LABEL>
 		<LABEL pos='590.00000,144.00000' direction='3' font='3' color='208000' style='0'>black-green</LABEL>
 		<WIRE a='616.00000,176.00000' b='616.00000,186.00000'/>
-		<SYMBOL id='19' pos='570.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='17' pos='570.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='clutch' show='1' pos='-5.00000,-16.60000'/>
 			<FIELD type='0' description='Name' value='compressor' show='1' pos='-5.00000,-19.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1910,7 +1909,7 @@ download a copy.-->
 			<FIELD type='1' description='WAG' value='443 951 253 J' show='0' pos='0.00000,0.00000'/>
 		</SYMBOL>
 		<LABEL pos='546.00000,124.00000' direction='3' font='3' color='208000' style='0'>green-yellow</LABEL>
-		<SYMBOL id='11' pos='552.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='10' pos='552.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='control unit' show='1' pos='-1.00000,-16.60000'/>
 			<FIELD type='0' description='Name' value='a/c' show='1' pos='-1.00000,-19.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1942,7 +1941,7 @@ download a copy.-->
 		<WIRE a='648.00000,132.00000' b='600.00000,132.00000'/>
 		<WIRE a='600.00000,132.00000' b='600.00000,146.00000'/>
 		<WIRE a='584.00000,80.00000' b='584.00000,84.00000'/>
-		<SYMBOL id='12' pos='588.00000,112.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='11' pos='588.00000,112.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='diode' show='0' pos='1.00000,-3.60000'/>
 			<FIELD type='0' description='Name' value='diode' show='1' pos='1.00000,-6.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1955,7 +1954,7 @@ download a copy.-->
 		<WIRE a='600.00000,108.00000' b='588.00000,108.00000'/>
 		<WIRE a='568.00000,80.00000' b='568.00000,108.00000'/>
 		<WIRE a='568.00000,108.00000' b='580.00000,108.00000'/>
-		<SYMBOL id='13' pos='518.00000,142.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='518.00000,142.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='1.00000,-2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1963,7 +1962,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='red' show='1' pos='0.00000,0.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='518.00000,138.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='518.00000,138.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='1.00000,-2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1971,7 +1970,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='red' show='1' pos='0.00000,0.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='518.00000,134.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='518.00000,134.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='1.00000,-2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1980,7 +1979,7 @@ download a copy.-->
 			<FIELD type='3' description='color' value='red' show='1' pos='0.00000,0.40000'/>
 		</SYMBOL>
 		<WIRE a='518.00000,140.00000' b='526.00000,140.00000'/>
-		<SYMBOL id='13' pos='566.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='566.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1988,7 +1987,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='green' show='1' pos='0.00000,-5.60000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='584.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='584.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1996,7 +1995,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='green' show='1' pos='0.00000,-5.60000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='592.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='592.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2004,7 +2003,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='green' show='1' pos='0.00000,-5.60000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='602.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='602.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2012,7 +2011,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='green' show='1' pos='0.00000,-5.60000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='608.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='608.00000,154.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2032,7 +2031,7 @@ download a copy.-->
 		<LABEL pos='600.00000,158.00000' direction='3' font='4' color='208000' style='0'>red-green</LABEL>
 		<LABEL pos='600.00000,183.00000' direction='3' font='4' color='208000' style='0'>red-blue</LABEL>
 		<LABEL pos='564.00000,158.00000' direction='3' font='3' color='208000' style='0'>green-yellow</LABEL>
-		<SYMBOL id='13' pos='518.00000,124.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='518.00000,124.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='1.00000,-2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2040,7 +2039,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='red-white' show='1' pos='0.00000,0.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='518.00000,120.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='518.00000,120.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='1.00000,-2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2048,7 +2047,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='red-white' show='1' pos='0.00000,0.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='518.00000,116.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='518.00000,116.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='1.00000,-2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2058,7 +2057,7 @@ download a copy.-->
 		</SYMBOL>
 		<WIRE a='518.00000,118.00000' b='534.00000,118.00000'/>
 		<WIRE a='534.00000,118.00000' b='534.00000,160.00000'/>
-		<SYMBOL id='13' pos='566.00000,110.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='566.00000,110.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2066,7 +2065,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='green-purple' show='1' pos='-4.00000,4.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='650.00000,122.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='650.00000,122.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2074,7 +2073,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='green-purple' show='1' pos='-4.00000,4.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='686.00000,108.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='686.00000,108.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2123,7 +2122,7 @@ download a copy.-->
 		<WIRE a='476.00000,148.00000' b='476.00000,160.00000'/>
 		<LABEL pos='484.00000,180.00000' direction='3' font='3' color='208000' style='0'>green-black</LABEL>
 		<LABEL pos='490.00000,148.00000' direction='3' font='3' color='208000' style='0'>blue-black</LABEL>
-		<SYMBOL id='14' pos='466.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='13' pos='466.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='blower' show='1' pos='-5.00000,-17.60000'/>
 			<FIELD type='0' description='Name' value='inside fan' show='1' pos='-5.00000,-20.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2138,7 +2137,7 @@ download a copy.-->
 		<WIRE a='484.00000,184.00000' b='484.00000,128.00000'/>
 		<LABEL pos='468.00000,182.00000' direction='3' font='3' color='208000' style='0'>green-broun</LABEL>
 		<WIRE a='460.00000,112.00000' b='460.00000,160.00000'/>
-		<SYMBOL id='20' pos='448.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='18' pos='448.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='blower sw' show='1' pos='-3.00000,-17.60000'/>
 			<FIELD type='0' description='Name' value='blower switch' show='1' pos='-3.00000,-20.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2161,7 +2160,7 @@ download a copy.-->
 		<LABEL pos='420.00000,160.00000' direction='3' font='3' color='208000' style='0'>broun-blue</LABEL>
 		<LABEL pos='412.00000,156.00000' direction='3' font='3' color='208000' style='0'>broun-yellow</LABEL>
 		<LABEL pos='404.00000,156.00000' direction='3' font='3' color='208000' style='0'>broun</LABEL>
-		<SYMBOL id='16' pos='438.00000,154.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='14' pos='438.00000,154.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='blower res' show='1' pos='1.00000,-11.60000'/>
 			<FIELD type='0' description='Name' value='blower resistor' show='1' pos='1.00000,-14.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2170,7 +2169,7 @@ download a copy.-->
 			<FIELD type='1' description='WAG' value='' show='0' pos='1.00000,-6.80000'/>
 		</SYMBOL>
 		<WIRE a='460.00000,76.00000' b='460.00000,104.00000'/>
-		<SYMBOL id='13' pos='462.00000,112.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='462.00000,112.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2178,7 +2177,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='-4.00000,4.40000'/>
 			<FIELD type='3' description='color' value='broun-purple' show='1' pos='-4.00000,6.80000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='446.00000,112.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='446.00000,112.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2186,7 +2185,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='-4.00000,4.40000'/>
 			<FIELD type='3' description='color' value='broun-purple' show='1' pos='-4.00000,6.80000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='432.00000,112.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='432.00000,112.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2205,7 +2204,7 @@ download a copy.-->
 		<WIRE a='426.00000,116.00000' b='426.00000,120.00000'/>
 		<WIRE a='426.00000,120.00000' b='370.00000,120.00000'/>
 		<WIRE a='484.00000,128.00000' b='354.00000,128.00000'/>
-		<SYMBOL id='17' pos='382.00000,182.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='15' pos='382.00000,182.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='a/c select sw' show='1' pos='-3.00000,-23.60000'/>
 			<FIELD type='0' description='Name' value='a/c select switch' show='1' pos='-3.00000,-26.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2216,7 +2215,7 @@ download a copy.-->
 		<WIRE a='362.00000,160.00000' b='362.00000,132.00000'/>
 		<WIRE a='354.00000,160.00000' b='354.00000,128.00000'/>
 		<LABEL pos='490.00000,132.00000' direction='3' font='3' color='208000' style='0'>black-yellow</LABEL>
-		<SYMBOL id='18' pos='398.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='16' pos='398.00000,176.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='a/c flap sol' show='1' pos='-5.00000,-17.60000'/>
 			<FIELD type='0' description='Name' value='a/c flap sol' show='1' pos='-5.00000,-20.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2235,7 +2234,7 @@ download a copy.-->
 		<WIRE a='374.00000,156.00000' b='370.00000,160.00000'/>
 		<WIRE a='370.00000,120.00000' b='370.00000,160.00000'/>
 		<LABEL pos='382.00000,142.00000' direction='3' font='3' color='208000' style='0'>green-black</LABEL>
-		<SYMBOL id='13' pos='536.00000,192.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='536.00000,192.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2243,7 +2242,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='white-purple' show='1' pos='-4.00000,4.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='544.00000,192.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='544.00000,192.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2251,7 +2250,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='green-purple' show='1' pos='-4.00000,4.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='552.00000,192.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='552.00000,192.00000' part='0' rotate='6' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='1.00000,-2.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -2259,7 +2258,7 @@ download a copy.-->
 			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='3' description='color' value='white-purple' show='1' pos='-4.00000,4.40000'/>
 		</SYMBOL>
-		<SYMBOL id='13' pos='702.00000,128.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='12' pos='702.00000,128.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='pin' show='1' pos='-4.00000,2.00000'/>
 			<FIELD type='0' description='Name' value='connector' show='0' pos='-4.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
