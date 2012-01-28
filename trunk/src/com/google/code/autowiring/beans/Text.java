@@ -15,7 +15,7 @@ public class Text implements Bean {
 
 	private double x;
 	private double y;
-	private int fontSize;
+	private double fontSize;
 	private String color;
 	private String fontName;
 	private Direction direction;
@@ -53,10 +53,10 @@ public class Text implements Bean {
 	public void setY(double y) {
 		this.y = y;
 	}
-	public int getFontSize() {
+	public double getFontSize() {
 		return fontSize;
 	}
-	public void setFontSize(int fontSize) {
+	public void setFontSize(double fontSize) {
 		this.fontSize = fontSize;
 	}
 	public String getColor() {
