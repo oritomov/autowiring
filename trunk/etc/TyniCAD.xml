@@ -71,7 +71,7 @@
     <prop name="direction"/>
     <prop name="color" class="com.google.code.autowiring.tynicad.beans.BgrColor"/>
     <ref name="font" class="com.google.code.autowiring.tynicad.beans.Font"/>
-    <ref name="style" class="com.google.code.autowiring.tynicad.beans.Style"/>
+    <!-- style -->
   </tag>
   <tag name="PIN" class="com.google.code.autowiring.tynicad.beans.Pin">
     <text name="name"/>
