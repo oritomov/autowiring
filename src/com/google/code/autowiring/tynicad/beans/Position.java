@@ -1,6 +1,7 @@
 package com.google.code.autowiring.tynicad.beans;
 
 import com.google.code.autowiring.Bean;
+import com.google.code.autowiring.tynicad.TyniCAD;
 
 /**
  * @author	Orlin Tomov
@@ -18,7 +19,7 @@ public class Position implements Bean {
 		this.y = y;
 	}
 	public Position(String position) {
-		this(Double.valueOf(position.split(",")[0]), Double.valueOf(position.split(",")[1]));
+		this(Double.valueOf(position.split(",")[0]) * TyniCAD.XY, Double.valueOf(position.split(",")[1]) * TyniCAD.XY);
 	}
 
 	public double getX() {

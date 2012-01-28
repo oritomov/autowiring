@@ -27,6 +27,8 @@ import com.google.code.autowiring.util.Xml;
  */
 public class TyniCAD extends Xml implements Wiring {
 
+	public static final double XY = 5;
+	public static final double FONT = 2.5;
 	private static final String ROOT = "TinyCADSheets";
 	private static final String TINY_CAD = "TinyCAD";
 	private static final String OPTIONS = "OPTIONS";

@@ -17,7 +17,7 @@ public class Pin extends Group {
 
 	public static final String COLOR_PIN = "colorPin";
 	public static final String FONT_ID = "1";
-	public static final int FONT_SIZE = 3;
+	public static final double FONT_SIZE = 4 * TyniCAD.FONT;
 	private static final String COLOR_TEXT = "000000";
 	private static final int WIDTH_PIN = 1;
 
@@ -122,7 +122,7 @@ public class Pin extends Group {
 	private Label createName() {
 		double x = 0;
 		double y = 0;
-		int fontSize = getFont().getWidth();
+		double fontSize = getFont().getWidth();
 		if (fontSize == 0) {
 			fontSize = FONT_SIZE;
 		}
@@ -166,16 +166,16 @@ public class Pin extends Group {
 		double y = 0;
 		switch (getDirection()) {
 			case Up:
-				y = -getLength()/5;
+				y = -getLength() * TyniCAD.XY/5;
 				break;
 			case Down:
-				y = getLength()/5;
+				y = getLength() * TyniCAD.XY/5;
 				break;
 			case Left:
-				x = -getLength()/5;
+				x = -getLength() * TyniCAD.XY/5;
 				break;
 			case Right:
-				x = getLength()/5;
+				x = getLength() * TyniCAD.XY/5;
 				break;
 		}
 		Wire wire = new Wire();
