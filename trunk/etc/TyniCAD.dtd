@@ -3,7 +3,7 @@
 <!ATTLIST tynicad
     class CDATA #REQUIRED>
 
-<!ELEMENT tag (prop*,ref*,tag*)>
+<!ELEMENT tag (text*,prop*,ref*,tag*)>
 
 <!ATTLIST tag
     name CDATA #IMPLIED
@@ -11,6 +11,10 @@
     class CDATA #IMPLIED
     prop CDATA #IMPLIED
     array CDATA #IMPLIED>
+
+<!ATTLIST text
+    name CDATA #REQUIRED
+    class CDATA #IMPLIED>
 
 <!ATTLIST prop
     name CDATA #REQUIRED
