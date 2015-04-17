@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--This file was written by TinyCAD Version 2.80.03 Build #514 Production Release
+<!--This file was written by TinyCAD Version 2.80.06 Build #626 Production Release
 If you wish to view this file go to http://tinycad.sourceforge.net to
-download a copy.-->
+download the executable.-->
 <TinyCADSheets>
 	<TinyCAD>
 		<NAME>Sheet 1</NAME>
@@ -19,7 +19,17 @@ download a copy.-->
 			<DATE></DATE>
 			<GRID spacing='25.00000' snap='1'/>
 		</DETAILS>
-		<FONT id='0'>
+		<FONT id='1'>
+			<HEIGHT>-10</HEIGHT>
+			<WIDTH>0</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='3'>
 			<HEIGHT>-13</HEIGHT>
 			<WIDTH>6</WIDTH>
 			<WEIGHT>400</WEIGHT>
@@ -29,12 +39,12 @@ download a copy.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<STYLE id='2'>
+		<STYLE id='3'>
 			<STYLE>0</STYLE>
 			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
-		<STYLE id='3'>
+		<STYLE id='4'>
 			<STYLE>2</STYLE>
 			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
@@ -63,69 +73,72 @@ download a copy.-->
 			<COLOR_PIN>4040C0</COLOR_PIN>
 			<COLOR_HIDDEN_PIN>208020</COLOR_HIDDEN_PIN>
 			<COLOR_BACKGROUND>FFFFFF</COLOR_BACKGROUND>
+			<COLOR_NOTETEXT_FILL>AFFFFF</COLOR_NOTETEXT_FILL>
+			<COLOR_NOTETEXT_LINE>FF0000</COLOR_NOTETEXT_LINE>
+			<COLOR_NOTETEXT_TEXT>FF0000</COLOR_NOTETEXT_TEXT>
 		</OPTIONS>
-		<POLYGON pos='36.00000,54.00000' style='2' fill='0'>
+		<POLYGON pos='36.00000,54.00000' style='3' fill='0'>
 			<POINT pos='0.00000,0.00000' arc='0'/>
 			<POINT pos='0.00000,2.00000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='35.00000,55.00000' style='2' fill='0'>
+		<POLYGON pos='35.00000,55.00000' style='3' fill='0'>
 			<POINT pos='1.00000,0.00000' arc='0'/>
 			<POINT pos='0.00000,0.00000' arc='0'/>
 			<POINT pos='0.00000,1.00000' arc='0'/>
 		</POLYGON>
 		<JUNCTION pos='36.00000,55.00000'/>
-		<RECTANGLE a='34.00000,56.00000' b='37.00000,57.00000' style='2' fill='0'/>
-		<POLYGON pos='36.00000,57.00000' style='2' fill='0'>
+		<RECTANGLE a='34.00000,56.00000' b='37.00000,57.00000' style='3' fill='0'/>
+		<POLYGON pos='36.00000,57.00000' style='3' fill='0'>
 			<POINT pos='0.00000,0.00000' arc='0'/>
-			<POINT pos='0.00000,11.50000' arc='0'/>
+			<POINT pos='0.00000,10.00000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='28.00000,54.00000' style='2' fill='0'>
-			<POINT pos='0.00000,0.00000' arc='0'/>
-			<POINT pos='0.00000,1.50000' arc='0'/>
-		</POLYGON>
-		<POLYGON pos='27.40000,55.40000' style='2' fill='0'>
+		<POLYGON pos='27.40000,55.40000' style='3' fill='0'>
 			<POINT pos='0.10000,0.10000' arc='0'/>
 			<POINT pos='1.10000,0.10000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='27.40000,57.40000' style='2' fill='0'>
+		<POLYGON pos='27.40000,57.40000' style='3' fill='0'>
 			<POINT pos='0.10000,0.10000' arc='0'/>
 			<POINT pos='1.10000,0.10000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='26.40000,56.00000' style='2' fill='0'>
+		<POLYGON pos='26.40000,56.00000' style='3' fill='0'>
 			<POINT pos='1.60000,1.50000' arc='0'/>
 			<POINT pos='0.10000,0.00000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='27.00000,56.40000' style='3' fill='0'>
+		<POLYGON pos='27.00000,56.40000' style='4' fill='0'>
 			<POINT pos='7.00000,0.10000' arc='0'/>
 			<POINT pos='0.00000,0.10000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='28.00000,57.40000' style='2' fill='0'>
+		<POLYGON pos='28.00000,57.40000' style='3' fill='0'>
 			<POINT pos='0.00000,0.10000' arc='0'/>
 			<POINT pos='0.00000,2.10000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='28.00000,57.00000' style='2' fill='0'>
+		<POLYGON pos='28.00000,57.00000' style='3' fill='0'>
 			<POINT pos='0.00000,1.50000' arc='0'/>
 			<POINT pos='7.00000,1.50000' arc='0'/>
 			<POINT pos='7.00000,0.00000' arc='0'/>
 		</POLYGON>
 		<JUNCTION pos='28.00000,58.50000'/>
-		<RECTANGLE a='27.00000,59.50000' b='29.00000,60.50000' style='2' fill='0'/>
-		<RECTANGLE a='25.00000,63.50000' b='31.00000,65.50000' style='2' fill='1'/>
-		<ELLIPSE a='26.00000,62.50000' b='30.00000,66.50000' style='2' fill='2'/>
-		<TEXT pos='27.00000,66.00000' direction='3' font='0' color='000000'>M</TEXT>
-		<POLYGON pos='28.00000,60.40000' style='2' fill='0'>
+		<RECTANGLE a='27.00000,59.50000' b='29.00000,60.50000' style='3' fill='0'/>
+		<RECTANGLE a='25.00000,63.50000' b='31.00000,65.50000' style='3' fill='1'/>
+		<ELLIPSE a='26.00000,62.50000' b='30.00000,66.50000' style='3' fill='2'/>
+		<TEXT pos='27.00000,66.00000' direction='3' font='3' color='000000'>M</TEXT>
+		<POLYGON pos='28.00000,60.40000' style='3' fill='0'>
 			<POINT pos='0.00000,0.10000' arc='0'/>
 			<POINT pos='0.00000,1.30000' arc='0'/>
 			<POINT pos='4.00000,1.30000' arc='0'/>
 			<POINT pos='4.00000,4.10000' arc='0'/>
 			<POINT pos='2.90769,4.10000' arc='0'/>
 		</POLYGON>
-		<POLYGON pos='24.00000,64.40000' style='2' fill='0'>
+		<POLYGON pos='24.00000,64.40000' style='3' fill='0'>
 			<POINT pos='1.10000,0.10000' arc='0'/>
 			<POINT pos='0.00000,0.10000' arc='0'/>
 			<POINT pos='0.00000,2.76667' arc='0'/>
 			<POINT pos='4.00000,2.76667' arc='0'/>
-			<POINT pos='4.00000,4.10000' arc='0'/>
 		</POLYGON>
+		<PIN pos='28.00000,51.50000' which='0' elec='0' direction='1' part='0' number='1' show='1' length='20' number_pos='0' centre_name='1'>30</PIN>
+		<PIN pos='36.00000,51.50000' which='0' elec='0' direction='1' part='0' number='2' show='1' length='18' number_pos='0' centre_name='1'>50</PIN>
+		<PIN pos='28.00000,71.00000' which='0' elec='0' direction='0' part='0' number='3' show='1' length='20' number_pos='0' centre_name='1'>31</PIN>
+		<PIN pos='36.00000,71.00000' which='0' elec='0' direction='0' part='0' number='4' show='1' length='20' number_pos='0' centre_name='1'>31</PIN>
+		<RECTANGLE a='23.00000,51.50000' b='39.00000,71.00000' style='3' fill='0'/>
 	</TinyCAD>
 </TinyCADSheets>
